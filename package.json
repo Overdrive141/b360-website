@@ -1,0 +1,42 @@
+{
+  "name": "Business360",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "serve": "next start",
+    "export": "next export",
+    "postbuild": "next-sitemap"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
+    "@mdx-js/react": "^1.6.22",
+    "framer-motion": "^4.1.16",
+    "next": "^12.1.0",
+    "next-compose-plugins": "^2.2.0",
+    "next-optimized-images": "^2.6.2",
+    "polished": "^3.6.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-ga": "^3.1.2",
+    "react-icons": "^3.11.0",
+    "react-intersection-observer": "^8.33.1",
+    "react-masonry-component": "^6.2.1",
+    "react-reveal": "^1.2.2",
+    "react-scroll": "^1.8.1",
+    "react-slick": "^0.27.11",
+    "react-stickynode": "^3.0.3",
+    "swiper": "^6.3.1",
+    "theme-ui": "^0.13.1",
+    "typeface-dm-sans": "^1.1.3"
+  },
+  "devDependencies": {
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^8.0.0",
+    "next-sitemap": "^1.2.4",
+    "prettier": "^2.1.2"
+  }
+}
