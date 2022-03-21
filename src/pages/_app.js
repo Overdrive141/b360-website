@@ -4,6 +4,7 @@ import 'swiper/swiper-bundle.min.css';
 import 'assets/css/slick.min.css';
 import { initGA, logPageView } from 'analytics';
 import 'typeface-dm-sans';
+import { ChakraProvider, theme, CSSReset } from '@chakra-ui/react'
 
 export default function CustomApp({ Component, pageProps }) {
   useEffect(() => {
@@ -12,5 +13,10 @@ export default function CustomApp({ Component, pageProps }) {
     Router.events.on('routeChangeComplete', logPageView);
   }, []);
 
-  return <Component {...pageProps} />;
+  return(
+    <ChakraProvider theme={theme}>
+      <CSSReset />
+      <Component {...pageProps} />
+    </ChakraProvider>
+  ) 
 }

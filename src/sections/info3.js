@@ -12,16 +12,12 @@ import bannerIcon7 from "assets/images/dot-pattern.svg";
 
 import { keyframes } from "@emotion/react";
 
-export default function Banner() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("submitting...");
-  };
+export default function Info3() {
 
   return (
-    <Box as="section" id="home" sx={styles.section}>
+    <Box as="section" id="products" sx={styles.section}>
       <Container sx={styles.container}>
-        <Image
+      <Image
           sx={styles.bannerIcon1}
           className="bannerIcon"
           alt="banner icon"
@@ -63,50 +59,15 @@ export default function Banner() {
           alt="banner icon"
           src={bannerIcon7}
         />
-
-        <Box sx={styles.contentWrapper}>
-          <Box
-            sx={{
-              width:"1270px",
-              textAlign:"left"
-            }}
-          >
+        <Box sx={{mt:"79px", mb:"52px",textAlign:"justify"}}>
             <Heading as="h1" sx={styles.heroTitle}>
-              Build for <br/>local <br />Businesses
+                AI First Platform
             </Heading>
-          </Box>
-
-          <Box sx={styles.bannerContent}>
-            <Text as="p" sx={styles.desc}>
-              Thousands of Successful businesses trust Business 360 as their
-              technical partner.
+        </Box>
+        <Box sx={{mb:"263px",textAlign:"justify"}}>
+            <Text sx={styles.content}>
+                Business360 brings Sales, Operations, Inventory, Finance, and HR together whilst equipping your automation with the latest AI and Data Analytics tools.<br /><br /><br /> Business360 was built for any type of business within any industry, those looking to scale up, scale down, looking for integrations with existing technologies, or looking for specified features.
             </Text>
-            <Box as="form" onSubmit={handleSubmit} sx={{mt:"86px"}}>
-              <Button type="submit" sx={styles.button} variant="primary">
-                <Text sx={{
-                  fontSize:"22px",
-                  fontWeight:400,
-                  lineHeight:"49px",
-                  color:"#1B1C1E"
-                }}>Start your free trial</Text>
-              </Button>
-            </Box>
-            <Box
-              sx={{
-                mt:"16px",
-                mb:"31px",
-              }}
-            >
-              <Text sx={{
-                fontSize:"14px",
-                fontWeight:400,
-                lineHeight:"21px",
-                color:"#ffffff",
-              }}>
-                Try Business 360 free for 30 days, no credit card required.
-              </Text>
-            </Box>
-          </Box>
         </Box>
       </Container>
     </Box>
@@ -117,7 +78,6 @@ const bannerAnim1 = keyframes`
     0% {
         transform: rotate3d(0, 1, 0, 0deg);
     }
-
     30% {
         transform: rotate3d(0, 0, 1, 5deg);
     }
@@ -206,79 +166,22 @@ const styles = {
     alignItems: "center",
     minHeight: [null, null, null, null, "50vh", "100vh"],
   },
-  bannerContent: {
-    backgroundColor: rgba("#000", 0.93),
-    boxShadow: [
-      "0px 10px 16px rgba(52, 61, 72, 0.12)",
-      null,
-      null,
-      null,
-      "none",
-    ],
-    widht:"481px",
-    height:"581px",
-    textAlign:"left",
-    padding: [
-      "20px",
-      "30px",
-      null,
-      null,
-      null,
-      "30px 50px 60px",
-      "50px 60px 90px",
-    ],
-    borderRadius: "10px",
-    borderWidth: 1,
-    borderColor: "black",
-    m: ["110px 0 0", null, null, "110px auto 0", "60px 0 0", null, 0],
-    "@media only screen and (min-height: 720px) and (max-height: 760px), (min-width: 1501px) and (max-width: 1560px) ":
-      {
-        maxWidth: 515,
-        mt: 70,
-        padding: "30px 50px 65px",
-      },
-  },
   heroTitle: {
-    fontSize: "130px",
+    fontSize: "70px",
     fontWeight: 400,
-    lineHeight:"195px", 
+    textAllign:"left",
     letterSpacing: "heading",
-    lineHeight: [1.4, null, null, null, null, null, 1.57],
+    fontColor:"#1B1C1E",
     "@media only screen and (min-height: 720px) and (max-height: 760px), (min-width: 1501px) and (max-width: 1560px) ":
       {
-        fontSize: 40,
+        fontSize: "70px",
       },
   },
-  desc: {
-    fontSize: "31px",
-    lineHeight: "46px",
-    fontWeight: 500,
-    maxWidth: 440,
-    marginTop: [15, 15, 15, null, null, null, 30],
-    color: rgba("#fff", 1),
-    "@media only screen and (min-height: 720px) and (max-height: 760px), (min-width: 1501px) and (max-width: 1560px) ":
-      {
-        mt: 15,
-      },
+  content:{
+    fontSize: "36px",
+    fontWeight: 400,
+    textAllign:"left",
   },
-  select: {
-    marginTop: 30,
-    select: {
-      minWidth: ["auto", "auto", "initial"],
-    },
-  },
-  button: {
-    fontSize: 20,
-    fontWeight: 700,
-    marginTop: 20,
-    width: "100%",
-    minHeight: [50, null, null, null, 60],
-    fontSize: [16, 16, 16, 20],
-    ":focus": {
-      outline: "0 none",
-    },
-  },
-
   bannerIcon1: {
     top: "10%",
     left: "10%",

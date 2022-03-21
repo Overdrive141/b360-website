@@ -1,5 +1,6 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import { Image as Img } from 'theme-ui';
+
 
 export default function Image({ src, ...rest }) {
   return <Img src={src} {...rest} />;

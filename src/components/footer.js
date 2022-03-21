@@ -4,6 +4,10 @@ import { jsx, Box, Flex, Text, Container } from "theme-ui";
 import { Link } from "components/link";
 import Logo from "components/logo";
 import { rgba } from "polished";
+import { IconButton } from "@chakra-ui/react";
+import { FaFacebook } from "react-icons/fa"
+import {FiInstagram} from "react-icons/fi"
+import {AiFillLinkedin} from "react-icons/ai"
 
 const navItems = [
   {
@@ -30,7 +34,15 @@ const navItems = [
 
 export default function Footer() {
   return (
+    <Box>
     <Box as="footer" sx={styles.footer}>
+    <Flex as="ul" sx={styles.nav}>
+        {navItems?.map((item) => (
+          <li key={item.id} sx={styles.list}>
+            <Link path={item.link}>{item.title}</Link>
+          </li>
+        ))}
+      </Flex>
       <Container sx={styles.container}>
         <Flex sx={styles.content}>
           <Flex sx={styles.copyright}>
@@ -40,22 +52,44 @@ export default function Footer() {
             </Text>
           </Flex>
 
-          <Flex as="ul" sx={styles.nav}>
-            {navItems?.map((item) => (
-              <li key={item.id}>
-                <Link path={item.link}>{item.title}</Link>
-              </li>
-            ))}
+          <Flex as="ul" sx={styles.icons}>
+
+            <IconButton 
+              color="#fff"
+              w="30px"
+              h="28px"
+              m={3}
+              aria-label='Send email'
+              icon={<FaFacebook />}
+            />
+            <IconButton 
+              color="#fff"
+              w="30px"
+              h="28px"
+              m={3}
+              aria-label='Send email'
+              icon={<FiInstagram />}
+            />
+            <IconButton 
+              color="#fff"
+              w="30px"
+              h="28px"
+              m={3}
+              aria-label='Send email'
+              icon={<AiFillLinkedin />}
+            />
+
           </Flex>
         </Flex>
       </Container>
+    </Box>
     </Box>
   );
 }
 
 const styles = {
   footer: {
-    backgroundColor: "#020718",
+    backgroundColor: "#1B1C1E",
   },
   content: {
     alignItems: "center",
@@ -81,7 +115,7 @@ const styles = {
       display: "inline-flex",
     },
   },
-  nav: {
+  icons: {
     listStyle: "none",
     alignItems: "center",
     padding: 0,
@@ -103,5 +137,35 @@ const styles = {
         textDecoration: "none",
       },
     },
+  },
+  nav: {
+    listStyle: "none",
+    alignItems: "center",
+    padding: 0,
+    mb:"40.5px",
+    ml:"155.5px",
+    mr:"155.5px",
+    // display: ['flex'],
+    flexWrap: ["wrap", null, null, "unset"],
+    justifyContent: ["center", null, null, null],
+    mt: [5, null, null, null, 0],
+    li: {
+      "+ li": {
+        marginLeft: [4],
+      },
+      "@media only screen and (max-width: 400px)": {
+        mb: 4,
+      },
+      a: {
+        color: "white",
+        display: "inline-flex",
+        textAlign: "right",
+        textDecoration: "none",
+      },
+    },
+  },
+  list:{
+    ml:"245.5px",
+    mr:"245.5px",
   },
 };
