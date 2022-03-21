@@ -1,6 +1,16 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, Box, Container, Heading, Text, Button, Image, Divider } from "theme-ui";
+import { useState, useRef, useEffect } from "react";
+import {
+  jsx,
+  Box,
+  Container,
+  Heading,
+  Text,
+  Button,
+  Image,
+  Divider
+} from "theme-ui";
 import { backgroundImages, rgba } from "polished";
 import bannerIcon1 from "assets/images/banner-icon-1-1.svg";
 import bannerIcon2 from "assets/images/banner-icon-1-2.svg";
@@ -10,124 +20,217 @@ import bannerIcon5 from "assets/images/banner-icon-1-5.svg";
 import bannerIcon6 from "assets/images/banner-icon-1-6.svg";
 import bannerIcon7 from "assets/images/dot-pattern.svg";
 import {
-    Accordion,
-    AccordionItem,
-    AccordionButton,
-    AccordionPanel,
-    AccordionIcon,
-} from '@chakra-ui/react'
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon
+} from "@chakra-ui/react";
+
+import { AnimationOnScroll } from "react-animation-on-scroll";
+import {
+  useMotionValue,
+  motion,
+  useTransform,
+  useElementScroll,
+  useViewportScroll
+} from "framer-motion";
 
 import { keyframes } from "@emotion/react";
 import { urlObjectKeys } from "next/dist/shared/lib/utils";
 
+const MotionAccordion = motion(AccordionItem);
+
+/**
+ * const x = useMotionValue(0)
+const input = [-200, 0, 200]
+const output = [0, 1, 0]
+const opacity = useTransform(x, input, output)
+ */
+
 export default function UserStories() {
+  const ref = useRef(null);
+  const [progress, setProgress] = useState(0);
+  // const { scrollYProgress } = useElementScroll(ref)
+
+  const { scrollYProgress } = useViewportScroll();
+
+  const scale = useTransform(
+    scrollYProgress,
+    [0.5, 0.2, 0.66, 1],
+    [0.5, 0.75, 0.5, 1]
+  );
+
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
+  scrollYProgress.onChange(setProgress);
+
+  useEffect(() => {
+    scrollYProgress.onChange(latest => {
+      console.log(latest);
+    });
+  }, []);
 
   return (
-    <Box as="section" id="products" sx={styles.section}>
-      <Container sx={styles.container}>
-        <Box sx={{display:"flex",width:"1590px",height:"1200px"}}>
-            <Box sx={{
-                width:"700px",
-                textAlign:"left",
-                mt:"45px"
-            }}>
-                <Text sx={{
-                    fontSize:"48px",
-                    fontWeight:400,
-                    lineHeight:"72px",
-                    color: "#ffffff",
-                    
-                }}>Bring your<br/> Business Online</Text>
-                <Divider sx={{
-                    width:"600px",
-                    mt:"54px",
+    <motion.div ref={ref}>
+      <Box as="section" id="products" sx={styles.section}>
+        <Container sx={styles.container}>
+          <Box sx={{ display: "flex", width: "1590px", height: "1200px" }}>
+            <Box
+              sx={{
+                width: "700px",
+                textAlign: "left",
+                mt: "45px"
+              }}
+            >
+              <Text
+                sx={{
+                  fontSize: "48px",
+                  fontWeight: 400,
+                  lineHeight: "72px",
+                  color: "#ffffff"
+                }}
+              >
+                Bring your
+                <br /> Business Online
+              </Text>
+              <Divider
+                sx={{
+                  width: "600px",
+                  mt: "54px",
+                  border: "0.5px solid #6C6C6C"
+                }}
+              />
+              <Accordion allowToggle w="600px ">
+                <MotionAccordion w={500} borderWidth="5" style={{ scale }}>
+                  <h2>
+                    <AccordionButton>
+                      <Box
+                        flex="1"
+                        textAlign="left"
+                        sx={{ fontSize: "26px", color: "#ffffff" }}
+                      >
+                        Distribution
+                      </Box>
+                      <AccordionIcon color="#ffffff" ml="300px" />
+                    </AccordionButton>
+                  </h2>
+                  <AccordionPanel pb={4} color="#ffffff">
+                    With many customers throughout the retail industry, we have
+                    deep experience in working with companies like yours.
+                    Business 360 has taken this industry expertise and bundled
+                    it into the retail solution to solve the unique business
+                    challenges of the manufacturing, wholesale, and retail
+                    industries. Combine this industry expertise with the leading
+                    practices developed by our retail-dedicated professional
+                    services team, we help our customers transform their
+                    businesses in consumable stages to develop a competitive
+                    advantage in the marketplace
+                  </AccordionPanel>
+                </MotionAccordion>
+
+                <Divider
+                  sx={{
+                    width: "600px",
+                    mt: "24px",
                     border: "0.5px solid #6C6C6C"
-                }} />
-                <Accordion allowToggle w="600px ">
-                    <AccordionItem w={500} borderWidth="5">
-                        <h2>
-                        <AccordionButton>
-                            <Box flex='1' textAlign='left' sx={{fontSize:"26px", color:"#ffffff",}} >
-                                Distribution
-                            </Box>
-                            <AccordionIcon color="#ffffff" ml="300px" />
-                        </AccordionButton >
-                        </h2>
-                        <AccordionPanel pb={4} color="#ffffff">
-                        With many customers throughout the retail industry, we have deep experience in working with companies like yours. Business 360 has taken this industry expertise and bundled it into the retail solution to solve the unique business challenges of the manufacturing, wholesale, and retail industries. Combine this industry expertise with the leading practices developed by our retail-dedicated professional services team, we help our customers transform their businesses in consumable stages to develop a competitive advantage in the marketplace
-                        </AccordionPanel>
-                    </AccordionItem>
+                  }}
+                />
 
-                    <Divider sx={{
-                        width:"600px",
-                        mt:"24px",
-                        border: "0.5px solid #6C6C6C"
-                    }} />
-
-                    <AccordionItem>
-                        <h2>
-                        <AccordionButton>
-                            <Box flex='1' textAlign='left' sx={{fontSize:"26px",color:"#ffffff"}}>
-                                Freight
-                            </Box>
-                            <AccordionIcon color="#ffffff" ml="350px" />
-                        </AccordionButton>
-                        </h2>
-                        <AccordionPanel pb={4} color="#ffffff">
-                        SubLo is a hyperlocal marketplace that is enabled by Business 360 to provides all the SaaS tools to local businesses so they can transition towards digitization in an On Demand Economy.
-                        </AccordionPanel>
-                    </AccordionItem>
-                    <Divider sx={{
-                        width:"600px",
-                        mt:"24px",
-                        border: "0.5px solid #6C6C6C"
-                    }} />
-                    <AccordionItem>
-                        <h2>
-                        <AccordionButton>
-                            <Box flex='1' textAlign='left' sx={{fontSize:"26px",color:"#ffffff"}}>
-                                HVAC
-                            </Box>
-                            <AccordionIcon color="#ffffff" ml="360px" />
-                        </AccordionButton>
-                        </h2>
-                        <AccordionPanel pb={4} color="#ffffff">
-                        SubLo is a hyperlocal marketplace that is enabled by Business 360 to provides all the SaaS tools to local businesses so they can transition towards digitization in an On Demand Economy. 
-                        </AccordionPanel>
-                    </AccordionItem>
-                    <Divider sx={{
-                        width:"600px",
-                        mt:"24px",
-                        border: "0.5px solid #6C6C6C"
-                    }} />
-                    <AccordionItem w={500} borderWidth="5">
-                        <h2>
-                        <AccordionButton>
-                            <Box flex='1' textAlign='left' sx={{fontSize:"26px", color:"#ffffff",}} >
-                                Security
-                            </Box>
-                            <AccordionIcon color="#ffffff" ml="330px" />
-                        </AccordionButton >
-                        </h2>
-                        <AccordionPanel pb={4} color="#ffffff">
-                        SubLo is a hyperlocal marketplace that is enabled by Business 360 to provides all the SaaS tools to local businesses so they can transition towards digitization in an On Demand Economy. 
-                        </AccordionPanel>
-                    </AccordionItem>
-                </Accordion>
+                <AccordionItem>
+                  <h2>
+                    <AccordionButton>
+                      <Box
+                        flex="1"
+                        textAlign="left"
+                        sx={{ fontSize: "26px", color: "#ffffff" }}
+                      >
+                        Freight
+                      </Box>
+                      <AccordionIcon color="#ffffff" ml="350px" />
+                    </AccordionButton>
+                  </h2>
+                  <AccordionPanel pb={4} color="#ffffff">
+                    SubLo is a hyperlocal marketplace that is enabled by
+                    Business 360 to provides all the SaaS tools to local
+                    businesses so they can transition towards digitization in an
+                    On Demand Economy.
+                  </AccordionPanel>
+                </AccordionItem>
+                <Divider
+                  sx={{
+                    width: "600px",
+                    mt: "24px",
+                    border: "0.5px solid #6C6C6C"
+                  }}
+                />
+                <AccordionItem>
+                  <h2>
+                    <AccordionButton>
+                      <Box
+                        flex="1"
+                        textAlign="left"
+                        sx={{ fontSize: "26px", color: "#ffffff" }}
+                      >
+                        HVAC
+                      </Box>
+                      <AccordionIcon color="#ffffff" ml="360px" />
+                    </AccordionButton>
+                  </h2>
+                  <AccordionPanel pb={4} color="#ffffff">
+                    SubLo is a hyperlocal marketplace that is enabled by
+                    Business 360 to provides all the SaaS tools to local
+                    businesses so they can transition towards digitization in an
+                    On Demand Economy.
+                  </AccordionPanel>
+                </AccordionItem>
+                <Divider
+                  sx={{
+                    width: "600px",
+                    mt: "24px",
+                    border: "0.5px solid #6C6C6C"
+                  }}
+                />
+                <AccordionItem w={500} borderWidth="5">
+                  <h2>
+                    <AccordionButton>
+                      <Box
+                        flex="1"
+                        textAlign="left"
+                        sx={{ fontSize: "26px", color: "#ffffff" }}
+                      >
+                        Security
+                      </Box>
+                      <AccordionIcon color="#ffffff" ml="330px" />
+                    </AccordionButton>
+                  </h2>
+                  <AccordionPanel pb={4} color="#ffffff">
+                    SubLo is a hyperlocal marketplace that is enabled by
+                    Business 360 to provides all the SaaS tools to local
+                    businesses so they can transition towards digitization in an
+                    On Demand Economy.
+                  </AccordionPanel>
+                </AccordionItem>
+              </Accordion>
             </Box>
-            <Box sx={{
-                width:"1020px",
-                height:"1079px",
+            <Box
+              sx={{
+                width: "1020px",
+                height: "1079px",
                 backgroundImages: 'url("/b.jpg")'
-            }}>
-                <Image src="/b.jpg" sx={{
-                    width:"1020px",
-                    height:"1079px",
-                }} />
+              }}
+            >
+              <Image
+                src="/b.jpg"
+                sx={{
+                  width: "1020px",
+                  height: "1079px"
+                }}
+              />
             </Box>
-        </Box>
-      </Container>
-    </Box>
+          </Box>
+        </Container>
+      </Box>
+    </motion.div>
   );
 }
 
@@ -207,69 +310,69 @@ const styles = {
       maxWidth: ["100%", null, null, "55%", "500px", "640px", "851px"],
       mx: "auto",
       mt: "30px",
-      mb: ["40px", null, null, "65px"],
-    },
+      mb: ["40px", null, null, "65px"]
+    }
   },
   container: {
     position: "relative",
     ".bannerIcon": {
       position: "absolute",
-      display: ["none", null, null, null, "block"],
-    },
+      display: ["none", null, null, null, "block"]
+    }
   },
   contentWrapper: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    minHeight: [null, null, null, null, "50vh", "100vh"],
+    minHeight: [null, null, null, null, "50vh", "100vh"]
   },
   heroTitle: {
     fontSize: "70px",
     fontWeight: 400,
-    textAllign:"left",
+    textAllign: "left",
     letterSpacing: "heading",
-    fontColor:"#1B1C1E",
+    fontColor: "#1B1C1E",
     "@media only screen and (min-height: 720px) and (max-height: 760px), (min-width: 1501px) and (max-width: 1560px) ":
       {
-        fontSize: "70px",
-      },
+        fontSize: "70px"
+      }
   },
-  content:{
+  content: {
     fontSize: "36px",
     fontWeight: 400,
-    textAllign:"left",
+    textAllign: "left"
   },
   bannerIcon1: {
     top: "10%",
     left: "10%",
-    animation: `${bannerAnim2} 8s linear infinite`,
+    animation: `${bannerAnim2} 8s linear infinite`
   },
   bannerIcon2: {
     top: "10%",
     right: "10%",
-    animation: `${bannerAnim2} 8s linear infinite`,
+    animation: `${bannerAnim2} 8s linear infinite`
   },
   bannerIcon3: {
     bottom: "40px",
     right: "-120px",
-    animation: `${bannerAnim1} 5s ease-out infinite`,
+    animation: `${bannerAnim1} 5s ease-out infinite`
   },
   bannerIcon4: {
     bottom: "130px",
     left: "-120px",
-    animation: `${bannerAnim1} 5s ease-out infinite`,
+    animation: `${bannerAnim1} 5s ease-out infinite`
   },
   bannerIcon5: {
     bottom: "40%",
-    left: "60%",
+    left: "60%"
   },
   bannerIcon6: {
     bottom: "-65px",
     left: "0px",
-    animation: `${bannerAnim3} 9s linear infinite`,
+    animation: `${bannerAnim3} 9s linear infinite`
   },
   bannerIcon7: {
     bottom: "30%",
-    right: "70%",
-  },
+    right: "70%"
+  }
 };
