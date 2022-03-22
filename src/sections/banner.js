@@ -1,6 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, Box, Container, Heading, Text, Button, Image } from "theme-ui";
+import { jsx, Container, Heading, Text, Button, Image } from "theme-ui";
+import { Box } from "@chakra-ui/react";
 import { rgba } from "polished";
 import bannerIcon1 from "assets/images/banner-icon-1-1.svg";
 import bannerIcon2 from "assets/images/banner-icon-1-2.svg";
@@ -76,7 +77,7 @@ export default function Banner() {
             </Heading>
           </Box>
 
-          <Box sx={styles.bannerContent}>
+          <Box display={["column","column","row","row",]} sx={styles.bannerContent}>
             <Text as="p" sx={styles.desc}>
               Thousands of Successful businesses trust Business 360 as their
               technical partner.
@@ -215,8 +216,8 @@ const styles = {
       null,
       "none",
     ],
-    widht:"481px",
-    height:"581px",
+    // widht:"481px",
+    // height:"581px",
     textAlign:"left",
     padding: [
       "20px",

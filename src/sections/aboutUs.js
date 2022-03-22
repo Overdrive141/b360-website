@@ -23,7 +23,7 @@ import { urlObjectKeys } from "next/dist/shared/lib/utils";
 export default function UserStories() {
 
   return (
-    <Box as="section" id="products" sx={styles.section}>
+    <Box as="section" id="aboutUs" sx={styles.section}>
       <Container sx={styles.container}>
         <Box sx={{display:"flex",width:"1590px",height:"1200px"}}>
             <Box sx={{

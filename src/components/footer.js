@@ -12,7 +12,7 @@ import {AiFillLinkedin} from "react-icons/ai"
 const navItems = [
   {
     id: 1,
-    link: "#!",
+    link: "#home",
     title: "Home",
   },
   {

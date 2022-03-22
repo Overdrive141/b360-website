@@ -22,7 +22,7 @@ import { keyframes } from "@emotion/react";
 export default function UserStories() {
 
   return (
-    <Box as="section" id="products" sx={styles.section}>
+    <Box as="section" id="userStories" sx={styles.section}>
       <Container sx={styles.container}>
       <Image
           sx={styles.bannerIcon1}

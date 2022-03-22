@@ -79,7 +79,7 @@ export default function Products() {
               maxHeight:"370px",
             }}
           >
-            <Image src="/fsm.png" sx={{
+            <Image src="/FSMM.png" sx={{
               maxWidth:"480px",
               maxHeight:"370px",
               border: "1px solid #1B1C1E",
@@ -154,14 +154,14 @@ export default function Products() {
               maxHeight:"370px",
             }}
           >
-            <Image src="/fsm.png" sx={{
+            <Image src="/Inventory.png" sx={{
               maxWidth:"480px",
               maxHeight:"370px",
               border: "1px solid #1B1C1E",
               boxSizing: "border-box",
               borderRadius: "3px",
               clipPath: "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
-              transform: "matrix(1, 0, 0, -1, 0, 0)",
+              //transform: "matrix(1, 0, 0, -1, 0, 0)",
             }} />
           </Box>
           <Box
@@ -233,7 +233,7 @@ export default function Products() {
               maxHeight:"370px",
             }}
           >
-            <Image src="/fsm.png" sx={{
+            <Image src="/Employee.png" sx={{
               maxWidth:"480px",
               maxHeight:"370px",
               border: "1px solid #1B1C1E",
@@ -305,14 +305,14 @@ export default function Products() {
               maxHeight:"370px",
             }}
           >
-            <Image src="/fsm.png" sx={{
+            <Image src="/Equipment.png" sx={{
               maxWidth:"480px",
               maxHeight:"370px",
               border: "1px solid #1B1C1E",
               boxSizing: "border-box",
               borderRadius: "3px",
               clipPath: "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
-              transform: "matrix(1, 0, 0, -1, 0, 0)",
+              //transform: "matrix(1, 0, 0, -1, 0, 0)",
             }} />
           </Box>
           <Box
@@ -381,7 +381,7 @@ export default function Products() {
               maxHeight:"370px",
             }}
           >
-            <Image src="/fsm.png" sx={{
+            <Image src="/Procurement.png" sx={{
               maxWidth:"480px",
               maxHeight:"370px",
               border: "1px solid #1B1C1E",
@@ -459,14 +459,14 @@ export default function Products() {
               maxHeight:"370px",
             }}
           >
-            <Image src="/fsm.png" sx={{
+            <Image src="/Order.png" sx={{
               maxWidth:"480px",
               maxHeight:"370px",
               border: "1px solid #1B1C1E",
               boxSizing: "border-box",
               borderRadius: "3px",
               clipPath: "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
-              transform: "matrix(1, 0, 0, -1, 0, 0)",
+              //transform: "matrix(1, 0, 0, -1, 0, 0)",
             }} />
           </Box>
           <Box
@@ -538,7 +538,7 @@ export default function Products() {
               maxHeight:"370px",
             }}
           >
-            <Image src="/fsm.png" sx={{
+            <Image src="/AccessControl.png" sx={{
               maxWidth:"480px",
               maxHeight:"370px",
               border: "1px solid #1B1C1E",

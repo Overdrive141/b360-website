@@ -26,7 +26,7 @@ export default function FAQ() {
     };
     
     return (
-        <Box as="section" id="home" sx={styles.section}>
+        <Box as="section" id="faq" sx={styles.section}>
             <Container sx={styles.container}>
                 <SimpleGrid columns={2} spacing={100}>
                     <Box  mt="106px" textAlign="left">
