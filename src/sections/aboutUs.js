@@ -71,26 +71,6 @@ export default function UserStories() {
   }, []);
 
   return (
-<<<<<<< HEAD
-    <Box as="section" id="aboutUs" sx={styles.section}>
-      <Container sx={styles.container}>
-        <Box sx={{display:"flex",width:"1590px",height:"1200px"}}>
-            <Box sx={{
-                width:"700px",
-                textAlign:"left",
-                mt:"45px"
-            }}>
-                <Text sx={{
-                    fontSize:"48px",
-                    fontWeight:400,
-                    lineHeight:"72px",
-                    color: "#ffffff",
-                    
-                }}>Bring your<br/> Business Online</Text>
-                <Divider sx={{
-                    width:"600px",
-                    mt:"54px",
-=======
     <motion.div ref={ref}>
       <Box as="section" id="products" sx={styles.section}>
         <Container sx={styles.container}>
@@ -152,7 +132,6 @@ export default function UserStories() {
                   sx={{
                     width: "600px",
                     mt: "24px",
->>>>>>> 9ad04bcf3a457c1feaa8dda0f4092cb7994482db
                     border: "0.5px solid #6C6C6C"
                   }}
                 />
