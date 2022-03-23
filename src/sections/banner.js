@@ -10,7 +10,11 @@ import bannerIcon5 from "assets/images/banner-icon-1-5.svg";
 import bannerIcon6 from "assets/images/banner-icon-1-6.svg";
 import bannerIcon7 from "assets/images/dot-pattern.svg";
 
+import ScrollMore from "../components/ScrollMore";
+
 import { keyframes } from "@emotion/react";
+import { useEffect } from "react";
+import gsap from "gsap/dist/gsap";
 
 export default function Banner() {
   const handleSubmit = (e) => {
@@ -18,8 +22,36 @@ export default function Banner() {
     console.log("submitting...");
   };
 
+  useEffect(() => {
+    const tl = gsap.timeline({
+      delay: 0.5,
+    });
+    tl.fromTo(
+      ".hero-title",
+      { opacity: 0 },
+      {
+        duration: 2,
+        opacity: 1,
+        delay: function (index) {
+          //index of how many hero index found. if multiple elements then all have a sequential delay
+          return 0.2 * index;
+        },
+      }
+    ).fromTo(
+      ".hero-form",
+      { opacity: 0 },
+      {
+        duration: 1,
+        opacity: 1,
+        delay: function (i) {
+          return 0.2 / i;
+        },
+      }
+    );
+  }, []);
+
   return (
-    <Box as="section" id="home" sx={styles.section}>
+    <Box as="section" id="home" sx={styles.section} data-scroll-section>
       <Container sx={styles.container}>
         <Image
           sx={styles.bannerIcon1}
@@ -67,47 +99,57 @@ export default function Banner() {
         <Box sx={styles.contentWrapper}>
           <Box
             sx={{
-              width:"1270px",
-              textAlign:"left"
+              width: "1270px",
+              textAlign: "left",
             }}
+            className="hero-title"
           >
             <Heading as="h1" sx={styles.heroTitle}>
-              Build for <br/>local <br />Businesses
+              Build for <br />
+              local <br />
+              Businesses
             </Heading>
           </Box>
 
-          <Box sx={styles.bannerContent}>
+          <Box sx={styles.bannerContent} className="hero-form">
             <Text as="p" sx={styles.desc}>
               Thousands of Successful businesses trust Business 360 as their
               technical partner.
             </Text>
-            <Box as="form" onSubmit={handleSubmit} sx={{mt:"86px"}}>
+            <Box as="form" onSubmit={handleSubmit} sx={{ mt: "86px" }}>
               <Button type="submit" sx={styles.button} variant="primary">
-                <Text sx={{
-                  fontSize:"22px",
-                  fontWeight:400,
-                  lineHeight:"49px",
-                  color:"#1B1C1E"
-                }}>Start your free trial</Text>
+                <Text
+                  sx={{
+                    fontSize: "22px",
+                    fontWeight: 400,
+                    lineHeight: "49px",
+                    color: "#1B1C1E",
+                  }}
+                >
+                  Start your free trial
+                </Text>
               </Button>
             </Box>
             <Box
               sx={{
-                mt:"16px",
-                mb:"31px",
+                mt: "16px",
+                mb: "31px",
               }}
             >
-              <Text sx={{
-                fontSize:"14px",
-                fontWeight:400,
-                lineHeight:"21px",
-                color:"#ffffff",
-              }}>
+              <Text
+                sx={{
+                  fontSize: "14px",
+                  fontWeight: 400,
+                  lineHeight: "21px",
+                  color: "#ffffff",
+                }}
+              >
                 Try Business 360 free for 30 days, no credit card required.
               </Text>
             </Box>
           </Box>
         </Box>
+        <ScrollMore />
       </Container>
     </Box>
   );
@@ -215,9 +257,9 @@ const styles = {
       null,
       "none",
     ],
-    widht:"481px",
-    height:"581px",
-    textAlign:"left",
+    widht: "481px",
+    height: "581px",
+    textAlign: "left",
     padding: [
       "20px",
       "30px",
@@ -241,7 +283,7 @@ const styles = {
   heroTitle: {
     fontSize: "130px",
     fontWeight: 400,
-    lineHeight:"195px", 
+    lineHeight: "195px",
     letterSpacing: "heading",
     lineHeight: [1.4, null, null, null, null, null, 1.57],
     "@media only screen and (min-height: 720px) and (max-height: 760px), (min-width: 1501px) and (max-width: 1560px) ":

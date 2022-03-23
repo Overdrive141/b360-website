@@ -1,6 +1,15 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, Box, Container, Heading, Text, Button, Image, Divider } from "theme-ui";
+import {
+  jsx,
+  Box,
+  Container,
+  Heading,
+  Text,
+  Button,
+  Image,
+  Divider,
+} from "theme-ui";
 import { rgba } from "polished";
 import bannerIcon1 from "assets/images/banner-icon-1-1.svg";
 import bannerIcon2 from "assets/images/banner-icon-1-2.svg";
@@ -10,21 +19,20 @@ import bannerIcon5 from "assets/images/banner-icon-1-5.svg";
 import bannerIcon6 from "assets/images/banner-icon-1-6.svg";
 import bannerIcon7 from "assets/images/dot-pattern.svg";
 import {
-    Accordion,
-    AccordionItem,
-    AccordionButton,
-    AccordionPanel,
-    AccordionIcon,
-} from '@chakra-ui/react'
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+} from "@chakra-ui/react";
 
 import { keyframes } from "@emotion/react";
 
 export default function UserStories() {
-
   return (
-    <Box as="section" id="products" sx={styles.section}>
+    <Box as="section" id="products" sx={styles.section} data-scroll-section>
       <Container sx={styles.container}>
-      <Image
+        <Image
           sx={styles.bannerIcon1}
           className="bannerIcon"
           alt="banner icon"
@@ -54,90 +62,178 @@ export default function UserStories() {
           alt="banner icon"
           src={bannerIcon7}
         />
-        <Box sx={{display:"flex",width:"1590px",height:"1200px"}}>
-            <Box sx={{
-                width:"700px",
-                textAlign:"left"
-            }}>
-                <Text sx={{
-                    fontSize:"48px",
-                    fontWeight:400,
-                    lineHeight:"72px",
-                    color: "#1B1C1E"
-                }}>Success Stories</Text>
-                <Divider sx={{
-                    width:"600px",
-                    mt:"24px",
-                    border: "0.5px solid #6C6C6C"
-                }} />
-                <Accordion allowToggle w="600px ">
-                    <AccordionItem w={500} borderWidth="5">
-                        <h2>
-                        <AccordionButton>
-                            <Box flex='1' textAlign='left' sx={{fontSize:"26px"}}>
-                                Pure Water Delivery (water company)
-                            </Box>
-                            <AccordionIcon flex="right" />
-                        </AccordionButton>
-                        </h2>
-                        <AccordionPanel pb={4}>
-                        <b>Problem:</b> Pure Water Company is a hyperlocal Mineral water delivery company that operates in Islamabad and Rawalpindi, their primary clientele consists of residential and commercial consumers. Managers at Pure Water Company were looking for more transparency and efficiency in both internal and field operations alongside a digital touchpoint for generating online orders.<br /><br />
-                        <b>Solution:</b> Business 360 provided pure water company with a customized solution that consisted of a Web-Application for online order generation. Once an order is generated, its notification with delivery information lands in the vendor portal for approval. Web App implementation showed a 35% increase in the company's total new orders. Both online and offline orders are listed in order management giving managers full visibility. <br /><br />
-                        Once an order is accepted by the vendor, inventory is automatically adjusted and the order is allocated to the allotted employee. Moreover, Business 360 allowed Pure Water to evaluate a pool of orders, and determine the optimal transportation mode, route, and carrier to minimize expenses within the required customer service level constraints.<br /><br />
-                        Field Service Management then allows the managers to allow the order to the listed employee which can then be managed and live tracked through the vendor portal until its delivery.
-                        </AccordionPanel>
-                    </AccordionItem>
+        <Box sx={{ display: "flex", width: "1590px", height: "1200px" }}>
+          <Box
+            sx={{
+              width: "700px",
+              textAlign: "left",
+            }}
+          >
+            <Text
+              sx={{
+                fontSize: "48px",
+                fontWeight: 400,
+                lineHeight: "72px",
+                color: "#1B1C1E",
+              }}
+            >
+              Success Stories
+            </Text>
+            <Divider
+              sx={{
+                width: "600px",
+                mt: "24px",
+                border: "0.5px solid #6C6C6C",
+              }}
+            />
+            <Accordion allowToggle w="600px ">
+              <AccordionItem w={500} borderWidth="5">
+                <h2>
+                  <AccordionButton>
+                    <Box flex="1" textAlign="left" sx={{ fontSize: "26px" }}>
+                      Pure Water Delivery (water company)
+                    </Box>
+                    <AccordionIcon flex="right" />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <b>Problem:</b> Pure Water Company is a hyperlocal Mineral
+                  water delivery company that operates in Islamabad and
+                  Rawalpindi, their primary clientele consists of residential
+                  and commercial consumers. Managers at Pure Water Company were
+                  looking for more transparency and efficiency in both internal
+                  and field operations alongside a digital touchpoint for
+                  generating online orders.
+                  <br />
+                  <br />
+                  <b>Solution:</b> Business 360 provided pure water company with
+                  a customized solution that consisted of a Web-Application for
+                  online order generation. Once an order is generated, its
+                  notification with delivery information lands in the vendor
+                  portal for approval. Web App implementation showed a 35%
+                  increase in the company's total new orders. Both online and
+                  offline orders are listed in order management giving managers
+                  full visibility. <br />
+                  <br />
+                  Once an order is accepted by the vendor, inventory is
+                  automatically adjusted and the order is allocated to the
+                  allotted employee. Moreover, Business 360 allowed Pure Water
+                  to evaluate a pool of orders, and determine the optimal
+                  transportation mode, route, and carrier to minimize expenses
+                  within the required customer service level constraints.
+                  <br />
+                  <br />
+                  Field Service Management then allows the managers to allow the
+                  order to the listed employee which can then be managed and
+                  live tracked through the vendor portal until its delivery.
+                </AccordionPanel>
+              </AccordionItem>
 
-                    <Divider sx={{
-                        width:"600px",
-                        mt:"24px",
-                        border: "0.5px solid #6C6C6C"
-                    }} />
+              <Divider
+                sx={{
+                  width: "600px",
+                  mt: "24px",
+                  border: "0.5px solid #6C6C6C",
+                }}
+              />
 
-                    <AccordionItem>
-                        <h2>
-                        <AccordionButton>
-                            <Box flex='1' textAlign='left' sx={{fontSize:"26px"}}>
-                                Safe Home Solutions (HVAC)
-                            </Box>
-                            <AccordionIcon />
-                        </AccordionButton>
-                        </h2>
-                        <AccordionPanel pb={4}>
-                        <b>Problem:</b> Managing field service-based industries such as HVAC is very difficult. Most of the companies are switching to these cloud-based ERPs to get the solutions to all problems in one place. Managers at Safe Home Solutions were also finding it difficult to track their orders and employees operating in the field, they were looking for a more remote and transparent solution that provides them with full visibility of their business operations both infield and internally. They were also looking to increase their orders as currently, they were only getting offline orders.<br /><br />
-                        <b>Solution:</b> Business 360 Field Workforce Management solved all operational difficulties by providing end-to-end digitization from order generation to order management and finally order delivery. Managers could exactly track all their assets in the field including employees, vehicles, equipment, etc. This helped them to decrease any time wastage in service provision and increase efficiency by 46%. <br /><br />
-                        In order to increase the online orders, a user-friendly Web Application was generated for Safe Home Solutions that allowed customers to order from anywhere anytime, resulting in 67% increase in total orders. 
-
-                        </AccordionPanel>
-                    </AccordionItem>
-                    <Divider sx={{
-                        width:"600px",
-                        mt:"24px",
-                        border: "0.5px solid #6C6C6C"
-                    }} />
-                    <AccordionItem>
-                        <h2>
-                        <AccordionButton>
-                            <Box flex='1' textAlign='left' sx={{fontSize:"26px"}}>
-                                Velocity Movers and Packers (Freight)
-                            </Box>
-                            <AccordionIcon />
-                        </AccordionButton>
-                        </h2>
-                        <AccordionPanel pb={4}>
-                            <b>Problem:</b>Velocity Movers and Packers were using an ERP system but it required the managers to input data manually in every step of the process, moreover; their system wasn't logging the data entries hence they couldn't see any insights about the business. Managers at the company also wanted efficiency and decreased inventory cycle. <br /><br />
-                            <b>Solution:</b> With Business 360, Velocity Movers and Packers managed inventories on a personalized dashboard, letting them view orders, sales, and deliveries from one centralized location. This allows for better decision-making: managers could make predictions about future orders based on previous sales trends. B360 also expedites distribution times. Research shows Business 360 speeds up order-to-shipment times for distributors by 23%.<br /><br />
-                            Business 360 comes with real-time data analytics that provides companies with valuable business intelligence. Managers use these programs to identify out-of-stock inventory, handle inbound orders from suppliers, and execute outbound orders for customers. This can be accomplished on a desktop or a smartphone. <br /><br />
-                            Business 360 also allowed Velocity Movers and Packers to improve their distribution management flow, from product fulfillment to transportation. These programs gather datasets from multiple sources — in-house records, the internet, social media, etc. — and display information through maps, charts, and graphs
-                        </AccordionPanel>
-                    </AccordionItem>
-                </Accordion>
-            </Box>
-            <Box sx={{
-                width:"1020px"
-            }} >
-                <Image src="/userStories.png" sx={{height:"1080px", width:"1025px", float:"right"}} />
-            </Box>
+              <AccordionItem>
+                <h2>
+                  <AccordionButton>
+                    <Box flex="1" textAlign="left" sx={{ fontSize: "26px" }}>
+                      Safe Home Solutions (HVAC)
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <b>Problem:</b> Managing field service-based industries such
+                  as HVAC is very difficult. Most of the companies are switching
+                  to these cloud-based ERPs to get the solutions to all problems
+                  in one place. Managers at Safe Home Solutions were also
+                  finding it difficult to track their orders and employees
+                  operating in the field, they were looking for a more remote
+                  and transparent solution that provides them with full
+                  visibility of their business operations both infield and
+                  internally. They were also looking to increase their orders as
+                  currently, they were only getting offline orders.
+                  <br />
+                  <br />
+                  <b>Solution:</b> Business 360 Field Workforce Management
+                  solved all operational difficulties by providing end-to-end
+                  digitization from order generation to order management and
+                  finally order delivery. Managers could exactly track all their
+                  assets in the field including employees, vehicles, equipment,
+                  etc. This helped them to decrease any time wastage in service
+                  provision and increase efficiency by 46%. <br />
+                  <br />
+                  In order to increase the online orders, a user-friendly Web
+                  Application was generated for Safe Home Solutions that allowed
+                  customers to order from anywhere anytime, resulting in 67%
+                  increase in total orders.
+                </AccordionPanel>
+              </AccordionItem>
+              <Divider
+                sx={{
+                  width: "600px",
+                  mt: "24px",
+                  border: "0.5px solid #6C6C6C",
+                }}
+              />
+              <AccordionItem>
+                <h2>
+                  <AccordionButton>
+                    <Box flex="1" textAlign="left" sx={{ fontSize: "26px" }}>
+                      Velocity Movers and Packers (Freight)
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <b>Problem:</b>Velocity Movers and Packers were using an ERP
+                  system but it required the managers to input data manually in
+                  every step of the process, moreover; their system wasn't
+                  logging the data entries hence they couldn't see any insights
+                  about the business. Managers at the company also wanted
+                  efficiency and decreased inventory cycle. <br />
+                  <br />
+                  <b>Solution:</b> With Business 360, Velocity Movers and
+                  Packers managed inventories on a personalized dashboard,
+                  letting them view orders, sales, and deliveries from one
+                  centralized location. This allows for better decision-making:
+                  managers could make predictions about future orders based on
+                  previous sales trends. B360 also expedites distribution times.
+                  Research shows Business 360 speeds up order-to-shipment times
+                  for distributors by 23%.
+                  <br />
+                  <br />
+                  Business 360 comes with real-time data analytics that provides
+                  companies with valuable business intelligence. Managers use
+                  these programs to identify out-of-stock inventory, handle
+                  inbound orders from suppliers, and execute outbound orders for
+                  customers. This can be accomplished on a desktop or a
+                  smartphone. <br />
+                  <br />
+                  Business 360 also allowed Velocity Movers and Packers to
+                  improve their distribution management flow, from product
+                  fulfillment to transportation. These programs gather datasets
+                  from multiple sources — in-house records, the internet, social
+                  media, etc. — and display information through maps, charts,
+                  and graphs
+                </AccordionPanel>
+              </AccordionItem>
+            </Accordion>
+          </Box>
+          <Box
+            sx={{
+              width: "1020px",
+            }}
+          >
+            <Image
+              src="/userStories.png"
+              sx={{ height: "1080px", width: "1025px", float: "right" }}
+            />
+          </Box>
         </Box>
       </Container>
     </Box>
@@ -239,18 +335,18 @@ const styles = {
   heroTitle: {
     fontSize: "70px",
     fontWeight: 400,
-    textAllign:"left",
+    textAllign: "left",
     letterSpacing: "heading",
-    fontColor:"#1B1C1E",
+    fontColor: "#1B1C1E",
     "@media only screen and (min-height: 720px) and (max-height: 760px), (min-width: 1501px) and (max-width: 1560px) ":
       {
         fontSize: "70px",
       },
   },
-  content:{
+  content: {
     fontSize: "36px",
     fontWeight: 400,
-    textAllign:"left",
+    textAllign: "left",
   },
   bannerIcon1: {
     top: "10%",

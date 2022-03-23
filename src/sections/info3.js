@@ -13,11 +13,10 @@ import bannerIcon7 from "assets/images/dot-pattern.svg";
 import { keyframes } from "@emotion/react";
 
 export default function Info3() {
-
   return (
-    <Box as="section" id="products" sx={styles.section}>
+    <Box as="section" id="products" sx={styles.section} data-scroll-section>
       <Container sx={styles.container}>
-      <Image
+        <Image
           sx={styles.bannerIcon1}
           className="bannerIcon"
           alt="banner icon"
@@ -59,15 +58,23 @@ export default function Info3() {
           alt="banner icon"
           src={bannerIcon7}
         />
-        <Box sx={{mt:"79px", mb:"52px",textAlign:"justify"}}>
-            <Heading as="h1" sx={styles.heroTitle}>
-                AI First Platform
-            </Heading>
+        <Box sx={{ mt: "79px", mb: "52px", textAlign: "justify" }}>
+          <Heading as="h1" sx={styles.heroTitle}>
+            AI First Platform
+          </Heading>
         </Box>
-        <Box sx={{mb:"263px",textAlign:"justify"}}>
-            <Text sx={styles.content}>
-                Business360 brings Sales, Operations, Inventory, Finance, and HR together whilst equipping your automation with the latest AI and Data Analytics tools.<br /><br /><br /> Business360 was built for any type of business within any industry, those looking to scale up, scale down, looking for integrations with existing technologies, or looking for specified features.
-            </Text>
+        <Box sx={{ mb: "263px", textAlign: "justify" }}>
+          <Text sx={styles.content}>
+            Business360 brings Sales, Operations, Inventory, Finance, and HR
+            together whilst equipping your automation with the latest AI and
+            Data Analytics tools.
+            <br />
+            <br />
+            <br /> Business360 was built for any type of business within any
+            industry, those looking to scale up, scale down, looking for
+            integrations with existing technologies, or looking for specified
+            features.
+          </Text>
         </Box>
       </Container>
     </Box>
@@ -169,18 +176,18 @@ const styles = {
   heroTitle: {
     fontSize: "70px",
     fontWeight: 400,
-    textAllign:"left",
+    textAllign: "left",
     letterSpacing: "heading",
-    fontColor:"#1B1C1E",
+    fontColor: "#1B1C1E",
     "@media only screen and (min-height: 720px) and (max-height: 760px), (min-width: 1501px) and (max-width: 1560px) ":
       {
         fontSize: "70px",
       },
   },
-  content:{
+  content: {
     fontSize: "36px",
     fontWeight: 400,
-    textAllign:"left",
+    textAllign: "left",
   },
   bannerIcon1: {
     top: "10%",

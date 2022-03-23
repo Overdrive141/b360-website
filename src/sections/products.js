@@ -19,9 +19,9 @@ export default function Products() {
   };
 
   return (
-    <Box as="section" id="products" sx={styles.section}>
+    <Box as="section" id="products" sx={styles.section} data-scroll-section>
       <Container sx={styles.container}>
-      <Image
+        <Image
           sx={styles.bannerIcon1}
           className="bannerIcon"
           alt="banner icon"
@@ -75,18 +75,22 @@ export default function Products() {
                 "30px 50px 60px",
                 "50px 60px 90px",
               ],
-              maxWidth:"480px",
-              maxHeight:"370px",
+              maxWidth: "480px",
+              maxHeight: "370px",
             }}
           >
-            <Image src="/fsm.png" sx={{
-              maxWidth:"480px",
-              maxHeight:"370px",
-              border: "1px solid #1B1C1E",
-              boxSizing: "border-box",
-              borderRadius: "3px",
-              clipPath: "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
-            }} />
+            <Image
+              src="/fsm.png"
+              sx={{
+                maxWidth: "480px",
+                maxHeight: "370px",
+                border: "1px solid #1B1C1E",
+                boxSizing: "border-box",
+                borderRadius: "3px",
+                clipPath:
+                  "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
+              }}
+            />
           </Box>
           <Box
             sx={{
@@ -99,41 +103,28 @@ export default function Products() {
                 "30px 50px 60px",
                 "50px 60px 90px",
               ],
-              maxWidth:"62px",
-              maxHeight:"171px",
-              ml:"104px",
-              mr:"19px",
+              maxWidth: "62px",
+              maxHeight: "171px",
+              ml: "104px",
+              mr: "19px",
             }}
           >
             <Text sx={styles.number}>1</Text>
           </Box>
           <Box
             sx={{
-              padding: [
-                "30px 50px 60px",
-                "50px 1px 90px",
-              ],
-              mt:"10px",
+              padding: ["30px 50px 60px", "50px 1px 90px"],
+              mt: "10px",
             }}
           >
             <Text sx={styles.productTitle}>Field Service Management</Text>
             <Box>
               <ul>
-                <li
-                  sx={styles.list}
-                >Field Service Management</li>
-                <li
-                  sx={styles.list}
-                >Dispatch Orders to Employees</li>
-                <li
-                  sx={styles.list}
-                >Manage Schedules and Bookings</li>
-                <li
-                  sx={styles.list}
-                >Employee Tracking</li>
-                <li
-                  sx={styles.list}
-                >Order Status</li>
+                <li sx={styles.list}>Field Service Management</li>
+                <li sx={styles.list}>Dispatch Orders to Employees</li>
+                <li sx={styles.list}>Manage Schedules and Bookings</li>
+                <li sx={styles.list}>Employee Tracking</li>
+                <li sx={styles.list}>Order Status</li>
               </ul>
             </Box>
           </Box>
@@ -150,19 +141,23 @@ export default function Products() {
                 "30px 50px 60px",
                 "50px 60px 90px",
               ],
-              maxWidth:"480px",
-              maxHeight:"370px",
+              maxWidth: "480px",
+              maxHeight: "370px",
             }}
           >
-            <Image src="/fsm.png" sx={{
-              maxWidth:"480px",
-              maxHeight:"370px",
-              border: "1px solid #1B1C1E",
-              boxSizing: "border-box",
-              borderRadius: "3px",
-              clipPath: "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
-              transform: "matrix(1, 0, 0, -1, 0, 0)",
-            }} />
+            <Image
+              src="/fsm.png"
+              sx={{
+                maxWidth: "480px",
+                maxHeight: "370px",
+                border: "1px solid #1B1C1E",
+                boxSizing: "border-box",
+                borderRadius: "3px",
+                clipPath:
+                  "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
+                transform: "matrix(1, 0, 0, -1, 0, 0)",
+              }}
+            />
           </Box>
           <Box
             sx={{
@@ -175,44 +170,29 @@ export default function Products() {
                 "30px 50px 60px",
                 "50px 60px 90px",
               ],
-              maxWidth:"62px",
-              maxHeight:"171px",
-              ml:"104px",
-              mr:"19px",
+              maxWidth: "62px",
+              maxHeight: "171px",
+              ml: "104px",
+              mr: "19px",
             }}
           >
             <Text sx={styles.number}>2</Text>
           </Box>
           <Box
             sx={{
-              padding: [
-                "30px 50px 60px",
-                "50px 1px 90px",
-              ],
-              mt:"10px",
+              padding: ["30px 50px 60px", "50px 1px 90px"],
+              mt: "10px",
             }}
           >
             <Text sx={styles.productTitle}>Inventory Management</Text>
             <Box>
               <ul>
-                <li
-                  sx={styles.list}
-                >Inventory Tracking Automated</li>
-                <li
-                  sx={styles.list}
-                >Inventory Replenishment</li>
-                <li
-                  sx={styles.list}
-                >Inventory Stock Notifications</li>
-                <li
-                  sx={styles.list}
-                >Advanced Orders Control</li>
-                <li
-                  sx={styles.list}
-                >Anaytics Interlinked Service</li>
-                <li
-                  sx={styles.list}
-                >Delivery</li>
+                <li sx={styles.list}>Inventory Tracking Automated</li>
+                <li sx={styles.list}>Inventory Replenishment</li>
+                <li sx={styles.list}>Inventory Stock Notifications</li>
+                <li sx={styles.list}>Advanced Orders Control</li>
+                <li sx={styles.list}>Anaytics Interlinked Service</li>
+                <li sx={styles.list}>Delivery</li>
               </ul>
             </Box>
           </Box>
@@ -229,18 +209,22 @@ export default function Products() {
                 "30px 50px 60px",
                 "50px 60px 90px",
               ],
-              maxWidth:"480px",
-              maxHeight:"370px",
+              maxWidth: "480px",
+              maxHeight: "370px",
             }}
           >
-            <Image src="/fsm.png" sx={{
-              maxWidth:"480px",
-              maxHeight:"370px",
-              border: "1px solid #1B1C1E",
-              boxSizing: "border-box",
-              borderRadius: "3px",
-              clipPath: "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
-            }} />
+            <Image
+              src="/fsm.png"
+              sx={{
+                maxWidth: "480px",
+                maxHeight: "370px",
+                border: "1px solid #1B1C1E",
+                boxSizing: "border-box",
+                borderRadius: "3px",
+                clipPath:
+                  "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
+              }}
+            />
           </Box>
           <Box
             sx={{
@@ -253,38 +237,27 @@ export default function Products() {
                 "30px 50px 60px",
                 "50px 60px 90px",
               ],
-              maxWidth:"62px",
-              maxHeight:"171px",
-              ml:"104px",
-              mr:"19px",
+              maxWidth: "62px",
+              maxHeight: "171px",
+              ml: "104px",
+              mr: "19px",
             }}
           >
             <Text sx={styles.number}>3</Text>
           </Box>
           <Box
             sx={{
-              padding: [
-                "30px 50px 60px",
-                "50px 1px 90px",
-              ],
-              mt:"10px",
+              padding: ["30px 50px 60px", "50px 1px 90px"],
+              mt: "10px",
             }}
           >
             <Text sx={styles.productTitle}>Employee Management</Text>
             <Box>
               <ul>
-                <li
-                  sx={styles.list}
-                >Employee Attendance</li>
-                <li
-                  sx={styles.list}
-                >Employee Database</li>
-                <li
-                  sx={styles.list}
-                >Employee Chat</li>
-                <li
-                  sx={styles.list}
-                >Employee Trackin</li>
+                <li sx={styles.list}>Employee Attendance</li>
+                <li sx={styles.list}>Employee Database</li>
+                <li sx={styles.list}>Employee Chat</li>
+                <li sx={styles.list}>Employee Trackin</li>
               </ul>
             </Box>
           </Box>
@@ -301,19 +274,23 @@ export default function Products() {
                 "30px 50px 60px",
                 "50px 60px 90px",
               ],
-              maxWidth:"480px",
-              maxHeight:"370px",
+              maxWidth: "480px",
+              maxHeight: "370px",
             }}
           >
-            <Image src="/fsm.png" sx={{
-              maxWidth:"480px",
-              maxHeight:"370px",
-              border: "1px solid #1B1C1E",
-              boxSizing: "border-box",
-              borderRadius: "3px",
-              clipPath: "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
-              transform: "matrix(1, 0, 0, -1, 0, 0)",
-            }} />
+            <Image
+              src="/fsm.png"
+              sx={{
+                maxWidth: "480px",
+                maxHeight: "370px",
+                border: "1px solid #1B1C1E",
+                boxSizing: "border-box",
+                borderRadius: "3px",
+                clipPath:
+                  "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
+                transform: "matrix(1, 0, 0, -1, 0, 0)",
+              }}
+            />
           </Box>
           <Box
             sx={{
@@ -326,41 +303,28 @@ export default function Products() {
                 "30px 50px 60px",
                 "50px 60px 90px",
               ],
-              maxWidth:"62px",
-              maxHeight:"171px",
-              ml:"104px",
-              mr:"19px",
+              maxWidth: "62px",
+              maxHeight: "171px",
+              ml: "104px",
+              mr: "19px",
             }}
           >
             <Text sx={styles.number}>4</Text>
           </Box>
           <Box
             sx={{
-              padding: [
-                "30px 50px 60px",
-                "50px 1px 90px",
-              ],
-              mt:"10px",
+              padding: ["30px 50px 60px", "50px 1px 90px"],
+              mt: "10px",
             }}
           >
-            <Text sx={styles.productTitle}>Equipment  Management</Text>
+            <Text sx={styles.productTitle}>Equipment Management</Text>
             <Box>
               <ul>
-                <li
-                  sx={styles.list}
-                >Asset Tracking</li>
-                <li
-                  sx={styles.list}
-                >Bookings Overview</li>
-                <li
-                  sx={styles.list}
-                >Equipment Maintenance</li>
-                <li
-                  sx={styles.list}
-                >Equipment Bookingn</li>
-                <li
-                  sx={styles.list}
-                >Equipment Reports</li>
+                <li sx={styles.list}>Asset Tracking</li>
+                <li sx={styles.list}>Bookings Overview</li>
+                <li sx={styles.list}>Equipment Maintenance</li>
+                <li sx={styles.list}>Equipment Bookingn</li>
+                <li sx={styles.list}>Equipment Reports</li>
               </ul>
             </Box>
           </Box>
@@ -377,18 +341,22 @@ export default function Products() {
                 "30px 50px 60px",
                 "50px 60px 90px",
               ],
-              maxWidth:"480px",
-              maxHeight:"370px",
+              maxWidth: "480px",
+              maxHeight: "370px",
             }}
           >
-            <Image src="/fsm.png" sx={{
-              maxWidth:"480px",
-              maxHeight:"370px",
-              border: "1px solid #1B1C1E",
-              boxSizing: "border-box",
-              borderRadius: "3px",
-              clipPath: "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
-            }} />
+            <Image
+              src="/fsm.png"
+              sx={{
+                maxWidth: "480px",
+                maxHeight: "370px",
+                border: "1px solid #1B1C1E",
+                boxSizing: "border-box",
+                borderRadius: "3px",
+                clipPath:
+                  "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
+              }}
+            />
           </Box>
           <Box
             sx={{
@@ -401,44 +369,29 @@ export default function Products() {
                 "30px 50px 60px",
                 "50px 60px 90px",
               ],
-              maxWidth:"62px",
-              maxHeight:"171px",
-              ml:"104px",
-              mr:"19px",
+              maxWidth: "62px",
+              maxHeight: "171px",
+              ml: "104px",
+              mr: "19px",
             }}
           >
             <Text sx={styles.number}>5</Text>
           </Box>
           <Box
             sx={{
-              padding: [
-                "30px 50px 60px",
-                "50px 1px 90px",
-              ],
-              mt:"10px",
+              padding: ["30px 50px 60px", "50px 1px 90px"],
+              mt: "10px",
             }}
           >
             <Text sx={styles.productTitle}>Procurement Management</Text>
             <Box>
               <ul>
-                <li
-                  sx={styles.list}
-                >Supplier Portal</li>
-                <li
-                  sx={styles.list}
-                >Purchase Reciepts and Invoices</li>
-                <li
-                  sx={styles.list}
-                >Purchase Orders</li>
-                <li
-                  sx={styles.list}
-                >Stock Entry</li>
-                <li
-                  sx={styles.list}
-                >Barcodding and Scanning</li>
-                <li
-                  sx={styles.list}
-                >Unlimited Warehouses</li>
+                <li sx={styles.list}>Supplier Portal</li>
+                <li sx={styles.list}>Purchase Reciepts and Invoices</li>
+                <li sx={styles.list}>Purchase Orders</li>
+                <li sx={styles.list}>Stock Entry</li>
+                <li sx={styles.list}>Barcodding and Scanning</li>
+                <li sx={styles.list}>Unlimited Warehouses</li>
               </ul>
             </Box>
           </Box>
@@ -455,19 +408,23 @@ export default function Products() {
                 "30px 50px 60px",
                 "50px 60px 90px",
               ],
-              maxWidth:"480px",
-              maxHeight:"370px",
+              maxWidth: "480px",
+              maxHeight: "370px",
             }}
           >
-            <Image src="/fsm.png" sx={{
-              maxWidth:"480px",
-              maxHeight:"370px",
-              border: "1px solid #1B1C1E",
-              boxSizing: "border-box",
-              borderRadius: "3px",
-              clipPath: "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
-              transform: "matrix(1, 0, 0, -1, 0, 0)",
-            }} />
+            <Image
+              src="/fsm.png"
+              sx={{
+                maxWidth: "480px",
+                maxHeight: "370px",
+                border: "1px solid #1B1C1E",
+                boxSizing: "border-box",
+                borderRadius: "3px",
+                clipPath:
+                  "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
+                transform: "matrix(1, 0, 0, -1, 0, 0)",
+              }}
+            />
           </Box>
           <Box
             sx={{
@@ -480,44 +437,29 @@ export default function Products() {
                 "30px 50px 60px",
                 "50px 60px 90px",
               ],
-              maxWidth:"62px",
-              maxHeight:"171px",
-              ml:"104px",
-              mr:"19px",
+              maxWidth: "62px",
+              maxHeight: "171px",
+              ml: "104px",
+              mr: "19px",
             }}
           >
             <Text sx={styles.number}>6</Text>
           </Box>
           <Box
             sx={{
-              padding: [
-                "30px 50px 60px",
-                "50px 1px 90px",
-              ],
-              mt:"10px",
+              padding: ["30px 50px 60px", "50px 1px 90px"],
+              mt: "10px",
             }}
           >
             <Text sx={styles.productTitle}>Order Management</Text>
             <Box>
               <ul>
-                <li
-                  sx={styles.list}
-                >Order Listing</li>
-                <li
-                  sx={styles.list}
-                >Order Status</li>
-                <li
-                  sx={styles.list}
-                >Capacity Status</li>
-                <li
-                  sx={styles.list}
-                >Centralized View</li>
-                <li
-                  sx={styles.list}
-                >Quotation Management</li>
-                <li
-                  sx={styles.list}
-                >Order Modification</li>
+                <li sx={styles.list}>Order Listing</li>
+                <li sx={styles.list}>Order Status</li>
+                <li sx={styles.list}>Capacity Status</li>
+                <li sx={styles.list}>Centralized View</li>
+                <li sx={styles.list}>Quotation Management</li>
+                <li sx={styles.list}>Order Modification</li>
               </ul>
             </Box>
           </Box>
@@ -534,18 +476,22 @@ export default function Products() {
                 "30px 50px 60px",
                 "50px 60px 90px",
               ],
-              maxWidth:"480px",
-              maxHeight:"370px",
+              maxWidth: "480px",
+              maxHeight: "370px",
             }}
           >
-            <Image src="/fsm.png" sx={{
-              maxWidth:"480px",
-              maxHeight:"370px",
-              border: "1px solid #1B1C1E",
-              boxSizing: "border-box",
-              borderRadius: "3px",
-              clipPath: "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)"
-            }} />
+            <Image
+              src="/fsm.png"
+              sx={{
+                maxWidth: "480px",
+                maxHeight: "370px",
+                border: "1px solid #1B1C1E",
+                boxSizing: "border-box",
+                borderRadius: "3px",
+                clipPath:
+                  "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
+              }}
+            />
           </Box>
           <Box
             sx={{
@@ -558,35 +504,26 @@ export default function Products() {
                 "30px 50px 60px",
                 "50px 60px 90px",
               ],
-              maxWidth:"62px",
-              maxHeight:"171px",
-              ml:"104px",
-              mr:"19px",
+              maxWidth: "62px",
+              maxHeight: "171px",
+              ml: "104px",
+              mr: "19px",
             }}
           >
             <Text sx={styles.number}>7</Text>
           </Box>
           <Box
-             sx={{
-              padding: [
-                "30px 50px 60px",
-                "50px 1px 90px",
-              ],
-              mt:"10px",
+            sx={{
+              padding: ["30px 50px 60px", "50px 1px 90px"],
+              mt: "10px",
             }}
           >
             <Text sx={styles.productTitle}>Access Control</Text>
             <Box>
               <ul>
-                <li
-                  sx={styles.list}
-                >Limit Access to Employees</li>
-                <li
-                  sx={styles.list}
-                >Creating Seperate Accesses</li>
-                <li
-                  sx={styles.list}
-                >Control Employee’s Portal View</li>
+                <li sx={styles.list}>Limit Access to Employees</li>
+                <li sx={styles.list}>Creating Seperate Accesses</li>
+                <li sx={styles.list}>Control Employee’s Portal View</li>
               </ul>
             </Box>
           </Box>
@@ -691,21 +628,21 @@ const styles = {
   heroTitle: {
     fontSize: "70px",
     fontWeight: 400,
-    textAllign:"center",
+    textAllign: "center",
     letterSpacing: "heading",
-    fontColor:"#1B1C1E",
+    fontColor: "#1B1C1E",
     lineHeight: [1.4, null, null, null, null, null, 1.57],
     "@media only screen and (min-height: 720px) and (max-height: 760px), (min-width: 1501px) and (max-width: 1560px) ":
       {
         fontSize: "70px",
       },
   },
-  productInfo:{
-    mt:"101px",
+  productInfo: {
+    mt: "101px",
     mb: "73px",
-    display:"flex", 
+    display: "flex",
   },
-  number:{
+  number: {
     fontStyle: "normal",
     fontWeight: 400,
     fontSize: "40px",
@@ -713,22 +650,22 @@ const styles = {
     color: "#1B1C1E",
   },
 
-  productTitle:{
+  productTitle: {
     fontStyle: "normal",
     letterSpacing: "heading",
     justifyContent: "space-between",
     fontWeight: 600,
     fontSize: "35px",
-    textAlign:"left",
+    textAlign: "left",
     color: "#1B1C1E",
   },
-  list:{
-    textAlign:"left",
-    opacity:"0.5",
+  list: {
+    textAlign: "left",
+    opacity: "0.5",
     color: "#1B1C1E",
-    fontSize:"26px",
-    lineHeight:"39px",
-    ml:"60px"
+    fontSize: "26px",
+    lineHeight: "39px",
+    ml: "60px",
   },
   bannerIcon1: {
     top: "10%",

@@ -19,9 +19,9 @@ export default function Info1() {
   };
 
   return (
-    <Box as="section" id="products" sx={styles.section}>
+    <Box as="section" id="products" sx={styles.section} data-scroll-section>
       <Container sx={styles.container}>
-      <Image
+        <Image
           sx={styles.bannerIcon1}
           className="bannerIcon"
           alt="banner icon"
@@ -63,10 +63,10 @@ export default function Info1() {
           alt="banner icon"
           src={bannerIcon7}
         />
-        <Box sx={{mt:"359px", mb:"352px"}}>
-            <Heading as="h1" sx={styles.heroTitle}>
-                All the tools your Business doesn’t know it needs
-            </Heading>
+        <Box sx={{ mt: "359px", mb: "352px" }}>
+          <Heading as="h1" sx={styles.heroTitle}>
+            All the tools your Business doesn’t know it needs
+          </Heading>
         </Box>
       </Container>
     </Box>
@@ -168,9 +168,9 @@ const styles = {
   heroTitle: {
     fontSize: "70px",
     fontWeight: 400,
-    textAllign:"center",
+    textAllign: "center",
     letterSpacing: "heading",
-    fontColor:"#1B1C1E",
+    fontColor: "#1B1C1E",
     lineHeight: [1.4, null, null, null, null, null, 1.57],
     "@media only screen and (min-height: 720px) and (max-height: 760px), (min-width: 1501px) and (max-width: 1560px) ":
       {

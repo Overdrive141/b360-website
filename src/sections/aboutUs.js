@@ -9,7 +9,7 @@ import {
   Text,
   Button,
   Image,
-  Divider
+  Divider,
 } from "theme-ui";
 import { backgroundImages, rgba } from "polished";
 import bannerIcon1 from "assets/images/banner-icon-1-1.svg";
@@ -24,54 +24,18 @@ import {
   AccordionItem,
   AccordionButton,
   AccordionPanel,
-  AccordionIcon
+  AccordionIcon,
+  useControllableState,
 } from "@chakra-ui/react";
 
-import { AnimationOnScroll } from "react-animation-on-scroll";
-import {
-  useMotionValue,
-  motion,
-  useTransform,
-  useElementScroll,
-  useViewportScroll
-} from "framer-motion";
+import { motion } from "framer-motion";
 
 import { keyframes } from "@emotion/react";
 import { urlObjectKeys } from "next/dist/shared/lib/utils";
 
-const MotionAccordion = motion(AccordionItem);
-
-/**
- * const x = useMotionValue(0)
-const input = [-200, 0, 200]
-const output = [0, 1, 0]
-const opacity = useTransform(x, input, output)
- */
-
 export default function UserStories() {
-  const ref = useRef(null);
-  const [progress, setProgress] = useState(0);
-  // const { scrollYProgress } = useElementScroll(ref)
-
-  const { scrollYProgress } = useViewportScroll();
-
-  const scale = useTransform(
-    scrollYProgress,
-    [0.5, 0.2, 0.66, 1],
-    [0.5, 0.75, 0.5, 1]
-  );
-
-  const rotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
-  scrollYProgress.onChange(setProgress);
-
-  useEffect(() => {
-    scrollYProgress.onChange(latest => {
-      console.log(latest);
-    });
-  }, []);
-
   return (
-    <motion.div ref={ref}>
+    <motion.div data-scroll-section>
       <Box as="section" id="products" sx={styles.section}>
         <Container sx={styles.container}>
           <Box sx={{ display: "flex", width: "1590px", height: "1200px" }}>
@@ -79,7 +43,7 @@ export default function UserStories() {
               sx={{
                 width: "700px",
                 textAlign: "left",
-                mt: "45px"
+                mt: "45px",
               }}
             >
               <Text
@@ -87,7 +51,7 @@ export default function UserStories() {
                   fontSize: "48px",
                   fontWeight: 400,
                   lineHeight: "72px",
-                  color: "#ffffff"
+                  color: "#ffffff",
                 }}
               >
                 Bring your
@@ -97,11 +61,11 @@ export default function UserStories() {
                 sx={{
                   width: "600px",
                   mt: "54px",
-                  border: "0.5px solid #6C6C6C"
+                  border: "0.5px solid #6C6C6C",
                 }}
               />
-              <Accordion allowToggle w="600px ">
-                <MotionAccordion w={500} borderWidth="5" style={{ scale }}>
+              <Accordion allowToggle w="600px " allowMultiple>
+                <AccordionItem w={500} borderWidth="5">
                   <h2>
                     <AccordionButton>
                       <Box
@@ -111,7 +75,11 @@ export default function UserStories() {
                       >
                         Distribution
                       </Box>
-                      <AccordionIcon color="#ffffff" ml="300px" />
+                      <AccordionIcon
+                        color="#ffffff"
+                        ml="300px"
+                        // rotate={scale}
+                      />
                     </AccordionButton>
                   </h2>
                   <AccordionPanel pb={4} color="#ffffff">
@@ -126,13 +94,13 @@ export default function UserStories() {
                     businesses in consumable stages to develop a competitive
                     advantage in the marketplace
                   </AccordionPanel>
-                </MotionAccordion>
+                </AccordionItem>
 
                 <Divider
                   sx={{
                     width: "600px",
                     mt: "24px",
-                    border: "0.5px solid #6C6C6C"
+                    border: "0.5px solid #6C6C6C",
                   }}
                 />
 
@@ -160,7 +128,7 @@ export default function UserStories() {
                   sx={{
                     width: "600px",
                     mt: "24px",
-                    border: "0.5px solid #6C6C6C"
+                    border: "0.5px solid #6C6C6C",
                   }}
                 />
                 <AccordionItem>
@@ -187,7 +155,7 @@ export default function UserStories() {
                   sx={{
                     width: "600px",
                     mt: "24px",
-                    border: "0.5px solid #6C6C6C"
+                    border: "0.5px solid #6C6C6C",
                   }}
                 />
                 <AccordionItem w={500} borderWidth="5">
@@ -216,14 +184,14 @@ export default function UserStories() {
               sx={{
                 width: "1020px",
                 height: "1079px",
-                backgroundImages: 'url("/b.jpg")'
+                backgroundImages: 'url("/b.jpg")',
               }}
             >
               <Image
                 src="/b.jpg"
                 sx={{
                   width: "1020px",
-                  height: "1079px"
+                  height: "1079px",
                 }}
               />
             </Box>
@@ -310,21 +278,21 @@ const styles = {
       maxWidth: ["100%", null, null, "55%", "500px", "640px", "851px"],
       mx: "auto",
       mt: "30px",
-      mb: ["40px", null, null, "65px"]
-    }
+      mb: ["40px", null, null, "65px"],
+    },
   },
   container: {
     position: "relative",
     ".bannerIcon": {
       position: "absolute",
-      display: ["none", null, null, null, "block"]
-    }
+      display: ["none", null, null, null, "block"],
+    },
   },
   contentWrapper: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    minHeight: [null, null, null, null, "50vh", "100vh"]
+    minHeight: [null, null, null, null, "50vh", "100vh"],
   },
   heroTitle: {
     fontSize: "70px",
@@ -334,45 +302,45 @@ const styles = {
     fontColor: "#1B1C1E",
     "@media only screen and (min-height: 720px) and (max-height: 760px), (min-width: 1501px) and (max-width: 1560px) ":
       {
-        fontSize: "70px"
-      }
+        fontSize: "70px",
+      },
   },
   content: {
     fontSize: "36px",
     fontWeight: 400,
-    textAllign: "left"
+    textAllign: "left",
   },
   bannerIcon1: {
     top: "10%",
     left: "10%",
-    animation: `${bannerAnim2} 8s linear infinite`
+    animation: `${bannerAnim2} 8s linear infinite`,
   },
   bannerIcon2: {
     top: "10%",
     right: "10%",
-    animation: `${bannerAnim2} 8s linear infinite`
+    animation: `${bannerAnim2} 8s linear infinite`,
   },
   bannerIcon3: {
     bottom: "40px",
     right: "-120px",
-    animation: `${bannerAnim1} 5s ease-out infinite`
+    animation: `${bannerAnim1} 5s ease-out infinite`,
   },
   bannerIcon4: {
     bottom: "130px",
     left: "-120px",
-    animation: `${bannerAnim1} 5s ease-out infinite`
+    animation: `${bannerAnim1} 5s ease-out infinite`,
   },
   bannerIcon5: {
     bottom: "40%",
-    left: "60%"
+    left: "60%",
   },
   bannerIcon6: {
     bottom: "-65px",
     left: "0px",
-    animation: `${bannerAnim3} 9s linear infinite`
+    animation: `${bannerAnim3} 9s linear infinite`,
   },
   bannerIcon7: {
     bottom: "30%",
-    right: "70%"
-  }
+    right: "70%",
+  },
 };
