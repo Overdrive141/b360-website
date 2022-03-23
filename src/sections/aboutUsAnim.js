@@ -9,7 +9,7 @@ import {
   Text,
   Button,
   Image,
-  Divider,
+  Divider
 } from "theme-ui";
 import { backgroundImages, rgba } from "polished";
 
@@ -19,7 +19,7 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-  useControllableState,
+  useControllableState
 } from "@chakra-ui/react";
 
 import { AnimationOnScroll } from "react-animation-on-scroll";
@@ -28,7 +28,7 @@ import {
   motion,
   useTransform,
   useElementScroll,
-  useViewportScroll,
+  useViewportScroll
 } from "framer-motion";
 
 import { keyframes } from "@emotion/react";
@@ -57,7 +57,7 @@ export default function UserStories({
   fadeIn = true,
   fadeOut = true,
   showProgress = false,
-  title,
+  title
 }) {
   // you need a state and updater to change the value
 
@@ -67,7 +67,7 @@ export default function UserStories({
 
   const [internalValue, setInternalValue] = useControllableState({
     value,
-    onChange: setValue,
+    onChange: setValue
   });
 
   const divRef = useRef(null);
@@ -91,9 +91,9 @@ export default function UserStories({
   // scrollYProgress.onChange(setProgress);
 
   useEffect(() => {
-    scrollYProgress.onChange((latest) => {
-      console.log(latest);
-      console.log("Start & End", start, end);
+    scrollYProgress.onChange(latest => {
+      // console.log(latest);
+      // console.log("Start & End", start, end);
     });
   }, []);
 
@@ -150,29 +150,29 @@ export default function UserStories({
         "https://images.unsplash.com/photo-1615617396130-db493d04e2c5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=934&q=100",
       title: "Distribution",
       description:
-        "With many customers throughout the retail industry, we have deep experience in working with companies like yours. Business 360 has taken this industry expertise and bundled it into the retail solution to solve the unique business challenges of the manufacturing, wholesale, and retail industries. Combine this industry expertise with the leading practices developed by our retail-dedicated professional services team, we help our customers transform their businesses in consumable stages to develop a competitive advantage in the marketplace",
+        "With many customers throughout the retail industry, we have deep experience in working with companies like yours. Business 360 has taken this industry expertise and bundled it into the retail solution to solve the unique business challenges of the manufacturing, wholesale, and retail industries. Combine this industry expertise with the leading practices developed by our retail-dedicated professional services team, we help our customers transform their businesses in consumable stages to develop a competitive advantage in the marketplace"
     },
     {
       imageUrl:
         "https://images.unsplash.com/photo-1561532089-cb18d10f86b4?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=934&q=100",
       title: "Freight",
       description:
-        "SubLo is a hyperlocal marketplace that is enabled by Business 360 to provides all the SaaS tools to local businesses so they can transition towards digitization in an On Demand Economy.",
+        "SubLo is a hyperlocal marketplace that is enabled by Business 360 to provides all the SaaS tools to local businesses so they can transition towards digitization in an On Demand Economy."
     },
     {
       imageUrl:
         "https://lh3.googleusercontent.com/e6W12HucjyEIRg_nLzpW489zhl65yttWZZlU6IvG5CJe3wURC9tmcBCoHh8TU3-L0MmjGysnXYIG-dgyLsPFPMrzJIq0V3GmeKq03w=s0",
       title: "Security",
       description:
-        "SubLo is a hyperlocal marketplace that is enabled by Business 360 to provides all the SaaS tools to local businesses so they can transition towards digitization in an On Demand Economy.",
+        "SubLo is a hyperlocal marketplace that is enabled by Business 360 to provides all the SaaS tools to local businesses so they can transition towards digitization in an On Demand Economy."
     },
     {
       imageUrl:
         "https://images.unsplash.com/photo-1548366565-6bbab241282d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=934&q=100",
       title: "HVAC",
       description:
-        "SubLo is a hyperlocal marketplace that is enabled by Business 360 to provides all the SaaS tools to local businesses so they can transition towards digitization in an On Demand Economy.",
-    },
+        "SubLo is a hyperlocal marketplace that is enabled by Business 360 to provides all the SaaS tools to local businesses so they can transition towards digitization in an On Demand Economy."
+    }
   ];
 
   const [activeFeatureIndex, setFeatureIndex] = useState(0);
@@ -190,7 +190,7 @@ export default function UserStories({
           //   scroller: "#smooth-scroll",
           trigger: featureImageRef.current,
           start: "top top", // top of element and top of viewport
-          end: () => `+=${featureSliderRef.current.offsetHeight}`,
+          end: () => `${featureSliderRef.current.offsetHeight}`,
           /**
            * start: "top top" triggers when the orange element's top edge
            * hits the top of the viewport.
@@ -202,9 +202,9 @@ export default function UserStories({
           scrub: true,
           pin: true,
           markers: true,
-          pinSpacing: false,
+          pinSpacing: false
           //   onUpdate: getCurrentSection,
-        },
+        }
       }).to(".class-of-business", {
         scrollTrigger: {
           trigger: ".class-of-business",
@@ -212,8 +212,8 @@ export default function UserStories({
           end: () => `+=${featureSliderRef.current.offsetHeight}`,
           pin: true,
           scrub: true,
-          pinSpacing: false,
-        },
+          pinSpacing: false
+        }
       });
 
       //   contentMarkers.forEach((marker) => {
@@ -282,7 +282,7 @@ export default function UserStories({
 
       console.log("featureImg", featureImages);
 
-      const tl = featureImages.forEach((effect) => {
+      const tl = featureImages.forEach(effect => {
         // gsap.to(effect, {
         //   y: "-=50",
         //   scrollTrigger: {
@@ -312,7 +312,7 @@ export default function UserStories({
             //   y: "-=50",
             opacity: 1,
             duration: 1,
-            autoAlpha: 0,
+            autoAlpha: 0
             // snap: {
             //   snapTo: 1 / 10, // progress increment
             //   // or "labels" or function or Array
@@ -344,27 +344,27 @@ export default function UserStories({
                 gsap.to(effect, {
                   //   y: 0,
                   opacity: 1,
-                  stagger: -0.2,
+                  stagger: -0.2
                 }),
               onLeave: () =>
                 gsap.to(effect, {
                   //   y: -50,
                   opacity: 0,
-                  stagger: 0.2,
+                  stagger: 0.2
                 }),
               onEnterBack: () =>
                 gsap.to(effect, {
                   //   y: 0,
                   opacity: 1,
-                  stagger: -0.2,
+                  stagger: -0.2
                 }),
               onLeaveBack: () =>
                 gsap.to(effect, {
                   //   y: 50,
                   opacity: 0,
-                  stagger: -0.2,
-                }),
-            },
+                  stagger: -0.2
+                })
+            }
           }
         );
         // gsap.fromTo(
@@ -380,7 +380,7 @@ export default function UserStories({
     const master = gsap.timeline();
     master.add(stopTrigger());
     master.add(featureScroll());
-    // master.add(imageScroll());
+    master.add(imageScroll());
   }, []);
 
   return (
@@ -400,7 +400,7 @@ export default function UserStories({
                 mt: "45px",
                 display: "flex",
                 flexDirection: "row",
-                justifyContent: "space-between",
+                justifyContent: "space-between"
               }}
             >
               <Box sx={{ width: "40%", paddingRight: "25px" }}>
@@ -412,7 +412,7 @@ export default function UserStories({
                       lineHeight: "72px",
                       color: "#ffffff",
                       display: "block",
-                      transition: "transform 5s ease",
+                      transition: "transform 5s ease"
                     }}
                   >
                     Bring your
@@ -420,7 +420,7 @@ export default function UserStories({
                   </Text>
                   <Divider
                     sx={{
-                      border: "0.5px solid #6C6C6C",
+                      border: "0.5px solid #6C6C6C"
                     }}
                   />
                 </Box>
@@ -446,14 +446,16 @@ export default function UserStories({
               <Box
                 sx={{
                   width: "60%",
-                  transform: "translateY(-45px)",
+                  transform: "translateY(-45px)"
                   //   height: "1079px",
                   //   backgroundImages: 'url("/b.jpg")',
                 }}
                 className="feature-images-parent"
                 ref={featureImageRef}
               >
-                {featureSlides.map(({ imageUrl }, index) => (
+                {/* {featureSlides.map(({ imageUrl }, index) => (
+                  
+                  
                   <Image
                     className={
                       activeFeatureIndex === index
@@ -461,14 +463,29 @@ export default function UserStories({
                         : "image"
                     }
                     key={imageUrl}
-                    src={imageUrl}
+                    src={}
                     sx={{
                       // width: "1020px",
                       height: "100vh",
-                      opacity: 0.6,
+                      opacity: activeFeatureIndex === index ? 0.6 : 0
                     }}
                   />
-                ))}
+                ))} */}
+                <Image
+                  // className={
+                  //   activeFeatureIndex === index
+                  //     ? "image as-primary"
+                  //     : "image"
+                  // }
+                  // key={featureSlides[activeFeatureIndex]}
+                  src={featureSlides[activeFeatureIndex].imageUrl}
+                  sx={{
+                    // width: "1020px",
+                    height: "100vh",
+                    // opacity: activeFeatureIndex === index ? 0.6 : 0
+                    opacity: 0.6
+                  }}
+                />
               </Box>
             </Box>
             {/* <Box
@@ -511,14 +528,14 @@ const styles = {
       maxWidth: ["100%", null, null, "55%", "500px", "640px", "851px"],
       mx: "auto",
       mt: "30px",
-      mb: ["40px", null, null, "65px"],
-    },
+      mb: ["40px", null, null, "65px"]
+    }
   },
   container: {
     // position: "relative",
     height: "400vh",
     // width: "100vw",
-    paddingLeft: "150px",
+    paddingLeft: "150px"
     // paddingRight: "150px",
-  },
+  }
 };
