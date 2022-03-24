@@ -15,7 +15,9 @@
     "@emotion/styled": "^11.8.1",
     "@mdx-js/react": "^1.6.22",
     "animate.css": "^4.1.1",
-    "framer-motion": "^6.2.8",
+    "antd": "^4.19.3",
+    "axios": "^0.26.1",
+    "mapbox-gl": "^2.7.1",
     "next": "^12.1.0",
     "next-compose-plugins": "^2.2.0",
     "next-optimized-images": "^2.6.2",
@@ -24,10 +26,13 @@
     "react-animation-on-scroll": "^5.0.0",
     "react-dom": "^17.0.2",
     "react-ga": "^3.1.2",
+    "react-google-places-autocomplete": "^3.3.4",
     "react-hook-form": "^7.28.1",
     "react-icons": "^3.11.0",
     "react-intersection-observer": "^8.33.1",
+    "react-map-gl": "^7.0.10",
     "react-masonry-component": "^6.2.1",
+    "react-query": "^3.34.16",
     "react-scroll": "^1.8.1",
     "react-slick": "^0.27.11",
     "react-stickynode": "^3.0.3",
@@ -40,6 +45,7 @@
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^8.0.0",
     "next-sitemap": "^1.2.4",
-    "prettier": "^2.1.2"
+    "prettier": "^2.1.2",
+    "worker-loader": "^3.0.8"
   }
 }

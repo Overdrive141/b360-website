@@ -1,7 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
+import React from 'react'
 import { jsx, Container, Heading, Text, Button, Image } from "theme-ui";
-import { Box } from "@chakra-ui/react";
+import { Box,  ModalBody, ModalContent, ModalHeader, ModalOverlay } from "@chakra-ui/react";
 import { rgba } from "polished";
 import bannerIcon1 from "assets/images/banner-icon-1-1.svg";
 import bannerIcon2 from "assets/images/banner-icon-1-2.svg";
@@ -10,16 +11,37 @@ import bannerIcon4 from "assets/images/banner-icon-1-4.svg";
 import bannerIcon5 from "assets/images/banner-icon-1-5.svg";
 import bannerIcon6 from "assets/images/banner-icon-1-6.svg";
 import bannerIcon7 from "assets/images/dot-pattern.svg";
+import {useDisclosure} from "@chakra-ui/react"
+import NewBusinessForm from "pages/MultiStepBusinessForm";
+import { useState } from 'react'
+import { Dialog } from '@headlessui/react'
+import ChakraModal from "components/forms/ChakraModal";
 
+import { Modal } from 'antd';
 import { keyframes } from "@emotion/react";
 
+
+
+
 export default function Banner() {
+
+  let [isOpen, setIsOpen] = useState(false)
+  // const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const handleAddClick = () => {
+    // open modal
+
+    setIsOpen(true)
+    //onOpen();
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("submitting...");
   };
 
   return (
+    <>
     <Box as="section" id="home" sx={styles.section}>
       <Container sx={styles.container}>
         <Image
@@ -82,8 +104,8 @@ export default function Banner() {
               Thousands of Successful businesses trust Business 360 as their
               technical partner.
             </Text>
-            <Box as="form" onSubmit={handleSubmit} sx={{mt:"86px"}}>
-              <Button type="submit" sx={styles.button} variant="primary">
+            <Box  sx={{mt:"86px"}}>
+              <Button  sx={styles.button} variant="primary" onClick={handleAddClick}>
                 <Text sx={{
                   fontSize:"22px",
                   fontWeight:400,
@@ -110,7 +132,55 @@ export default function Banner() {
           </Box>
         </Box>
       </Container>
+
     </Box>
+
+    <Modal title="Basic Modal" visible={isOpen} >
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Modal>
+
+    {/* <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
+      <Dialog.Overlay />
+
+      <Dialog.Title>Deactivate account</Dialog.Title>
+      <Dialog.Description>
+        This will permanently deactivate your account
+      </Dialog.Description>
+
+      <p>
+        Are you sure you want to deactivate your account? All of your data will
+        be permanently removed. This action cannot be undone.
+      </p>
+
+      <button onClick={() => setIsOpen(false)}>Deactivate</button>
+      <button onClick={() => setIsOpen(false)}>Cancel</button>
+    </Dialog> */}
+
+
+              {/* <Modal isOpen={isOpen} onClose={onClose}>
+                <ModalOverlay/>
+                <ModalContent>
+                  <ModalHeader>
+                    Testr
+                    </ModalHeader>
+                    <ModalBody>
+                      <Text>Rest</Text>
+                    </ModalBody>
+                </ModalContent>
+
+              </Modal> */}
+
+    {/* <ChakraModal
+        title="Create Business Profile"
+        {...{ isOpen, onClose, onOpen }}
+        // size="4xl"
+      >
+        <Text>Test</Text>
+        {/* <NewBusinessForm onClose={onClose} /> 
+      </ChakraModal> */}
+    </>
   );
 }
 

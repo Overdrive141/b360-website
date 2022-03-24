@@ -13,6 +13,8 @@ import Products2 from "sections/products2"
 import UserStories from "sections/userStories"
 import FAQ from "sections/faq"
 
+
+
 export default function IndexPage() {
   return (
     <ThemeProvider theme={theme}>

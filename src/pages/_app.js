@@ -14,8 +14,7 @@ export default function CustomApp({ Component, pageProps }) {
   }, []);
 
   return(
-    <ChakraProvider theme={theme}>
-      <CSSReset />
+    <ChakraProvider theme={theme} resetCSS={true} portalZIndex={5}>
       <Component {...pageProps} />
     </ChakraProvider>
   ) 
