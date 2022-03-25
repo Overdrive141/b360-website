@@ -17,20 +17,18 @@ import {
     Link,
     MenuItem,
     Select,
-  } from "@chakra-ui/react";
-  import React from "react";
-//import { FaUserAlt } from "react-icons/fa";
-//import { Link as RouterLink, Redirect } from "react-router-dom";
-  
-  import { useForm } from "react-hook-form";
-//   import { useDispatch, useSelector } from "react-redux";
-  
-//   import { register as registerAction } from "actions/auth";
-  const Register = () => {
+} from "@chakra-ui/react";
+import React,{useState} from "react";
+import { API_URL } from "config/api/index";
+import { usePostData } from "hooks/usePostData";
+import { createToast } from "utils/createToast";
+import { useMutation } from "react-query";
+import { useForm } from "react-hook-form";
+const Register = ({completeFormStep, setUserId, ...props}) => {
+
+    const [done, setDone] = useState(false);
     // Selectors
-    // const error = useSelector((state) => state.auth.error);
-    // const isRegistered = useSelector((state) => state.auth.isRegistered);
-  
+
     // Other Hooks
     const {
       handleSubmit,
@@ -39,24 +37,49 @@ import {
       setError,
       formState: { errors, isSubmitting },
     } = useForm();
+
+    const { mutate, isSuccess, isLoading, isError } = useMutation(
+        usePostData,
+        {}
+    );
+    
+    const URL = `${API_URL.auth}/register`;
     //const dispatch = useDispatch();
   
-    const onSubmit = (values) => {
-    //   try {
-    //     console.log(JSON.stringify(values));
-    //     if (values.password !== values.confirmPassword) {
-    //       setError("confirmPassword", {
-    //         type: "validate",
-    //         message: "Passwords do not match",
-    //       });
-    //       return;
-    //     } else {
-    //       unregister("confirmPassword");
-    //     }
-    //     return dispatch(registerAction(values));
-    //   } catch (err) {
-    //     alert(err.message);
-    //   }
+    const onSubmit = (body) => {
+      try {
+        console.log(JSON.stringify(body));
+        if (body.password !== body.confirmPassword) {
+          setError("confirmPassword", {
+            type: "validate",
+            message: "Passwords do not match",
+          });
+          return;
+        } else {
+          unregister("confirmPassword");
+        }
+        mutate(
+            { URL, body },
+            {
+              onSuccess: (value) => {
+                setDone(true);
+                console.log("set value",value);
+                setUserId(value.data.data._id)
+                createToast({ title: "User Created Successfully" });
+                completeFormStep()
+              },
+              onError: (err) => {
+                createToast({
+                  title: "Unable to Create User",
+                  msg: err.stack,
+                  type: "error",
+                });
+              },
+            }
+        );
+      } catch (err) {
+        alert(err.message);
+      }
     };
   
     //if (isRegistered) return <Redirect to="/login" />;
@@ -64,10 +87,9 @@ import {
     return (
         <Box >
             <chakra.form onSubmit={handleSubmit(onSubmit)}>
-                <Text  h="116px" color="#000000" fontSize='45px' textAlign="center" fontStyle="normal" fontWeight={4} >Sign Up</Text>
+                <Text  h="116px" color="#000000" fontSize='45px' ml="250px" fontStyle="normal" fontWeight={4} >Sign Up</Text>
                 <Grid templateColumns='repeat(7, 1fr)' gap={6} mt={6}>
-                    <GridItem ></GridItem>
-                    <GridItem colSpan={5} ml="200px" mr={10}>
+                    <GridItem colSpan={5}  mr={10} ml="100px">
                         <Grid templateColumns="repeat(2, 1fr)"
                             gap={4}
                             ml={12}
@@ -78,7 +100,7 @@ import {
                                 <InputGroup>
                                     <Input 
                                         placeholder="First Name"
-                                        w="447px"
+                                        w="247px"
                                         h="72px"
                                         border="1px"
                                         borderRadius="3px"
@@ -101,7 +123,7 @@ import {
                                 <InputGroup>
                                     <Input 
                                         placeholder="Last Name"
-                                        w="447px"
+                                        w="247px"
                                         h="72px"
                                         border="1px"
                                         borderRadius="3px"
@@ -125,7 +147,7 @@ import {
                                 <InputGroup>
                                     <Input 
                                         placeholder="Email"
-                                        w="447px"
+                                        w="247px"
                                         h="72px"
                                         border="1px"
                                         borderRadius="3px"
@@ -149,7 +171,7 @@ import {
                                 <InputGroup>
                                     <Input 
                                         placeholder="Contact Number"
-                                        w="447px"
+                                        w="247px"
                                         h="72px"
                                         border="1px"
                                         borderRadius="3px"
@@ -173,7 +195,7 @@ import {
                                 <Select
                                     title="Select Occupation"
                                     id="role"
-                                    w="447px"
+                                    w="247px"
                                     h="72px"
                                     border="1px"
                                     borderRadius="3px"
@@ -198,7 +220,7 @@ import {
                                 <Select
                                     title="Select Gender"
                                     id="gender"
-                                    w="447px"
+                                    w="247px"
                                     h="72px"
                                     border="1px"
                                     borderRadius="3px"
@@ -222,7 +244,7 @@ import {
                                 <InputGroup>
                                     <Input 
                                         placeholder="Password"
-                                        w="447px"
+                                        w="247px"
                                         h="72px"
                                         border="1px"
                                         borderRadius="3px"
@@ -247,7 +269,7 @@ import {
                                 <InputGroup>
                                     <Input 
                                         placeholder="Confirm Password"
-                                        w="447px"
+                                        w="247px"
                                         h="72px"
                                         border="1px"
                                         borderRadius="3px"
@@ -266,7 +288,7 @@ import {
                                     </FormErrorMessage>
                                 </InputGroup>
                             </GridItem>
-                            <GridItem mr="220px">
+                            <GridItem  >
                                 <Checkbox defaultIsChecked py={4} >
                                     <Text textAlign="left">
                                         I agree to the <span>&nbsp;</span>
@@ -290,8 +312,8 @@ import {
                         <Button
                             borderRadius={40}
                             border="1px"
-                            mt={1}
-                            ml="460px"
+                            mt={3}
+                            ml="100px"
                             type="submit"
                             colorScheme="customBlue"
                             bg="#000000"
@@ -299,7 +321,7 @@ import {
                             h="72px"
                             isLoading={isSubmitting}
                         >
-                            Sign In 
+                            <Text fontSize="20px" textAlign="center" color="#ffffff">Next</Text>
                         </Button>
                     </Box>
             </chakra.form>

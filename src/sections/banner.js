@@ -12,10 +12,8 @@ import bannerIcon5 from "assets/images/banner-icon-1-5.svg";
 import bannerIcon6 from "assets/images/banner-icon-1-6.svg";
 import bannerIcon7 from "assets/images/dot-pattern.svg";
 import {useDisclosure} from "@chakra-ui/react"
-import NewBusinessForm from "pages/MultiStepBusinessForm";
+import NewBusinessForm from "components/forms/MultiStepBusinessForm/index";
 import { useState } from 'react'
-import { Dialog } from '@headlessui/react'
-import ChakraModal from "components/forms/ChakraModal";
 
 import { Modal } from 'antd';
 import { keyframes } from "@emotion/react";
@@ -26,6 +24,7 @@ import { keyframes } from "@emotion/react";
 export default function Banner() {
 
   let [isOpen, setIsOpen] = useState(false)
+  let [isClose, setIsClose] = useState(false)
   // const { isOpen, onOpen, onClose } = useDisclosure();
 
   const handleAddClick = () => {
@@ -135,51 +134,9 @@ export default function Banner() {
 
     </Box>
 
-    <Modal title="Basic Modal" visible={isOpen} >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+      <Modal title="Basic Modal" visible={isOpen} width={700} footer={null} closable={false}>
+        <NewBusinessForm />
       </Modal>
-
-    {/* <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
-      <Dialog.Overlay />
-
-      <Dialog.Title>Deactivate account</Dialog.Title>
-      <Dialog.Description>
-        This will permanently deactivate your account
-      </Dialog.Description>
-
-      <p>
-        Are you sure you want to deactivate your account? All of your data will
-        be permanently removed. This action cannot be undone.
-      </p>
-
-      <button onClick={() => setIsOpen(false)}>Deactivate</button>
-      <button onClick={() => setIsOpen(false)}>Cancel</button>
-    </Dialog> */}
-
-
-              {/* <Modal isOpen={isOpen} onClose={onClose}>
-                <ModalOverlay/>
-                <ModalContent>
-                  <ModalHeader>
-                    Testr
-                    </ModalHeader>
-                    <ModalBody>
-                      <Text>Rest</Text>
-                    </ModalBody>
-                </ModalContent>
-
-              </Modal> */}
-
-    {/* <ChakraModal
-        title="Create Business Profile"
-        {...{ isOpen, onClose, onOpen }}
-        // size="4xl"
-      >
-        <Text>Test</Text>
-        {/* <NewBusinessForm onClose={onClose} /> 
-      </ChakraModal> */}
     </>
   );
 }

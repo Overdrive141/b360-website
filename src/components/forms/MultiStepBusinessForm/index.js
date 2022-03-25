@@ -14,27 +14,22 @@ import {
   Text
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
-//import { useMutation } from "react-query";
-// import * as Yup from "yup";
-// import { yupResolver } from "@hookform/resolvers/yup";
-
+import { useMutation } from "react-query";
 // import Map from "components/Map";
-// import ImageUpload from "components/Others/ImageUpload";
- import { API_URL } from "config/api/index";
-// import { usePostData } from "hooks/usePostData";
-// import { createToast } from "utils/createToast";
-// import { useYupValidationResolver } from "hooks/useYupValidationResolver";
-// import { useDispatch } from "react-redux";
-// import { fetchUserProfile } from "actions/auth";
-//import { SimpleGrid } from "@mantine/core";
+import ImageUpload from "components/Others/ImageUpload";
+import { API_URL } from "config/api/index";
+import Register from "components/forms/Register/NewRegister"
+import { usePostData } from "hooks/usePostData";
+import { createToast } from "utils/createToast";
 import {AiOutlineClose} from "react-icons/ai"
 import {MdOutlineArrowBackIosNew} from "react-icons/md"
 
-const URL = API_URL.business;
+
 
 const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
   const [done, setDone] = useState(false);
   const [formStep, setFormStep] = useState(0)
+  const [userId, setUserId] = useState()
 
   const completeFormStep = () =>{
       setFormStep(curr => curr +1)
@@ -42,39 +37,8 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
   const goBack = () =>{
     setFormStep(curr => curr -1)
     }
-  const MAX_STEP=3
-//   const dispatch = useDispatch();
+  const MAX_STEP=4
 
-  // Form Validation Rules
-//   const validationSchema = Yup.object().shape(
-//     {
-//       businessName: Yup.string().required("Business Name is required"),
-//       businessLogo: Yup.array().required("Business Logo is required"),
-//       businessLocation: Yup.object().shape({
-//         //   location: Yup.object().shape({
-//         //     coordinates: Yup.array().required("Business Location is required"),
-//         //   }),
-//         address: Yup.string().required("Business Address is required"),
-//       }),
-//       businessDescription: Yup.string().required(
-//         "Business Tag Line is required"
-//       ),
-//       businessEmail: Yup.string()
-//         .email()
-//         .required("Business Email is required so you can receive orders"),
-//       businessPhNumber: Yup.string().required(
-//         "Business Phone Number is required so you can receive orders"
-//       ),
-//       websiteUrl: Yup.string()
-//         .nullable()
-//         .notRequired()
-//         .when("websiteUrl", {
-//           is: (value) => value?.length,
-//           then: (rule) => rule.url(),
-//         }),
-//     },
-//     [["websiteUrl", "websiteUrl"]]
-//   );
 
   const {
     handleSubmit,
@@ -88,58 +52,59 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
     formState: { errors, isSubmitting, isValid, isDirty },
   } = useForm({mode : "all"});
 
-//   const { mutate, isSuccess, isLoading, isError } = useMutation(
-//     usePostData,
-//     {}
-//   );
+  const { mutate, isSuccess, isLoading, isError } = useMutation(
+    usePostData,
+    {}
+  );
+
+  const URL = `${API_URL.business}/business-webapp`;
 
   const onSubmit = async (body) => {
+      body.userId = userId
     console.log("body----------->",body);
-    // try {
-    //   mutate(
-    //     { URL, body },
-    //     {
-    //       onSuccess: (value) => {
-    //         setDone(true);
-    //         console.log(value.data);
-    //         // dispatch({
-    //         //   type: BUSINESS_CREATION_SUCCESS,
-    //         //   payload: value.data.business,
-    //         // });
-    //         dispatch(fetchUserProfile());
-    //         //onClose();
-    //         completeFormStep()
-    //       },
-    //       onError: (err) => {
-    //         createToast({
-    //           title: "Unable to Create Business",
-    //           msg: err.stack,
-    //           type: "error",
-    //         });
-    //       },
-    //     }
-    //   );
-    // } catch (err) {
-    //   alert(err.message);
-    // }
+    try {
+      mutate(
+        { URL, body },
+        {
+          onSuccess: (value) => {
+            setDone(true);
+            console.log(value.data);
+            createToast({ title: "Business Created Successfully" });
+            completeFormStep()
+          },
+          onError: (err) => {
+            createToast({
+              title: "Unable to Create Business",
+              msg: err.stack,
+              type: "error",
+            });
+          },
+        }
+      );
+    } catch (err) {
+      alert(err.message);
+    }
   };
-//   if (isLoading) {
-//   }
-//   if (isError) {
-//   }
-//   if (isSuccess) {
-//   }
+  if (isLoading) {
+  }
+  if (isError) {
+  }
+  if (isSuccess) {
+  }
   return (
     <>
       <Box d="flex" flexDir="column" {...props} justifyContent="center">
+          {formStep === 0 &&(
+              <Register completeFormStep={completeFormStep} setUserId={setUserId} />
+          )}
         <chakra.form onSubmit={handleSubmit(onSubmit)}>
-            {formStep === 0 &&(
+            {formStep === 1 &&(
                 <section>
                     <Box h="116px" mt="19px">
                         <Text  color="#000000" fontSize='45px' textAlign="center" fontStyle="normal" fontWeight={4} >Create Your Online Store</Text>
                         <Text  color="rgba(0, 0, 0, 0.7)" fontSize='25px' textAlign="center" fontStyle="normal" fontWeight={4} >Create Your Online Store</Text>
                     </Box>
-                    <Box ml="180px" w="447px" mb={20}>
+                    <Box ml="140px" w="447px" mb={20}>
                         <FormLabel  mt={10} fontSize="21px" w="280px">Business Name</FormLabel>
                         <InputGroup>
                             <Input 
@@ -181,7 +146,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                     </Box>
                 </section>
             )}
-            {formStep === 1 &&(
+            {formStep === 2 &&(
                 <section>
                     <Box h="116px" mt="19px">
                         <Text  color="rgba(0, 0, 0, 0.7)" fontSize='25px' textAlign="center" fontStyle="normal" fontWeight={4} mr="80px">Step {formStep} of {MAX_STEP}</Text>
@@ -196,11 +161,11 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                             <GridItem rowSpan={2} colSpan={2}>
                             <FormLabel  mt={10} fontSize="16px" w="280px">Business Logo</FormLabel>
                             <Box m={6} w={120} h={120}>
-                            {/* <ImageUpload
+                            <ImageUpload
                                 imageCount={1}
                                 value="businessLogo"
                                 {...{ register, setValue, control }}
-                            /> */}
+                            />
                             </Box>
                             </GridItem>
                             <GridItem colSpan={2} >
@@ -270,13 +235,13 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                                 </InputGroup>
                             </GridItem>
                         </Grid>
-                        <Button leftIcon={<MdOutlineArrowBackIosNew />} mt="45px" bg="transparent" border="none" outline="none" w="102px" h="72px" onClick={goBack}><Text>Back</Text></Button>
+                        <Button mt="45px" bg="transparent" border="none" outline="none" w="102px" h="72px" onClick={goBack}><Text>Back</Text></Button>
                         <Button
                             border="1px solid #000000"
                             disabled={!isDirty || !isValid}
                             bg="#000000"
                             mt="45px"
-                            ml="500px"
+                            ml="280px"
                             w="202px"
                             h="72px"
                             borderRadius="3px"
@@ -286,7 +251,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                     </Box>
                 </section>
             )}
-            {formStep === 2 &&(
+            {formStep === 3 &&(
                 <section>
                     <Box h="116px" mt="19px">
                     <Text  color="rgba(0, 0, 0, 0.7)" fontSize='25px' textAlign="center" fontStyle="normal" fontWeight={4} mr="80px">Step {formStep} of {MAX_STEP}</Text>
@@ -299,7 +264,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                             gap={4}
                         >
                             <GridItem rowSpan={2} colSpan={2}>
-                                {/* <FormLabel  mt={10} fontSize="16px" w="280px">Location</FormLabel> */}
+                                <FormLabel  mt={10} fontSize="16px" w="280px">Location</FormLabel>
                                 <Box d="flex" flexDir="column" w="250" mt="75px">
                                     {/* <Map
                                         width={250}
@@ -383,13 +348,13 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                                 </InputGroup>
                             </GridItem>
                         </Grid>
-                        <Button leftIcon={<MdOutlineArrowBackIosNew />} mt="45px" bg="transparent" border="none" outline="none" w="102px" h="72px" onClick={goBack}><Text>Back</Text></Button>
+                        <Button mt="45px" bg="transparent" border="none" outline="none" w="102px" h="72px" onClick={goBack}><Text>Back</Text></Button>
                         <Button
                             border="1px solid #000000"
                             disabled={!isDirty || !isValid}
                             bg="#000000"
                             mt="45px"
-                            ml="500px"
+                            ml="280px"
                             w="202px"
                             h="72px"
                             borderRadius="3px"
@@ -399,7 +364,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                     </Box>
                 </section>
             )}
-            {formStep === 3 &&(
+            {formStep === 4 &&(
                 <section>
                     <Box h="116px" mt="19px">
                         <Text  color="rgba(0, 0, 0, 0.7)" fontSize='25px' textAlign="center" fontStyle="normal" fontWeight={4} mr="80px">Step {formStep} of {MAX_STEP}</Text>
@@ -494,30 +459,30 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                         <FormErrorMessage>
                             {errors.WhichIndustryWillYouBeOperating && errors.WhichIndustryWillYouBeOperating.message}
                         </FormErrorMessage>
-                        <Button leftIcon={<MdOutlineArrowBackIosNew />} mt="45px" bg="transparent" border="none" outline="none" w="102px" h="72px" onClick={goBack}><Text>Back</Text></Button>
+                    </Box>
+                    <Button  mt="45px" bg="transparent" border="none" outline="none" w="102px" h="72px" onClick={goBack}><Text>Back</Text></Button>
                         <Button
                             border="1px solid #000000"
                             disabled={!isDirty || !isValid}
                             bg="#000000"
                             mt="45px"
-                            ml="140px"
+                            ml="280px"
                             w="202px"
                             h="72px"
                             borderRadius="3px"
                             type="submit"
                             isLoading={isLoading}
                         ><Text fontSize="20px" textAlign="center" color="#ffffff">Submit</Text></Button>
-                    </Box>
                 </section>
             )}
         </chakra.form>
-            {formStep === 4 &&(
+            {formStep === 5 &&(
                 <section>
                     <Box h="116px" mt="19px">
                         <Text  color="#000000" fontSize='45px' textAlign="center" fontStyle="normal" fontWeight={4} >Your Store is ready to go</Text>
                         <Text  color="rgba(0, 0, 0, 0.7)" fontSize='25px' textAlign="center" fontStyle="normal" fontWeight={4} >Explore Now</Text>
                     </Box>
-                    <Box ml="180px" w="447px" mb={20}>
+                    <Box ml="130px" w="447px" mb={20}>
                         <Button
                             border="1px solid #000000"
                             bg="#000000"
