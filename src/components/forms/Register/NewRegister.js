@@ -16,8 +16,8 @@ import {
     useColorMode as mode,
     Link,
     MenuItem,
-    Select,
 } from "@chakra-ui/react";
+import { Select } from 'antd';
 import React,{useState} from "react";
 import { API_URL } from "config/api/index";
 import { usePostData } from "hooks/usePostData";
@@ -27,6 +27,7 @@ import { useForm } from "react-hook-form";
 const Register = ({completeFormStep, setUserId, ...props}) => {
 
     const [done, setDone] = useState(false);
+    const [gender, setGender] = useState("")
     // Selectors
 
     // Other Hooks
@@ -38,17 +39,24 @@ const Register = ({completeFormStep, setUserId, ...props}) => {
       formState: { errors, isSubmitting },
     } = useForm();
 
+    const { Option } = Select;
+
     const { mutate, isSuccess, isLoading, isError } = useMutation(
         usePostData,
         {}
     );
+
+    const handleChange = (value) =>{
+        setGender(value)
+    }
     
     const URL = `${API_URL.auth}/register`;
     //const dispatch = useDispatch();
   
     const onSubmit = (body) => {
       try {
-        console.log(JSON.stringify(body));
+          body.gender= gender
+            console.log(body);
         if (body.password !== body.confirmPassword) {
           setError("confirmPassword", {
             type: "validate",
@@ -100,8 +108,8 @@ const Register = ({completeFormStep, setUserId, ...props}) => {
                                 <InputGroup>
                                     <Input 
                                         placeholder="First Name"
-                                        w="247px"
-                                        h="72px"
+                                        w="207px"
+                                        h="42px"
                                         border="1px"
                                         borderRadius="3px"
                                         color="#000000" 
@@ -118,13 +126,14 @@ const Register = ({completeFormStep, setUserId, ...props}) => {
                                     </FormErrorMessage>
                                 </InputGroup>
                             </GridItem>
-                            <GridItem>
+                            <GridItem ml={50}>
                             <FormLabel fontSize="18px">Last Name</FormLabel>
                                 <InputGroup>
                                     <Input 
                                         placeholder="Last Name"
-                                        w="247px"
-                                        h="72px"
+                                        w="207px"
+                                        h="42px"
+                                        
                                         border="1px"
                                         borderRadius="3px"
                                         color="#000000" 
@@ -147,8 +156,8 @@ const Register = ({completeFormStep, setUserId, ...props}) => {
                                 <InputGroup>
                                     <Input 
                                         placeholder="Email"
-                                        w="247px"
-                                        h="72px"
+                                        w="207px"
+                                        h="42px"
                                         border="1px"
                                         borderRadius="3px"
                                         color="#000000" 
@@ -166,13 +175,13 @@ const Register = ({completeFormStep, setUserId, ...props}) => {
                                     </FormErrorMessage>
                                 </InputGroup>
                             </GridItem>
-                            <GridItem>
+                            <GridItem ml={50}>
                             <FormLabel fontSize="18px">Contact Number</FormLabel>
                                 <InputGroup>
                                     <Input 
                                         placeholder="Contact Number"
-                                        w="247px"
-                                        h="72px"
+                                        w="207px"
+                                        h="42px"
                                         border="1px"
                                         borderRadius="3px"
                                         color="#000000" 
@@ -190,62 +199,37 @@ const Register = ({completeFormStep, setUserId, ...props}) => {
                                     </FormErrorMessage>
                                 </InputGroup>
                             </GridItem>
-                            <GridItem>
-                                <FormLabel fontSize="18px">Occupation</FormLabel>
-                                <Select
-                                    title="Select Occupation"
-                                    id="role"
-                                    w="247px"
-                                    h="72px"
-                                    border="1px"
-                                    borderRadius="3px"
-                                    color="#000000" 
-                                    mb="25px"
-                                    focusBorderColor="blue"
-                                    {...register("role", {
-                                        required: "This is required",
-                                    })}
-                                >
-                                    <option value="vendorOwner">Business Owner</option>
-                                    <option disabled value="vendorEmployee">
-                                        Employee (Disabled)
-                                    </option>
-                                </Select>
-                                <FormErrorMessage>
-                                    {errors.role && errors.role.message}
-                                </FormErrorMessage>
-                            </GridItem>
+                            
                             <GridItem>
                                 <FormLabel fontSize="18px">Gender</FormLabel>
                                 <Select
-                                    title="Select Gender"
+                                    placeholder="Select Gender"
                                     id="gender"
-                                    w="247px"
-                                    h="72px"
-                                    border="1px"
-                                    borderRadius="3px"
-                                    color="#000000" 
-                                    mb="25px"
-                                    focusBorderColor="blue"
-                                    {...register("gender", {
-                                        required: "This is required",
-                                    })}
+                                    style={{
+                                        width:"207px",
+                                        border:"1px",
+                                        borderRadius:"3px",
+                                        color:"#000000",
+                                        marginBottom:"25px",
+                                        focusBorderColor:"blue"
+                                    }}
+                                    onChange={handleChange}
                                 >
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
+                                    <Option value="Male">Male</Option>
+                                    <Option value="Female">Female</Option>
                                 </Select>
 
                                 <FormErrorMessage>
                                     {errors.gender && errors.gender.message}
                                 </FormErrorMessage>
                             </GridItem>
-                            <GridItem>
+                            <GridItem ml={50}>
                             <FormLabel fontSize="18px">Password</FormLabel>
                                 <InputGroup>
                                     <Input 
                                         placeholder="Password"
-                                        w="247px"
-                                        h="72px"
+                                        w="207px"
+                                        h="42px"
                                         border="1px"
                                         borderRadius="3px"
                                         color="#000000" 
@@ -269,8 +253,8 @@ const Register = ({completeFormStep, setUserId, ...props}) => {
                                 <InputGroup>
                                     <Input 
                                         placeholder="Confirm Password"
-                                        w="247px"
-                                        h="72px"
+                                        w="207px"
+                                        h="42px"
                                         border="1px"
                                         borderRadius="3px"
                                         color="#000000" 
@@ -287,6 +271,8 @@ const Register = ({completeFormStep, setUserId, ...props}) => {
                                         {errors.confirmPassword && errors.confirmPassword.message}
                                     </FormErrorMessage>
                                 </InputGroup>
+                            </GridItem>
+                            <GridItem>
                             </GridItem>
                             <GridItem  >
                                 <Checkbox defaultIsChecked py={4} >
@@ -312,13 +298,13 @@ const Register = ({completeFormStep, setUserId, ...props}) => {
                         <Button
                             borderRadius={40}
                             border="1px"
-                            mt={3}
-                            ml="100px"
+                            mt={10}
+                            ml="450px"
                             type="submit"
                             colorScheme="customBlue"
                             bg="#000000"
-                            width="202px"
-                            h="72px"
+                            width="182px"
+                            h="42px"
                             isLoading={isSubmitting}
                         >
                             <Text fontSize="20px" textAlign="center" color="#ffffff">Next</Text>

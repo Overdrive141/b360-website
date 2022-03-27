@@ -10,12 +10,12 @@ import {
   GridItem,
   Input,
   InputGroup,
-  Select,
   Text
 } from "@chakra-ui/react";
+import { Select } from 'antd';
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
-// import Map from "components/Map";
+    import Map from "components/Map";
 import ImageUpload from "components/Others/ImageUpload";
 import { API_URL } from "config/api/index";
 import Register from "components/forms/Register/NewRegister"
@@ -29,10 +29,29 @@ import {MdOutlineArrowBackIosNew} from "react-icons/md"
 const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
   const [done, setDone] = useState(false);
   const [formStep, setFormStep] = useState(0)
+  const [hasWebsite, setHasWebsite] = useState()
+  const [hasOnlineStore, setHasOnlineStore] = useState()
+  const [currentRevenue, setCurrentRevenue] = useState()
+  const [industry, setIndustry] = useState()
   const [userId, setUserId] = useState()
+  const { Option } = Select;
 
   const completeFormStep = () =>{
       setFormStep(curr => curr +1)
+  }
+
+  const onWebsite = (value) =>{
+      setHasWebsite(value)
+  }
+  const onOnlineStore = (value) =>{
+      setHasOnlineStore(value)
+  }
+
+  const onCurrentRevenue = (value) =>{
+      setCurrentRevenue(value)
+  }
+  const onIndustry = (value) =>{
+      setIndustry(value)
   }
   const goBack = () =>{
     setFormStep(curr => curr -1)
@@ -61,6 +80,10 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
 
   const onSubmit = async (body) => {
       body.userId = userId
+      body.hasWebsite = hasWebsite
+      body.hasOnlineStore = hasOnlineStore
+      body.currentRevenue = currentRevenue
+      body.industry = industry
     console.log("body----------->",body);
     try {
       mutate(
@@ -127,10 +150,10 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                                 </Text>)}
                             </FormErrorMessage>
                         </InputGroup>
-                        <Text mt="13px" color="rgba(0, 0, 0, 0.6)">Sugesstions</Text>
+                        <Text mt="13px" color="rgba(0, 0, 0, 0.6)">Suggestions</Text>
                         <Grid templateColumns='repeat(3, 1fr)' gap={3} mt="4px">
-                            <Button w="163px" h="37px" bg='#F5F8FF' borderRadius="60px" rightIcon={<AiOutlineClose />}><Text w="92px" fontSize="14px" textAlign="left">Sugesstion 1</Text></Button>
-                            <Button w="163px" h="37px" bg='#F5F8FF' borderRadius="60px" rightIcon={<AiOutlineClose />}><Text w="92px" fontSize="14px" textAlign="left">Sugesstion 1</Text></Button>
+                            <Button w="163px" h="37px" bg='#F5F8FF' borderRadius="60px" rightIcon={<AiOutlineClose />}><Text w="92px" fontSize="14px" textAlign="left">Suggestion 1</Text></Button>
+                            <Button w="163px" h="37px" bg='#F5F8FF' borderRadius="60px" rightIcon={<AiOutlineClose />}><Text w="92px" fontSize="14px" textAlign="left">Suggestion 2</Text></Button>
                         </Grid>
                         <Button
                             border="1px solid #000000"
@@ -169,12 +192,12 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                             </Box>
                             </GridItem>
                             <GridItem colSpan={2} >
-                                <FormLabel  mt={10} fontSize="16px" w="280px">Contact Number</FormLabel>
+                                <FormLabel  mt={10} fontSize="16px" w="207px">Contact Number</FormLabel>
                                 <InputGroup>
                                     <Input 
                                         placeholder="Contact Number"
-                                        w="447px"
-                                        h="72px"
+                                        w="157px"
+                                        h="42px"
                                         border="1px"
                                         borderRadius="3px"
                                         color="#000000" 
@@ -195,8 +218,8 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                                 <InputGroup>
                                     <Input 
                                         placeholder="Business Email"
-                                        w="347px"
-                                        h="72px"
+                                        w="157px"
+                                        h="42px"
                                         border="1px"
                                         borderRadius="3px"
                                         color="#000000" 
@@ -218,7 +241,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                                     <Input 
                                         placeholder="Tag Line"
                                         w="535px"
-                                        h="72px"
+                                        h="42px"
                                         border="1px"
                                         borderRadius="3px"
                                         color="#000000" 
@@ -264,9 +287,8 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                             gap={4}
                         >
                             <GridItem rowSpan={2} colSpan={2}>
-                                <FormLabel  mt={10} fontSize="16px" w="280px">Location</FormLabel>
-                                <Box d="flex" flexDir="column" w="250" mt="75px">
-                                    {/* <Map
+                                <Box d="flex" flexDir="column" w="250" mt="15px">
+                                    <Map
                                         width={250}
                                         height={250}
                                         value="businessLocation"
@@ -278,16 +300,17 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                                             setError,
                                             clearErrors,
                                         }}
-                                    /> */}
+                                    />
                                 </Box>
                             </GridItem>
                             <GridItem colSpan={4} >
-                                <FormLabel  mt={10} fontSize="16px" w="280px">City</FormLabel>
+                                <FormLabel  mt={10} ml={70} fontSize="16px" w="280px">City</FormLabel>
                                 <InputGroup>
                                     <Input 
                                         placeholder="City"
-                                        w="447px"
-                                        h="72px"
+                                        ml={70}
+                                        w="247px"
+                                        h="42px"
                                         border="1px"
                                         borderRadius="3px"
                                         color="#000000" 
@@ -300,50 +323,6 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                                     />
                                     <FormErrorMessage>
                                         {errors.city && errors.city.message}
-                                    </FormErrorMessage>
-                                </InputGroup>
-                            </GridItem>
-                            {/* <GridItem colSpan={2} >
-                                <FormLabel  mt={10} fontSize="16px" w="280px">City</FormLabel>
-                                <InputGroup>
-                                    <Input 
-                                        placeholder="City"
-                                        w="347px"
-                                        h="72px"
-                                        border="1px"
-                                        borderRadius="3px"
-                                        color="#000000" 
-                                        type="text"
-                                        {...register("businessName", {
-                                            required: "This is required",
-                                        })}
-                                        autoComplete="name"
-                                        focusBorderColor="blue"
-                                    />
-                                    <FormErrorMessage>
-                                        {errors.businessName && errors.businessName.message}
-                                    </FormErrorMessage>
-                                </InputGroup>
-                            </GridItem> */}
-                            <GridItem colSpan={4} >
-                                <FormLabel  mt={10} fontSize="16px" w="280px">Postal Code</FormLabel>
-                                <InputGroup>
-                                    <Input 
-                                        placeholder="Postal Code"
-                                        w="447px"
-                                        h="72px"
-                                        border="1px"
-                                        borderRadius="3px"
-                                        color="#000000" 
-                                        type="text"
-                                        {...register("postalCode", {
-                                            required: "This is required",
-                                        })}
-                                        autoComplete="name"
-                                        focusBorderColor="blue"
-                                    />
-                                    <FormErrorMessage>
-                                        {errors.postalCode && errors.postalCode.message}
                                     </FormErrorMessage>
                                 </InputGroup>
                             </GridItem>
@@ -371,90 +350,89 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                         <Text  color="#000000" fontSize='45px' textAlign="center" fontStyle="normal" fontWeight={4} >Tell us a little more about yourself</Text>
                     </Box>
                     <Box ml="180px" w="447px" mb={20}>
-                        <FormLabel fontSize="18px">Do you have a website?</FormLabel>
+                        <FormLabel fontSize="18px" mb="20px" mt="20px">Do you have a website?</FormLabel>
                         <Select
                             title="Please Choose One"
                             placeholder="Please choose one"
                             id="DoyouhaveAwebsite"
-                            w="447px"
-                            h="72px"
-                            border="1px"
-                            borderRadius="3px"
-                            color="#000000" 
-                            mb="25px"
-                            focusBorderColor="blue"
-                            {...register("DoyouhaveAwebsite", {
-                                required: "This is required",
-                            })}
+                            style={{
+                                width:"247px",
+                                border:"1px",
+                                borderRadius:"3px",
+                                color:"#000000",
+                                focusBorderColor:"blue"
+                            }}
+                            onChange={onWebsite}
                         >
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
+                            <Option value="Yes">Yes</Option>
+                            <Option value="No">No</Option>
                         </Select>        
                         <FormErrorMessage>
                             {errors.DoyouhaveAwebsite && errors.DoyouhaveAwebsite.message}
                         </FormErrorMessage>
-                        <FormLabel fontSize="18px">Do you have an Online digital store?</FormLabel>
+                        <FormLabel fontSize="18px" mb="20px" mt="20px">Do you have an Online digital store?</FormLabel>
                         <Select
                             title="Please choose one"
                             placeholder="Please choose one"
                             id="DoyouhaveanOnlinedigitalstore"
-                            w="447px"
-                            h="72px"
-                            border="1px"
-                            borderRadius="3px"
-                            color="#000000" 
-                            mb="25px"
-                            focusBorderColor="blue"
-                            {...register("DoyouhaveanOnlinedigitalstore", {
-                                required: "This is required",
-                            })}
+                            style={{
+                                width:"247px",
+                                border:"1px",
+                                borderRadius:"3px",
+                                color:"#000000",
+                                mb:"25px",
+                                focusBorderColor:"blue"
+                            }}
+                            onChange={onOnlineStore}
                         >
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
+                            <Option value="Yes">Yes</Option>
+                            <Option value="No">No</Option>
                         </Select>        
                         <FormErrorMessage>
                             {errors.DoyouhaveanOnlinedigitalstore && errors.DoyouhaveanOnlinedigitalstore.message}
                         </FormErrorMessage>
-                        <FormLabel fontSize="18px">What is your current revenue?</FormLabel>
+                        <FormLabel fontSize="18px" mb="20px" mt="20px">What is your current revenue?</FormLabel>
                         <Select
-                            title="Please choose one"
                             placeholder="Please choose one"
                             id="q3"
-                            w="447px"
-                            h="72px"
-                            border="1px"
-                            borderRadius="3px"
-                            color="#000000" 
-                            mb="25px"
-                            focusBorderColor="blue"
-                            {...register("WhatIsYourCurrentRevenue", {
-                                required: "This is required",
-                            })}
+                            style={{
+                                width:"247px",
+                                border:"1px",
+                                borderRadius:"3px",
+                                color:"#000000",
+                                mb:"25px",
+                                focusBorderColor:"blue"
+                            }}
+                            onChange={onCurrentRevenue}
                         >
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
+                            <Option value="Rs.50000-Rs.100000">Rs.50000-Rs.100000</Option>
+                            <Option value="Rs.100000-Rs.500000">Rs.100000-Rs.500000</Option>
+                            <Option value="Rs.500000-Rs.1000000">Rs.500000-Rs.1000000</Option>
+                            <Option value="Rs.1000000-Rs.2000000">Rs.1000000-Rs.2000000</Option>
                         </Select>        
                         <FormErrorMessage>
                             {errors.WhatIsYourCurrentRevenue && errors.WhatIsYourCurrentRevenue.message}
                         </FormErrorMessage>
-                        <FormLabel fontSize="18px">Which Industry will you be operating?</FormLabel>
+                        <FormLabel fontSize="18px" mb="20px" mt="20px">Which Industry will you be operating?</FormLabel>
                         <Select
                             title="Please choose one"
                             placeholder="Please choose one"
                             id="WhichIndustryWillYouBeOperating"
-                            w="447px"
-                            h="72px"
-                            border="1px"
-                            borderRadius="3px"
-                            color="#000000" 
-                            mb="25px"
-                            focusBorderColor="blue"
-                            {...register("WhichIndustryWillYouBeOperating", {
-                                required: "This is required",
-                            })}
+                            style={{
+                                width:"247px",
+                                border:"1px",
+                                borderRadius:"3px",
+                                color:"#000000",
+                                mb:"25px",
+                                focusBorderColor:"blue"
+                            }}
+                            
+                            onChange={onIndustry}
                         >
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
+                            <Option value="Food">Food</Option>
+                            <Option value="FMCG">FMCG</Option>
+                            <Option value="Petroleum">Petroleum</Option>
+                            <Option value="IT">IT</Option>
                         </Select>        
                         <FormErrorMessage>
                             {errors.WhichIndustryWillYouBeOperating && errors.WhichIndustryWillYouBeOperating.message}

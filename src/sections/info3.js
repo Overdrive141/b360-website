@@ -17,48 +17,7 @@ export default function Info3() {
   return (
     <Box as="section" id="products" sx={styles.section}>
       <Container sx={styles.container}>
-      <Image
-          sx={styles.bannerIcon1}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon1}
-        />
-        <Image
-          sx={styles.bannerIcon2}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon2}
-        />
-        {/* <Image
-          sx={styles.bannerIcon3}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon3}
-        /> */}
-        {/* <Image
-          sx={styles.bannerIcon4}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon4} 
-        />*/}
-        <Image
-          sx={styles.bannerIcon5}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon5}
-        />
-        <Image
-          sx={styles.bannerIcon6}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon6}
-        />
-        <Image
-          sx={styles.bannerIcon7}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon7}
-        />
+      
         <Box sx={{mt:"79px", mb:"52px",textAlign:"justify"}}>
             <Heading as="h1" sx={styles.heroTitle}>
                 AI First Platform
@@ -138,7 +97,7 @@ const styles = {
     // backgroundSize: ["100%", null, null, null, "cover"],
 
     overflow: "hidden",
-    backgroundColor: "#F9FBFD",
+    backgroundColor: "#ffffff",
     textAlign: "center",
     // pt: ["110px", null, null, null, "130px"],
     h2: {
@@ -169,18 +128,30 @@ const styles = {
   heroTitle: {
     fontSize: "70px",
     fontWeight: 400,
-    textAllign:"left",
+    textAlign:"left",
     letterSpacing: "heading",
     fontColor:"#1B1C1E",
-    "@media only screen and (min-height: 720px) and (max-height: 760px), (min-width: 1501px) and (max-width: 1560px) ":
-      {
-        fontSize: "70px",
-      },
+    "@media only screen and (max-width: 1024px) ":{
+      fontSize:"60px",
+      // letterSpacing: "0.15em",
+      // lineHeight:"105px",
+    },
+    "@media only screen and (max-width: 768px) ":{
+      fontSize:"50px",
+      // letterSpacing: "0.15em",
+      // lineHeight:"105px",
+    }
   },
   content:{
     fontSize: "36px",
     fontWeight: 400,
-    textAllign:"left",
+    textAlign:"left",
+    "@media only screen and (max-width: 1024px) ":{
+        fontSize:"30px",  
+    },
+    "@media only screen and (max-width: 768px) ":{
+      fontSize:"20px",  
+  }
   },
   bannerIcon1: {
     top: "10%",

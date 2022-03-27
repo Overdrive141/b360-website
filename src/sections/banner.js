@@ -103,13 +103,27 @@ export default function Banner() {
               Thousands of Successful businesses trust Business 360 as their
               technical partner.
             </Text>
-            <Box  sx={{mt:"86px"}}>
+            <Box  sx={{mt:"86px",
+                "@media only screen and (max-width: 1024px) ":{
+                  mt:"20px"
+                },
+                "@media only screen and (max-width: 768px) ":{
+                  mt:"15px"
+                },
+                "@media only screen and (max-width: 425px) ":{
+                  mt:"10px"
+                }
+              }}
+            >
               <Button  sx={styles.button} variant="primary" onClick={handleAddClick}>
                 <Text sx={{
                   fontSize:"22px",
                   fontWeight:400,
                   lineHeight:"49px",
-                  color:"#1B1C1E"
+                  color:"#1B1C1E",
+                    // "@media only screen and (max-width: 1024px) ":{
+                    //   fontSize:"16px"
+                    // }
                 }}>Start your free trial</Text>
               </Button>
             </Box>
@@ -124,6 +138,16 @@ export default function Banner() {
                 fontWeight:400,
                 lineHeight:"21px",
                 color:"#ffffff",
+                "@media only screen and (max-width: 1024px) ":{
+                  fontSize:"12px"
+                },
+                "@media only screen and (max-width: 768px) ":{
+                  fontSize:"10px"
+                },
+                "@media only screen and (max-width: 425px) ":{
+                  fontSize:"8px",
+                  lineHeight:"9px",
+                }
               }}>
                 Try Business 360 free for 30 days, no credit card required.
               </Text>
@@ -134,7 +158,7 @@ export default function Banner() {
 
     </Box>
 
-      <Modal title="Basic Modal" visible={isOpen} width={700} footer={null} closable={false}>
+      <Modal title="" visible={isOpen} width={700} footer={null} closable={false}>
         <NewBusinessForm />
       </Modal>
     </>
@@ -233,6 +257,10 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "center",
     minHeight: [null, null, null, null, "50vh", "100vh"],
+    "@media only screen and (max-width: 425px)":
+      {
+        display:"block"
+      },
   },
   bannerContent: {
     backgroundColor: rgba("#000", 0.93),
@@ -259,10 +287,25 @@ const styles = {
     borderWidth: 1,
     borderColor: "black",
     m: ["110px 0 0", null, null, "110px auto 0", "60px 0 0", null, 0],
-    "@media only screen and (min-height: 720px) and (max-height: 760px), (min-width: 1501px) and (max-width: 1560px) ":
+    "@media only screen and (max-width: 1024px)":
       {
-        maxWidth: 515,
+        maxWidth: 500 ,
         mt: 70,
+        mb:70,
+        padding: "30px 50px 65px",
+      },
+      "@media only screen and (max-width: 768px)":
+      {
+        maxWidth: 400 ,
+        mt: 70,
+        mb:70,
+        padding: "30px 50px 65px",
+      },
+      "@media only screen and (max-width: 425px)":
+      {
+        maxWidth: 350 ,
+        mt: 70,
+        mb:70,
         padding: "30px 50px 65px",
       },
   },
@@ -272,9 +315,18 @@ const styles = {
     lineHeight:"195px", 
     letterSpacing: "heading",
     lineHeight: [1.4, null, null, null, null, null, 1.57],
-    "@media only screen and (min-height: 720px) and (max-height: 760px), (min-width: 1501px) and (max-width: 1560px) ":
+    "@media only screen and (max-width: 1024px) ":
       {
-        fontSize: 40,
+        fontSize: "90px",
+      },
+      "@media only screen and (max-width: 768px)":
+      {
+        fontSize:"60px"
+      },
+      "@media only screen and (max-width: 425px)":
+      {
+        fontSize:"40px",
+        mt:"80px"
       },
   },
   desc: {
@@ -284,9 +336,23 @@ const styles = {
     maxWidth: 440,
     marginTop: [15, 15, 15, null, null, null, 30],
     color: rgba("#fff", 1),
-    "@media only screen and (min-height: 720px) and (max-height: 760px), (min-width: 1501px) and (max-width: 1560px) ":
+    "@media only screen and (max-width: 1024px) ":
       {
         mt: 15,
+        fontSize:"28px",
+        lineHeight: "36px",
+      },
+      "@media only screen and (max-width: 768px)":
+      {
+        mt: 15,
+        fontSize:"22px",
+        lineHeight: "26px",
+      },
+      "@media only screen and (max-width: 425px)":
+      {
+        mt: 15,
+        fontSize:"16px",
+        lineHeight: "20px",
       },
   },
   select: {
@@ -305,6 +371,24 @@ const styles = {
     ":focus": {
       outline: "0 none",
     },
+    "@media only screen and (max-width: 1024px) ":{
+      fontSize: 16,
+      fontWeight: 500,
+      marginTop: 5,
+      width: "100%",
+    },
+    "@media only screen and (max-width: 768px) ":{
+      fontSize: 13,
+      fontWeight: 500,
+      marginTop: 5,
+      width: "100%",
+    },
+    "@media only screen and (max-width: 425px) ":{
+      fontSize: 19,
+      fontWeight: 500,
+      marginTop: 5,
+      width: "100%",
+    }
   },
 
   bannerIcon1: {

@@ -28,7 +28,7 @@ export default function FAQ() {
     return (
         <Box as="section" id="faq" sx={styles.section}>
             <Container sx={styles.container}>
-                <SimpleGrid columns={2} spacing={100}>
+                <SimpleGrid columns={2} spacing={100} sx={styles.grid}>
                     <Box  mt="106px" textAlign="left">
                         <Text color="#FFFFFF" fontSize="60px" fontWeight={400} lineHeight="90px">Questions?<br/> We're here to <br/>help.</Text>
                         <Text color="#FFFFFF" fontSize="16px" fontWeight={400} opacity="0.5" lineHeight="24px" mt={20}>Our advisors are here to help you chart a course to success. They can answer <br/>all your Business360-related questions, including topics like:</Text>
@@ -147,16 +147,10 @@ export default function FAQ() {
                                 />
                             </InputGroup>
                             <Button
-                                mt={10}
-                                ml="290px"
-                                type="submit"
-                                w="191px"
-                                h="63px"
-                                bg= "#FFFFFF"
-                                border= "2px solid #FFFFFF"
-                                boxSizing="border-box"
-                                borderRadius= "30px"
-                                isLoading={isSubmitting}
+                            type="submit"
+                            isLoading={isSubmitting}
+                                sx={styles.button}
+                                
                             >
                                 Sign In 
                             </Button>
@@ -200,6 +194,27 @@ const styles = {
   box:{
     mt:"61px",
     display:"flex",
+  },
+  grid:{
+    "@media only screen and (max-width: 768px) ":{
+        display:"block"      
+    },
+    "@media only screen and (max-width: 425px) ":{
+        display:"block"      
+    }
+  },
+  button:{
+    mt:10,
+    ml:"250px",
+    width:"191px",
+    height:"63px",
+    backgroundColor: "#FFFFFF",
+    border:"2px solid #FFFFFF",
+    boxSizing:"border-box",
+    borderRadius:"30px",
+    "@media only screen and (max-width: 425px) ":{
+        ml:"150px",
+    }
   },
   number:{
     fontWeight:400,

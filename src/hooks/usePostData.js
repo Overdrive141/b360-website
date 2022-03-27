@@ -1,8 +1,9 @@
+import axios from "axios";
 import customAxios from "config/axios";
 
 export const usePostData = async ({ URL, body }) => {
   console.log(`URL , body`, URL, body);
-  const resp = await customAxios({
+  const resp = await axios({
     method: "POST",
     data: body,
     // body: JSON.stringify(body),

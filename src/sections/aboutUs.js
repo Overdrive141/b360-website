@@ -71,50 +71,38 @@ export default function UserStories() {
   }, []);
 
   return (
-    <motion.div ref={ref}>
       <Box as="section" id="products" sx={styles.section}>
         <Container sx={styles.container}>
-          <Box sx={{ display: "flex", width: "1590px", height: "1200px" }}>
+          <Box sx={styles.contentBox}>
             <Box
-              sx={{
-                width: "700px",
-                textAlign: "left",
-                mt: "45px"
-              }}
+              sx={styles.box} 
+              //mt:"45px"
             >
               <Text
-                sx={{
-                  fontSize: "48px",
-                  fontWeight: 400,
-                  lineHeight: "72px",
-                  color: "#ffffff"
-                }}
+                sx={styles.title}
               >
                 Bring your
                 <br /> Business Online
               </Text>
               <Divider
-                sx={{
-                  width: "600px",
-                  mt: "54px",
-                  border: "0.5px solid #6C6C6C"
-                }}
+                sx={styles.divider}
               />
-              <Accordion allowToggle w="600px ">
-                <MotionAccordion w={500} borderWidth="5" style={{ scale }}>
+              <Accordion allowToggle>
+                <AccordionItem  >
                   <h2>
                     <AccordionButton>
                       <Box
-                        flex="1"
-                        textAlign="left"
-                        sx={{ fontSize: "26px", color: "#ffffff" }}
+                        flex='1'
+                        sx={{color: "#ffffff"}}
                       >
-                        Distribution
+                        <Text 
+                          sx={styles.accordianTitle}
+                        >Distribution</Text>
                       </Box>
-                      <AccordionIcon color="#ffffff" ml="300px" />
+                      <AccordionIcon color="#ffffff"  mt={20} />
                     </AccordionButton>
                   </h2>
-                  <AccordionPanel pb={4} color="#ffffff">
+                  <AccordionPanel pb={4} color="#ffffff" mr="10%">
                     With many customers throughout the retail industry, we have
                     deep experience in working with companies like yours.
                     Business 360 has taken this industry expertise and bundled
@@ -126,30 +114,52 @@ export default function UserStories() {
                     businesses in consumable stages to develop a competitive
                     advantage in the marketplace
                   </AccordionPanel>
-                </MotionAccordion>
+                </AccordionItem>
 
                 <Divider
-                  sx={{
-                    width: "600px",
-                    mt: "24px",
-                    border: "0.5px solid #6C6C6C"
-                  }}
+                  sx={styles.divider}
+                />
+                <AccordionItem  >
+                  <h2>
+                    <AccordionButton>
+                      <Box
+                        flex='1'
+                        sx={{color: "#ffffff"}}
+                      >
+                        <Text 
+                          sx={styles.accordianTitle}
+                        >Freight</Text>
+                      </Box>
+                      <AccordionIcon color="#ffffff" mt={20} />
+                    </AccordionButton>
+                  </h2>
+                  <AccordionPanel pb={4} color="#ffffff" mr="10%">
+                    SubLo is a hyperlocal marketplace that is enabled by
+                    Business 360 to provides all the SaaS tools to local
+                    businesses so they can transition towards digitization in an
+                    On Demand Economy.
+                  </AccordionPanel>
+                </AccordionItem>
+
+                <Divider
+                  sx={styles.divider}
                 />
 
-                <AccordionItem>
+                <AccordionItem  >
                   <h2>
                     <AccordionButton>
                       <Box
-                        flex="1"
-                        textAlign="left"
-                        sx={{ fontSize: "26px", color: "#ffffff" }}
+                        flex='1'
+                        sx={{color: "#ffffff"}}
                       >
-                        Freight
+                        <Text 
+                          sx={styles.accordianTitle}
+                        >HVAC</Text>
                       </Box>
-                      <AccordionIcon color="#ffffff" ml="350px" />
+                      <AccordionIcon color="#ffffff"  mt={20} />
                     </AccordionButton>
                   </h2>
-                  <AccordionPanel pb={4} color="#ffffff">
+                  <AccordionPanel pb={4} color="#ffffff" mr="10%">
                     SubLo is a hyperlocal marketplace that is enabled by
                     Business 360 to provides all the SaaS tools to local
                     businesses so they can transition towards digitization in an
@@ -157,80 +167,51 @@ export default function UserStories() {
                   </AccordionPanel>
                 </AccordionItem>
                 <Divider
-                  sx={{
-                    width: "600px",
-                    mt: "24px",
-                    border: "0.5px solid #6C6C6C"
-                  }}
-                />
-                <AccordionItem>
+                  sx={styles.divider}
+                />  
+                <AccordionItem  >
                   <h2>
                     <AccordionButton>
                       <Box
-                        flex="1"
-                        textAlign="left"
-                        sx={{ fontSize: "26px", color: "#ffffff" }}
+                        flex='1'
+                        sx={{color: "#ffffff"}}
                       >
-                        HVAC
+                        <Text 
+                          sx={styles.accordianTitle}
+                        >Security</Text>
                       </Box>
-                      <AccordionIcon color="#ffffff" ml="360px" />
+                      <AccordionIcon color="#ffffff"  mt={20} />
                     </AccordionButton>
                   </h2>
-                  <AccordionPanel pb={4} color="#ffffff">
+                  <AccordionPanel pb={4} color="#ffffff" mr="10%">
                     SubLo is a hyperlocal marketplace that is enabled by
                     Business 360 to provides all the SaaS tools to local
                     businesses so they can transition towards digitization in an
                     On Demand Economy.
                   </AccordionPanel>
                 </AccordionItem>
-                <Divider
-                  sx={{
-                    width: "600px",
-                    mt: "24px",
-                    border: "0.5px solid #6C6C6C"
-                  }}
-                />
-                <AccordionItem w={500} borderWidth="5">
-                  <h2>
-                    <AccordionButton>
-                      <Box
-                        flex="1"
-                        textAlign="left"
-                        sx={{ fontSize: "26px", color: "#ffffff" }}
-                      >
-                        Security
-                      </Box>
-                      <AccordionIcon color="#ffffff" ml="330px" />
-                    </AccordionButton>
-                  </h2>
-                  <AccordionPanel pb={4} color="#ffffff">
-                    SubLo is a hyperlocal marketplace that is enabled by
-                    Business 360 to provides all the SaaS tools to local
-                    businesses so they can transition towards digitization in an
-                    On Demand Economy.
-                  </AccordionPanel>
-                </AccordionItem>
+
               </Accordion>
             </Box>
             <Box
               sx={{
-                width: "1020px",
-                height: "1079px",
-                backgroundImages: 'url("/b.jpg")'
-              }}
+                width:"1020px",
+                "@media only screen and (max-width: 1024px)" :{
+                  width:"900px",
+                },
+                "@media only screen and (max-width: 768px)" :{
+                  width:"700px",
+                }
+              }}  
             >
               <Image
                 src="/b.jpg"
-                sx={{
-                  width: "1020px",
-                  height: "1079px"
-                }}
+                sx={styles.image}
               />
             </Box>
           </Box>
         </Container>
-      </Box>
-    </motion.div>
+      </Box>  
   );
 }
 
@@ -329,7 +310,7 @@ const styles = {
   heroTitle: {
     fontSize: "70px",
     fontWeight: 400,
-    textAllign: "left",
+    textAlign: "left",
     letterSpacing: "heading",
     fontColor: "#1B1C1E",
     "@media only screen and (min-height: 720px) and (max-height: 760px), (min-width: 1501px) and (max-width: 1560px) ":
@@ -337,10 +318,93 @@ const styles = {
         fontSize: "70px"
       }
   },
+  title:{
+    fontSize:"48px",
+    fontWeight:400,
+    lineHeight:"72px",
+    fontColor: "#fffff",
+    "@media only screen and (max-width: 1024px) ":{
+      fontSize:"35px",
+      fontWeight:400,
+      lineHeight:"52px",
+    },
+    "@media only screen and (max-width: 768px) ":{
+      fontSize:"30px",
+      fontWeight:400,
+      lineHeight:"42px",
+      
+    },
+  },
+  image:{
+    height:"1080px", width:"1025px", float:"right",
+    "@media only screen and (max-width: 1024px)" :{
+      width:"550px",
+      height:"900px",
+    },
+    "@media only screen and (max-width: 768px)" :{
+      width:"500px",
+      height:"800px",
+      display:"none"
+    }
+  },
+  box:{
+    width:"700px",
+    textAlign:"left",
+    color:"#ffffff",
+    mt:"45px",
+    "@media only screen and (max-width: 1024px) ":{
+      width:"600px",
+    },
+    "@media only screen and (max-width: 768px) ":{
+      
+      width:"4000px",
+    },
+    "@media only screen and (max-width: 425px) ":{
+      width:"700px",
+    },
+  },
+  divider:{
+    width:"600px",
+    mt:"24px",
+    border: "0.5px solid #6C6C6C",
+    "@media only screen and (max-width: 1024px) ":{
+      width:"350px",
+      mt:"16px",
+    },
+    "@media only screen and (max-width: 768px) ":{
+      width:"700px",
+      mt:"14px",
+    },
+    "@media only screen and (max-width: 425px) ":{
+      width:"400px",
+      mt:"14px",
+    },
+  },
+  accordianTitle:{
+    fontSize:"26px",
+    color:"#fffff",
+    "@media only screen and (max-width: 1024px) ":{
+      fontSize:"20px "
+    },
+    "@media only screen and (max-width: 768px) ":{
+      
+      fontSize:"18px ",
+      ml:"50px"
+    },
+  },
+  contentBox:{
+    display:"flex",width:"1590px",height:"1200px",
+    "@media only screen and (max-width: 1024px) ":{
+      width:"1000px",height:"1000px"
+    },
+    "@media only screen and (max-width: 768px) ":{
+      width:"400px",height:"900px"
+    }
+  },
   content: {
     fontSize: "36px",
     fontWeight: 400,
-    textAllign: "left"
+    textAlign: "left"
   },
   bannerIcon1: {
     top: "10%",

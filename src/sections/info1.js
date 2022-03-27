@@ -21,48 +21,6 @@ export default function Info1() {
   return (
     <Box as="section" id="products" sx={styles.section}>
       <Container sx={styles.container}>
-      <Image
-          sx={styles.bannerIcon1}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon1}
-        />
-        <Image
-          sx={styles.bannerIcon2}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon2}
-        />
-        {/* <Image
-          sx={styles.bannerIcon3}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon3}
-        /> */}
-        {/* <Image
-          sx={styles.bannerIcon4}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon4} 
-        />*/}
-        <Image
-          sx={styles.bannerIcon5}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon5}
-        />
-        <Image
-          sx={styles.bannerIcon6}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon6}
-        />
-        <Image
-          sx={styles.bannerIcon7}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon7}
-        />
         <Box sx={{mt:"359px", mb:"352px"}}>
             <Heading as="h1" sx={styles.heroTitle}>
               All the tools your Business Needs
@@ -137,7 +95,7 @@ const styles = {
     // backgroundSize: ["100%", null, null, null, "cover"],
 
     overflow: "hidden",
-    backgroundColor: "#F9FBFD",
+    backgroundColor: "#ffffff",
     textAlign: "center",
     // pt: ["110px", null, null, null, "130px"],
     h2: {
@@ -168,7 +126,7 @@ const styles = {
   heroTitle: {
     fontSize: "70px",
     fontWeight: 400,
-    textAllign:"center",
+    textAlign:"center",
     letterSpacing: "heading",
     fontColor:"#1B1C1E",
     lineHeight: [1.4, null, null, null, null, null, 1.57],

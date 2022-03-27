@@ -24,107 +24,73 @@ export default function UserStories() {
   return (
     <Box as="section" id="userStories" sx={styles.section}>
       <Container sx={styles.container}>
-      <Image
-          sx={styles.bannerIcon1}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon1}
-        />
-        <Image
-          sx={styles.bannerIcon2}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon2}
-        />
-        <Image
-          sx={styles.bannerIcon5}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon5}
-        />
-        <Image
-          sx={styles.bannerIcon6}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon6}
-        />
-        <Image
-          sx={styles.bannerIcon7}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon7}
-        />
-        <Box sx={{display:"flex",width:"1590px",height:"1200px"}}>
-            <Box sx={{
-                width:"700px",
-                textAlign:"left"
-            }}>
-                <Text sx={{
-                    fontSize:"48px",
-                    fontWeight:400,
-                    lineHeight:"72px",
-                    color: "#1B1C1E"
-                }}>Success Stories</Text>
-                <Divider sx={{
-                    width:"600px",
-                    mt:"24px",
-                    border: "0.5px solid #6C6C6C"
-                }} />
-                <Accordion allowToggle w="600px ">
-                    <AccordionItem w={500} borderWidth="5">
+      
+        <Box sx={styles.contentBox}>
+            <Box sx={styles.box} >
+                <Text sx={styles.title}>Success Stories</Text>
+                <Divider sx={styles.divider} />
+                <Accordion allowToggle  >
+                    <AccordionItem  >
                         <h2>
                         <AccordionButton>
-                            <Box flex='1' textAlign='left' sx={{fontSize:"26px"}}>
-                                Pure Water Delivery (water company)
+                            <Box flex='1' sx={{              
+                            "@media only screen and (max-width: 768px)":
+                            {
+                              width:"100%",
+                            }}}>
+                              <Text 
+                                  sx={styles.accordianTitle}
+                                >Pure Water Delivery (water company)</Text>
+                                
                             </Box>
                             <AccordionIcon flex="right" />
                         </AccordionButton>
                         </h2>
-                        <AccordionPanel pb={4}>
-                        <b>Problem:</b> Pure Water Company is a hyperlocal Mineral water delivery company that operates in Islamabad and Rawalpindi, their primary clientele consists of residential and commercial consumers. Managers at Pure Water Company were looking for more transparency and efficiency in both internal and field operations alongside a digital touchpoint for generating online orders.<br /><br />
-                        <b>Solution:</b> Business 360 provided pure water company with a customized solution that consisted of a Web-Application for online order generation. Once an order is generated, its notification with delivery information lands in the vendor portal for approval. Web App implementation showed a 35% increase in the company's total new orders. Both online and offline orders are listed in order management giving managers full visibility. <br /><br />
-                        Once an order is accepted by the vendor, inventory is automatically adjusted and the order is allocated to the allotted employee. Moreover, Business 360 allowed Pure Water to evaluate a pool of orders, and determine the optimal transportation mode, route, and carrier to minimize expenses within the required customer service level constraints.<br /><br />
-                        Field Service Management then allows the managers to allow the order to the listed employee which can then be managed and live tracked through the vendor portal until its delivery.
+                        <AccordionPanel pb={4}  >
+                          <Text
+                            sx={styles.contentAccordian}
+                          >
+                            <b>Problem:</b> Pure Water Company is a hyperlocal Mineral water delivery company that operates in Islamabad and Rawalpindi, their primary clientele consists of residential and commercial consumers. Managers at Pure Water Company were looking for more transparency and efficiency in both internal and field operations alongside a digital touchpoint for generating online orders.<br /><br />
+                            <b>Solution:</b> Business 360 provided pure water company with a customized solution that consisted of a Web-Application for online order generation. Once an order is generated, its notification with delivery information lands in the vendor portal for approval. Web App implementation showed a 35% increase in the company's total new orders. Both online and offline orders are listed in order management giving managers full visibility. <br /><br />
+                            Once an order is accepted by the vendor, inventory is automatically adjusted and the order is allocated to the allotted employee. Moreover, Business 360 allowed Pure Water to evaluate a pool of orders, and determine the optimal transportation mode, route, and carrier to minimize expenses within the required customer service level constraints.<br /><br />
+                            Field Service Management then allows the managers to allow the order to the listed employee which can then be managed and live tracked through the vendor portal until its delivery.
+                          </Text>
                         </AccordionPanel>
                     </AccordionItem>
 
-                    <Divider sx={{
-                        width:"600px",
-                        mt:"24px",
-                        border: "0.5px solid #6C6C6C"
-                    }} />
+                    <Divider sx={styles.divider} />
 
                     <AccordionItem>
                         <h2>
-                        <AccordionButton>
-                            <Box flex='1' textAlign='left' sx={{fontSize:"26px"}}>
-                                Safe Home Solutions (HVAC)
+                        <AccordionButton textAlign="left">
+                            <Box flex='1' sx={{textAlign:  "left"}}>
+                                <Text 
+                                  sx={styles.accordianTitle}
+                                >Safe Home Solutions (HVAC)</Text>
                             </Box>
-                            <AccordionIcon />
+                            <AccordionIcon mt={20} />
                         </AccordionButton>
                         </h2>
-                        <AccordionPanel pb={4}>
+                        <AccordionPanel pb={4} mr="10%">
                         <b>Problem:</b> Managing field service-based industries such as HVAC is very difficult. Most of the companies are switching to these cloud-based ERPs to get the solutions to all problems in one place. Managers at Safe Home Solutions were also finding it difficult to track their orders and employees operating in the field, they were looking for a more remote and transparent solution that provides them with full visibility of their business operations both infield and internally. They were also looking to increase their orders as currently, they were only getting offline orders.<br /><br />
                         <b>Solution:</b> Business 360 Field Workforce Management solved all operational difficulties by providing end-to-end digitization from order generation to order management and finally order delivery. Managers could exactly track all their assets in the field including employees, vehicles, equipment, etc. This helped them to decrease any time wastage in service provision and increase efficiency by 46%. <br /><br />
                         In order to increase the online orders, a user-friendly Web Application was generated for Safe Home Solutions that allowed customers to order from anywhere anytime, resulting in 67% increase in total orders. 
 
                         </AccordionPanel>
                     </AccordionItem>
-                    <Divider sx={{
-                        width:"600px",
-                        mt:"24px",
-                        border: "0.5px solid #6C6C6C"
-                    }} />
+                    <Divider sx={styles.divider} />
                     <AccordionItem>
                         <h2>
                         <AccordionButton>
-                            <Box flex='1' textAlign='left' sx={{fontSize:"26px"}}>
-                                Velocity Movers and Packers (Freight)
+                            <Box flex='1' textAlign='left'>
+                              <Text 
+                                  sx={styles.accordianTitle}
+                                >Velocity Movers and Packers (Freight)</Text>
                             </Box>
-                            <AccordionIcon />
+                            <AccordionIcon mt={20} />
                         </AccordionButton>
                         </h2>
-                        <AccordionPanel pb={4}>
+                        <AccordionPanel pb={4} mr="10%">
                             <b>Problem:</b>Velocity Movers and Packers were using an ERP system but it required the managers to input data manually in every step of the process, moreover; their system wasn't logging the data entries hence they couldn't see any insights about the business. Managers at the company also wanted efficiency and decreased inventory cycle. <br /><br />
                             <b>Solution:</b> With Business 360, Velocity Movers and Packers managed inventories on a personalized dashboard, letting them view orders, sales, and deliveries from one centralized location. This allows for better decision-making: managers could make predictions about future orders based on previous sales trends. B360 also expedites distribution times. Research shows Business 360 speeds up order-to-shipment times for distributors by 23%.<br /><br />
                             Business 360 comes with real-time data analytics that provides companies with valuable business intelligence. Managers use these programs to identify out-of-stock inventory, handle inbound orders from suppliers, and execute outbound orders for customers. This can be accomplished on a desktop or a smartphone. <br /><br />
@@ -134,9 +100,13 @@ export default function UserStories() {
                 </Accordion>
             </Box>
             <Box sx={{
-                width:"1020px"
+                width:"1020px",
+                "@media only screen and (max-width: 1024px)" :{
+                  width:"900px",
+                }
             }} >
-                <Image src="/userStories.png" sx={{height:"1080px", width:"1025px", float:"right"}} />
+                <Image src="/userStories.png" 
+                  sx={styles.image} />
             </Box>
         </Box>
       </Container>
@@ -208,7 +178,7 @@ const styles = {
     // backgroundSize: ["100%", null, null, null, "cover"],
 
     overflow: "hidden",
-    backgroundColor: "#F9FBFD",
+    backgroundColor: "#fffff",
     textAlign: "center",
     // pt: ["110px", null, null, null, "130px"],
     h2: {
@@ -239,7 +209,7 @@ const styles = {
   heroTitle: {
     fontSize: "70px",
     fontWeight: 400,
-    textAllign:"left",
+    textAlign:"left",
     letterSpacing: "heading",
     fontColor:"#1B1C1E",
     "@media only screen and (min-height: 720px) and (max-height: 760px), (min-width: 1501px) and (max-width: 1560px) ":
@@ -247,10 +217,93 @@ const styles = {
         fontSize: "70px",
       },
   },
+  title:{
+    fontSize:"48px",
+    fontWeight:400,
+    lineHeight:"72px",
+    color: "#1B1C1E",
+    "@media only screen and (max-width: 1024px) ":{
+      fontSize:"35px",
+      fontWeight:400,
+      lineHeight:"52px",
+    },
+    "@media only screen and (max-width: 768px) ":{
+      fontSize:"30px",
+      fontWeight:400,
+      lineHeight:"52px",
+    }
+  },
+  image:{
+    height:"1080px", width:"1025px", float:"right",
+    "@media only screen and (max-width: 1024px)" :{
+      width:"700px",
+      height:"900px",
+    },
+    "@media only screen and (max-width: 768px)" :{
+      display:"none"
+    }
+  },
+  box:{
+    width:"700px",
+    textAlign:"left",
+    "@media only screen and (max-width: 1024px) ":{
+      width:"600px",
+    },
+    "@media only screen and (max-width: 768px) ":{
+      width:"4000px",
+    },
+    "@media only screen and (max-width: 425px) ":{
+      width:"700px",
+    },
+  },
+  contentAccordian:{
+    "@media only screen and (max-width: 768px) ":{
+      width:"550px",
+      fontSize:"12px",
+      mt:"12px",
+      textAlign:"center",
+      alignSelf:"center"
+
+    },
+    
+
+  },
+  divider:{
+    width:"600px",
+    mt:"24px",
+    border: "0.5px solid #6C6C6C",
+    "@media only screen and (max-width: 1024px) ":{
+      width:"350px",
+      mt:"16px",
+    },
+    "@media only screen and (max-width: 768px) ":{
+      width:"700px",
+      mt:"16px",
+    },
+  },
+  accordianTitle:{
+    fontSize:"26px",
+    "@media only screen and (max-width: 1024px) ":{
+      fontSize:"20px ",
+    },
+    "@media only screen and (max-width: 768px) ":{
+      fontSize:"15px ",
+      ml:"35px"
+    }
+  },
+  contentBox:{
+    display:"flex",width:"1590px",height:"1200px",
+    "@media only screen and (max-width: 1024px) ":{
+      width:"1000px",height:"1200px"
+    },
+    "@media only screen and (max-width: 768px) ":{
+      width:"700px",height:"1400px",  
+    }
+  },
   content:{
     fontSize: "36px",
     fontWeight: 400,
-    textAllign:"left",
+    textAlign:"left",
   },
   bannerIcon1: {
     top: "10%",

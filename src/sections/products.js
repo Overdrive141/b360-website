@@ -21,100 +21,19 @@ export default function Products() {
   return (
     <Box as="section" id="products" sx={styles.section}>
       <Container sx={styles.container}>
-      <Image
-          sx={styles.bannerIcon1}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon1}
-        />
-        <Image
-          sx={styles.bannerIcon2}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon2}
-        />
-        {/* <Image
-          sx={styles.bannerIcon3}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon3}
-        /> */}
-        {/* <Image
-          sx={styles.bannerIcon4}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon4} 
-        />*/}
-        <Image
-          sx={styles.bannerIcon5}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon5}
-        />
-        <Image
-          sx={styles.bannerIcon6}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon6}
-        />
-        <Image
-          sx={styles.bannerIcon7}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon7}
-        />
         <Box sx={styles.productInfo}>
           <Box
-            sx={{
-              padding: [
-                "20px",
-                "30px",
-                null,
-                null,
-                null,
-                "30px 50px 60px",
-                "50px 60px 90px",
-              ],
-              maxWidth:"480px",
-              maxHeight:"370px",
-            }}
+            sx={styles.imageBox}
           >
-            <Image src="/FSMM.png" sx={{
-              maxWidth:"480px",
-              maxHeight:"370px",
-              border: "1px solid #1B1C1E",
-              boxSizing: "border-box",
-              borderRadius: "3px",
-              clipPath: "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
-            }} />
+            <Image src="/FSMM.png" sx={styles.image} />
           </Box>
           <Box
-            sx={{
-              padding: [
-                "20px",
-                "30px",
-                null,
-                null,
-                null,
-                "30px 50px 60px",
-                "50px 60px 90px",
-              ],
-              maxWidth:"62px",
-              maxHeight:"171px",
-              ml:"104px",
-              mr:"19px",
-            }}
+            sx={styles.numberBox}
           >
             <Text sx={styles.number}>1</Text>
           </Box>
           <Box
-            sx={{
-              padding: [
-                "30px 50px 60px",
-                "50px 1px 90px",
-              ],
-              mt:"10px",
-            }}
+            sx={styles.contentBox}
           >
             <Text sx={styles.productTitle}>Field Service Management</Text>
             <Box>
@@ -140,57 +59,17 @@ export default function Products() {
         </Box>
         <Box sx={styles.productInfo}>
           <Box
-            sx={{
-              padding: [
-                "20px",
-                "30px",
-                null,
-                null,
-                null,
-                "30px 50px 60px",
-                "50px 60px 90px",
-              ],
-              maxWidth:"480px",
-              maxHeight:"370px",
-            }}
+            sx={styles.imageBox}
           >
-            <Image src="/Inventory.png" sx={{
-              maxWidth:"480px",
-              maxHeight:"370px",
-              border: "1px solid #1B1C1E",
-              boxSizing: "border-box",
-              borderRadius: "3px",
-              clipPath: "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
-              //transform: "matrix(1, 0, 0, -1, 0, 0)",
-            }} />
+            <Image src="/Inventory.png" sx={styles.imageBox} />
           </Box>
           <Box
-            sx={{
-              padding: [
-                "20px",
-                "30px",
-                null,
-                null,
-                null,
-                "30px 50px 60px",
-                "50px 60px 90px",
-              ],
-              maxWidth:"62px",
-              maxHeight:"171px",
-              ml:"104px",
-              mr:"19px",
-            }}
+            sx={styles.numberBox}
           >
             <Text sx={styles.number}>2</Text>
           </Box>
           <Box
-            sx={{
-              padding: [
-                "30px 50px 60px",
-                "50px 1px 90px",
-              ],
-              mt:"10px",
-            }}
+            sx={styles.contentBox}
           >
             <Text sx={styles.productTitle}>Inventory Management</Text>
             <Box>
@@ -219,56 +98,17 @@ export default function Products() {
         </Box>
         <Box sx={styles.productInfo}>
           <Box
-            sx={{
-              padding: [
-                "20px",
-                "30px",
-                null,
-                null,
-                null,
-                "30px 50px 60px",
-                "50px 60px 90px",
-              ],
-              maxWidth:"480px",
-              maxHeight:"370px",
-            }}
+            sx={styles.imageBox}
           >
-            <Image src="/Employee.png" sx={{
-              maxWidth:"480px",
-              maxHeight:"370px",
-              border: "1px solid #1B1C1E",
-              boxSizing: "border-box",
-              borderRadius: "3px",
-              clipPath: "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
-            }} />
+            <Image src="/Employee.png" sx={styles.imageBox} />
           </Box>
           <Box
-            sx={{
-              padding: [
-                "20px",
-                "30px",
-                null,
-                null,
-                null,
-                "30px 50px 60px",
-                "50px 60px 90px",
-              ],
-              maxWidth:"62px",
-              maxHeight:"171px",
-              ml:"104px",
-              mr:"19px",
-            }}
+            sx={styles.numberBox}
           >
             <Text sx={styles.number}>3</Text>
           </Box>
           <Box
-            sx={{
-              padding: [
-                "30px 50px 60px",
-                "50px 1px 90px",
-              ],
-              mt:"10px",
-            }}
+            sx={styles.contentBox}
           >
             <Text sx={styles.productTitle}>Employee Management</Text>
             <Box>
@@ -291,57 +131,17 @@ export default function Products() {
         </Box>
         <Box sx={styles.productInfo}>
           <Box
-            sx={{
-              padding: [
-                "20px",
-                "30px",
-                null,
-                null,
-                null,
-                "30px 50px 60px",
-                "50px 60px 90px",
-              ],
-              maxWidth:"480px",
-              maxHeight:"370px",
-            }}
+            sx={styles.imageBox}
           >
-            <Image src="/Equipment.png" sx={{
-              maxWidth:"480px",
-              maxHeight:"370px",
-              border: "1px solid #1B1C1E",
-              boxSizing: "border-box",
-              borderRadius: "3px",
-              clipPath: "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
-              //transform: "matrix(1, 0, 0, -1, 0, 0)",
-            }} />
+            <Image src="/Equipment.png" sx={styles.imageBox} />
           </Box>
           <Box
-            sx={{
-              padding: [
-                "20px",
-                "30px",
-                null,
-                null,
-                null,
-                "30px 50px 60px",
-                "50px 60px 90px",
-              ],
-              maxWidth:"62px",
-              maxHeight:"171px",
-              ml:"104px",
-              mr:"19px",
-            }}
+            sx={styles.numberBox}
           >
             <Text sx={styles.number}>4</Text>
           </Box>
           <Box
-            sx={{
-              padding: [
-                "30px 50px 60px",
-                "50px 1px 90px",
-              ],
-              mt:"10px",
-            }}
+            sx={styles.contentBox}
           >
             <Text sx={styles.productTitle}>Equipment  Management</Text>
             <Box>
@@ -367,56 +167,17 @@ export default function Products() {
         </Box>
         <Box sx={styles.productInfo}>
           <Box
-            sx={{
-              padding: [
-                "20px",
-                "30px",
-                null,
-                null,
-                null,
-                "30px 50px 60px",
-                "50px 60px 90px",
-              ],
-              maxWidth:"480px",
-              maxHeight:"370px",
-            }}
+            sx={styles.imageBox}
           >
-            <Image src="/Procurement.png" sx={{
-              maxWidth:"480px",
-              maxHeight:"370px",
-              border: "1px solid #1B1C1E",
-              boxSizing: "border-box",
-              borderRadius: "3px",
-              clipPath: "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
-            }} />
+            <Image src="/Procurement.png" sx={styles.imageBox} />
           </Box>
           <Box
-            sx={{
-              padding: [
-                "20px",
-                "30px",
-                null,
-                null,
-                null,
-                "30px 50px 60px",
-                "50px 60px 90px",
-              ],
-              maxWidth:"62px",
-              maxHeight:"171px",
-              ml:"104px",
-              mr:"19px",
-            }}
+            sx={styles.numberBox}
           >
             <Text sx={styles.number}>5</Text>
           </Box>
           <Box
-            sx={{
-              padding: [
-                "30px 50px 60px",
-                "50px 1px 90px",
-              ],
-              mt:"10px",
-            }}
+            sx={styles.contentBox}
           >
             <Text sx={styles.productTitle}>Procurement Management</Text>
             <Box>
@@ -445,57 +206,17 @@ export default function Products() {
         </Box>
         <Box sx={styles.productInfo}>
           <Box
-            sx={{
-              padding: [
-                "20px",
-                "30px",
-                null,
-                null,
-                null,
-                "30px 50px 60px",
-                "50px 60px 90px",
-              ],
-              maxWidth:"480px",
-              maxHeight:"370px",
-            }}
+            sx={styles.imageBox}
           >
-            <Image src="/Order.png" sx={{
-              maxWidth:"480px",
-              maxHeight:"370px",
-              border: "1px solid #1B1C1E",
-              boxSizing: "border-box",
-              borderRadius: "3px",
-              clipPath: "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
-              //transform: "matrix(1, 0, 0, -1, 0, 0)",
-            }} />
+            <Image src="/Order.png" sx={styles.imageBox} />
           </Box>
           <Box
-            sx={{
-              padding: [
-                "20px",
-                "30px",
-                null,
-                null,
-                null,
-                "30px 50px 60px",
-                "50px 60px 90px",
-              ],
-              maxWidth:"62px",
-              maxHeight:"171px",
-              ml:"104px",
-              mr:"19px",
-            }}
+            sx={styles.numberBox}
           >
             <Text sx={styles.number}>6</Text>
           </Box>
           <Box
-            sx={{
-              padding: [
-                "30px 50px 60px",
-                "50px 1px 90px",
-              ],
-              mt:"10px",
-            }}
+            sx={styles.contentBox}
           >
             <Text sx={styles.productTitle}>Order Management</Text>
             <Box>
@@ -524,56 +245,17 @@ export default function Products() {
         </Box>
         <Box sx={styles.productInfo}>
           <Box
-            sx={{
-              padding: [
-                "20px",
-                "30px",
-                null,
-                null,
-                null,
-                "30px 50px 60px",
-                "50px 60px 90px",
-              ],
-              maxWidth:"480px",
-              maxHeight:"370px",
-            }}
+            sx={styles.imageBox}
           >
-            <Image src="/AccessControl.png" sx={{
-              maxWidth:"480px",
-              maxHeight:"370px",
-              border: "1px solid #1B1C1E",
-              boxSizing: "border-box",
-              borderRadius: "3px",
-              clipPath: "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)"
-            }} />
+            <Image src="/AccessControl.png" sx={styles.imageBox} />
           </Box>
           <Box
-            sx={{
-              padding: [
-                "20px",
-                "30px",
-                null,
-                null,
-                null,
-                "30px 50px 60px",
-                "50px 60px 90px",
-              ],
-              maxWidth:"62px",
-              maxHeight:"171px",
-              ml:"104px",
-              mr:"19px",
-            }}
+            sx={styles.numberBox}
           >
             <Text sx={styles.number}>7</Text>
           </Box>
           <Box
-             sx={{
-              padding: [
-                "30px 50px 60px",
-                "50px 1px 90px",
-              ],
-              mt:"10px",
-            }}
+             sx={styles.contentBox}
           >
             <Text sx={styles.productTitle}>Access Control</Text>
             <Box>
@@ -660,7 +342,7 @@ const styles = {
     // backgroundSize: ["100%", null, null, null, "cover"],
 
     overflow: "hidden",
-    backgroundColor: "#F9FBFD",
+    backgroundColor: "#fffff",
     textAlign: "center",
     // pt: ["110px", null, null, null, "130px"],
     h2: {
@@ -687,11 +369,13 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "center",
     minHeight: [null, null, null, null, "50vh", "100vh"],
+    
+    
   },
   heroTitle: {
     fontSize: "70px",
     fontWeight: 400,
-    textAllign:"center",
+    textAlign:"center",
     letterSpacing: "heading",
     fontColor:"#1B1C1E",
     lineHeight: [1.4, null, null, null, null, null, 1.57],
@@ -703,7 +387,13 @@ const styles = {
   productInfo:{
     mt:"101px",
     mb: "73px",
-    display:"flex", 
+  
+    display:"flex",
+    "@media only screen and (max-width: 425px) ":{
+      width:"100%",
+      display:"block"
+    },
+
   },
   number:{
     fontStyle: "normal",
@@ -711,6 +401,18 @@ const styles = {
     fontSize: "40px",
     lineHeight: "75px",
     color: "#1B1C1E",
+    "@media only screen and (max-width: 1024px) ":{
+      fontSize: "30px",
+      lineHeight: "55px",
+    },
+    "@media only screen and (max-width: 768px) ":{
+      fontSize: "25px",
+      lineHeight: "35px",
+    },
+    "@media only screen and (max-width: 425px) ":{
+      fontSize: "25px",
+      lineHeight:"25px"
+    },
   },
 
   productTitle:{
@@ -721,6 +423,15 @@ const styles = {
     fontSize: "35px",
     textAlign:"left",
     color: "#1B1C1E",
+    "@media only screen and (max-width: 1024px) ":{
+      fontSize: "25px",
+    },
+    "@media only screen and (max-width: 768px) ":{
+      fontSize: "20px",
+    },
+    "@media only screen and (max-width: 425px) ":{
+      fontSize: "20px",
+    },
   },
   list:{
     textAlign:"left",
@@ -728,7 +439,118 @@ const styles = {
     color: "#1B1C1E",
     fontSize:"26px",
     lineHeight:"39px",
-    ml:"60px"
+    ml:"60px",
+    "@media only screen and (max-width: 1024px) ":{
+      fontSize: "20px",
+      ml:"40px",
+      lineHeight:"33px",
+    },
+    "@media only screen and (max-width: 768px) ":{
+      fontSize: "15px",
+      ml:"30px",
+      lineHeight:"23px",
+    },
+    "@media only screen and (max-width: 425px) ":{
+      fontSize: "13px",
+      ml:"40px",
+      lineHeight:"20px",
+    }
+  },
+  imageBox:{
+    padding: [
+      "20px",
+      "30px",
+      null,
+      null,
+      null,
+      "30px 50px 60px",
+      "50px 60px 90px",
+    ],
+    maxWidth:"480px",
+    maxHeight:"370px",
+    "@media only screen and (max-width: 1024px) ":{
+      maxWidth:"380px",
+      maxHeight:"270px",
+    },
+    "@media only screen and (max-width: 768px) ":{
+      maxWidth:"280px",
+      maxHeight:"170px",
+    },
+    "@media only screen and (max-width: 425px) ":{
+      maxWidth:"0px",
+      maxHeight:"70px",
+      border:"3px orange solid",
+      display:"none"
+    }
+  },
+  image:{
+    maxWidth:"480px",
+    maxHeight:"370px",
+    border: "1px solid #1B1C1E",
+    boxSizing: "border-box",
+    borderRadius: "3px",
+    clipPath: "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
+    "@media only screen and (max-width: 1024px) ":{
+      mt:"40px",
+      maxWidth:"380px",
+      maxHeight:"270px",
+    },
+    "@media only screen and (max-width: 768px) ":{
+      mt:"40px",
+      maxWidth:"280px",
+      maxHeight:"170px",
+    },
+    "@media only screen and (max-width: 425px) ":{
+      maxWidth:"180px",
+      maxHeight:"70px",
+      //display:"none"
+    }
+  },
+  numberBox:{
+    padding: [
+      "20px",
+      "30px",
+      null,
+      null,
+      null,
+      "30px 50px 60px",
+      "50px 60px 90px",
+    ],
+    maxWidth:"62px",
+    maxHeight:"171px",
+    ml:"104px",
+    mr:"19px",
+    "@media only screen and (max-width: 1024px) ":{
+      mt:"30px",
+    },
+    "@media only screen and (max-width: 768px) ":{
+      mt:"35px",
+    },
+    "@media only screen and (max-width: 425px) ":{
+      mt:"35px",
+      mr:"20px",
+      width:"500px",
+    }
+  },
+  contentBox:{
+    padding: [
+      "30px 50px 60px",
+      "50px 1px 90px",
+    ],
+    mt:"10px",
+    
+    "@media only screen and (max-width: 1024px) ":{
+      mt:"15px",
+      textAlign:"left "
+    },
+    "@media only screen and (max-width: 768px) ":{
+      mt:"15px",
+      textAlign:"left "
+    },
+    "@media only screen and (max-width: 425px) ":{
+      mr:"15px",
+      textAlign:"left "
+    },
   },
   bannerIcon1: {
     top: "10%",

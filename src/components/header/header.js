@@ -140,6 +140,9 @@ const styles = {
     display: ["flex"],
     listStyle: "none",
     marginLeft: "auto",
+    "@media only screen and (max-width: 425px) ":{
+      display:"block"
+    },
     p: 0,
     ".nav-item": {
       cursor: "pointer",

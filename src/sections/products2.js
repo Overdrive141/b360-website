@@ -13,7 +13,7 @@ export default function Products2() {
                 <Box>
                     <Text sx={styles.number}>01</Text>
                 </Box>
-                <Box sx={{mt:"73px",}}>
+                <Box sx={styles.titleBox}>
                     <Text sx={styles.title}>Delta Insights</Text>
                     <Box>
                         <ul>
@@ -34,7 +34,7 @@ export default function Products2() {
                 <Box>
                     <Text sx={styles.number}>02</Text>
                 </Box>
-                <Box sx={{mt:"73px", textAlign:"left"}}>
+                <Box sx={styles.titleBox}>
                     <Text sx={styles.title}>Chatbot Builder</Text>
                     <Box>
                         <ul>
@@ -55,7 +55,7 @@ export default function Products2() {
                 <Box>
                     <Text sx={styles.number}>03</Text>
                 </Box>
-                <Box sx={{mt:"73px", textAlign:"left"}}>
+                <Box sx={styles.titleBox}>
                     <Text sx={styles.title}>Odyssey</Text>
                     <Box>
                         <ul>
@@ -76,7 +76,7 @@ export default function Products2() {
                 <Box>
                     <Text sx={styles.number}>04</Text>
                 </Box>
-                <Box sx={{mt:"73px", textAlign:"left",}}>
+                <Box sx={styles.titleBox}>
                     <Text sx={styles.title}>Centrum</Text>
                     <Box>
                         <ul>
@@ -97,7 +97,7 @@ export default function Products2() {
                 <Box>
                     <Text sx={styles.number}>05</Text>
                 </Box>
-                <Box sx={{mt:"73px",textAlign:"left"}}>
+                <Box sx={styles.titleBox}>
                     <Text sx={styles.title}>Omni Channel</Text>
                     <Box>
                         <ul>
@@ -148,14 +148,52 @@ const styles = {
   },
   box:{
     mt:"61px",
+    mb:"40px",
     display:"flex",
+    "@media only screen and (max-width: 768px) ":{
+        mt:"41px",
+        mb:"40px"
+    },
+    "@media only screen and (max-width: 425px) ":{
+        mt:"21px",
+        mb:"20px",
+        width:"500px"
+    }
+  },
+  titleBox:{
+    mt:"73px", textAlign:"left",
+    "@media only screen and (max-width: 768px) ":{
+        mt:"41px",
+    },
+    "@media only screen and (max-width: 425px) ":{
+        mt:"1px",
+        //mb:"20px"
+    }
+
   },
   number:{
     fontWeight:400,
     fontSize:"250px",
     letterSpacing: "0.15em",
     lineHeight:"375px",
-    color:"#ffffff"
+    color:"#ffffff",
+    "@media only screen and (max-width: 1024px) ":{
+        fontSize:"150px",
+        letterSpacing: "0.10em",
+        lineHeight:"275px",
+    },
+    "@media only screen and (max-width: 768px) ":{
+        fontSize:"100px",
+        letterSpacing: "0.10em",
+        lineHeight:"175px",
+        mt:"20px"
+    },
+    "@media only screen and (max-width: 425px) ":{
+        fontSize:"40px",
+        letterSpacing: "10px",
+        lineHeight:"45px",
+        
+    }
   },
   title:{
     ml:"205px",
@@ -163,7 +201,22 @@ const styles = {
     fontSize:"50px",
     letterSpacing: "0.15em",
     lineHeight:"105px",
-    color:"#ffffff"
+    color:"#ffffff",
+    "@media only screen and (max-width: 1024px) ":{
+        fontSize:"40px",
+        letterSpacing: "0.15em",
+        lineHeight:"105px",
+    },
+    "@media only screen and (max-width: 768px) ":{
+        fontSize:"30px",
+        letterSpacing: "0.15em",
+        lineHeight:"85px",
+    },
+    "@media only screen and (max-width: 425px) ":{
+        fontSize:"15px",
+        letterSpacing: "0.01em",
+        lineHeight:"55px",ml:"105px",
+    },
   },
   list:{
     ml:"265px",
@@ -172,5 +225,19 @@ const styles = {
     color: "#ffffff",
     fontSize:"26px",
     lineHeight:"39px",
+    "@media only screen and (max-width: 1024px) ":{
+        fontSize:"18px",
+        lineHeight:"29px",
+    },
+    "@media only screen and (max-width: 768px) ":{
+        fontSize:"15px",
+        lineHeight:"25px",
+    },
+    "@media only screen and (max-width: 425px) ":{
+        fontSize:"12px",
+        lineHeight:"15px",
+        ml:"130px",
+    },
+    
   },  
 };

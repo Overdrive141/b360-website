@@ -114,6 +114,11 @@ const styles = {
       marginTop: 1,
       display: "inline-flex",
     },
+    "@media only screen and (max-width: 1024px) ":{
+      span: {
+        fontSize: "10px",
+      },
+    }
   },
   icons: {
     listStyle: "none",
@@ -145,6 +150,12 @@ const styles = {
     mb:"40.5px",
     ml:"155.5px",
     mr:"155.5px",
+    "@media only screen and (max-width: 1024px) ":{
+      mb:"25.5px",
+    },
+    "@media only screen and (max-width: 425px) ":{
+      display:"none"
+    },
     // display: ['flex'],
     flexWrap: ["wrap", null, null, "unset"],
     justifyContent: ["center", null, null, null],
@@ -167,5 +178,9 @@ const styles = {
   list:{
     ml:"245.5px",
     mr:"245.5px",
+    "@media only screen and (max-width: 1024px) ":{
+      ml:"145.5px",
+      mr:"145.5px",
+    },
   },
 };
