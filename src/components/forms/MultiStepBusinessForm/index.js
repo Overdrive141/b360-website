@@ -115,28 +115,18 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
   return (
     <>
       <Box d="flex" flexDir="column" {...props} justifyContent="center">
-        {formStep === 1 && (
+        {formStep === 0 && (
           <Register completeFormStep={completeFormStep} setUserId={setUserId} />
         )}
         <chakra.form onSubmit={handleSubmit(onSubmit)}>
           {formStep === 1 && (
             <section>
               <Box h="116px" mt="19px">
-                <Text
-                  sx={styles.title}
-                >
-                  Create Your Online Store
-                </Text>
-                <Text
-                  sx={styles.subTitle}
-                >
-                  Create Your Online Store
-                </Text>
+                <Text sx={styles.title}>Create Your Online Store</Text>
+                <Text sx={styles.subTitle}>Create Your Online Store</Text>
               </Box>
               <Box sx={styles.container}>
-                <FormLabel sx={styles.label}>
-                  Business Name
-                </FormLabel>
+                <FormLabel sx={styles.label}>Business Name</FormLabel>
                 <InputGroup>
                   <Input
                     placeholder="Business Name"
@@ -154,16 +144,14 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                     )}
                   </FormErrorMessage>
                 </InputGroup>
-                
+
                 <Button
                   sx={styles.button}
                   disabled={!isDirty || !isValid}
                   type="button"
                   onClick={completeFormStep}
                 >
-                  <Text sx={styles.buttonText}>
-                    Create Store
-                  </Text>
+                  <Text sx={styles.buttonText}>Create Store</Text>
                 </Button>
               </Box>
             </section>
@@ -171,16 +159,10 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
           {formStep === 2 && (
             <section>
               <Box h="116px" mt="19px">
-                <Text
-                  sx={styles.stepHeading}
-                >
+                <Text sx={styles.stepHeading}>
                   Step {formStep} of {MAX_STEP}
                 </Text>
-                <Text
-                  sx={styles.title}
-                >
-                  Create Your Business Profile
-                </Text>
+                <Text sx={styles.title}>Create Your Business Profile</Text>
               </Box>
               <Box ml="30px" mb={20}>
                 <Grid
@@ -190,9 +172,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                   sx={styles.grid}
                 >
                   <GridItem rowSpan={2} colSpan={2}>
-                    <FormLabel sx={styles.labelForm2}>
-                      Business Logo
-                    </FormLabel>
+                    <FormLabel sx={styles.labelForm2}>Business Logo</FormLabel>
                     <Box sx={styles.imageContainer}>
                       <ImageUpload
                         imageCount={1}
@@ -202,9 +182,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                     </Box>
                   </GridItem>
                   <GridItem colSpan={2} sx={styles.box}>
-                    <FormLabel sx={styles.labelForm2}>
-                      Contact Number
-                    </FormLabel>
+                    <FormLabel sx={styles.labelForm2}>Contact Number</FormLabel>
                     <InputGroup>
                       <Input
                         placeholder="Contact Number"
@@ -227,9 +205,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                     </InputGroup>
                   </GridItem>
                   <GridItem colSpan={2}>
-                    <FormLabel sx={styles.labelForm2}>
-                      Business Email
-                    </FormLabel>
+                    <FormLabel sx={styles.labelForm2}>Business Email</FormLabel>
                     <InputGroup>
                       <Input
                         placeholder="Business Email"
@@ -251,9 +227,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                     </InputGroup>
                   </GridItem>
                   <GridItem colSpan={4}>
-                    <FormLabel sx={styles.labelForm2}>
-                      Tag Line
-                    </FormLabel>
+                    <FormLabel sx={styles.labelForm2}>Tag Line</FormLabel>
                     <InputGroup>
                       <Input
                         placeholder="Tag Line"
@@ -275,10 +249,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                     </InputGroup>
                   </GridItem>
                 </Grid>
-                <Button
-                  sx={styles.backButton}
-                  onClick={goBack}
-                >
+                <Button sx={styles.backButton} onClick={goBack}>
                   <Text>Back</Text>
                 </Button>
                 <Button
@@ -287,9 +258,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                   type="button"
                   onClick={completeFormStep}
                 >
-                  <Text sx={styles.buttonText}>
-                    Next
-                  </Text>
+                  <Text sx={styles.buttonText}>Next</Text>
                 </Button>
               </Box>
             </section>
@@ -297,16 +266,10 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
           {formStep === 3 && (
             <section>
               <Box h="116px" mt="19px">
-                <Text
-                  sx={styles.stepHeading}
-                >
+                <Text sx={styles.stepHeading}>
                   Step {formStep} of {MAX_STEP}
                 </Text>
-                <Text
-                  sx={styles.title}
-                >
-                  Add Your Address
-                </Text>
+                <Text sx={styles.title}>Add Your Address</Text>
               </Box>
               <Box ml="30px" mb={20}>
                 <Grid
@@ -333,9 +296,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                     </Box>
                   </GridItem>
                   <GridItem colSpan={4}>
-                    <FormLabel sx={styles.cityLabel}>
-                      City
-                    </FormLabel>
+                    <FormLabel sx={styles.cityLabel}>City</FormLabel>
                     <InputGroup>
                       <Input
                         placeholder="City"
@@ -353,10 +314,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                     </InputGroup>
                   </GridItem>
                 </Grid>
-                <Button
-                  sx={styles.backButton}
-                  onClick={goBack}
-                >
+                <Button sx={styles.backButton} onClick={goBack}>
                   <Text>Back</Text>
                 </Button>
                 <Button
@@ -365,9 +323,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                   type="button"
                   onClick={completeFormStep}
                 >
-                  <Text sx={styles.buttonText}>
-                    Next
-                  </Text>
+                  <Text sx={styles.buttonText}>Next</Text>
                 </Button>
               </Box>
             </section>
@@ -375,14 +331,10 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
           {formStep === 4 && (
             <section>
               <Box h="116px" mt="19px">
-                <Text
-                  sx={styles.stepHeading}
-                >
+                <Text sx={styles.stepHeading}>
                   Step {formStep} of {MAX_STEP}
                 </Text>
-                <Text
-                  sx={styles.title}
-                >
+                <Text sx={styles.title}>
                   Tell us a little more about yourself
                 </Text>
               </Box>
@@ -476,10 +428,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                   <Option value="IT">IT</Option>
                 </Select>
               </Box>
-              <Button
-                sx={styles.backButton}
-                onClick={goBack}
-              >
+              <Button sx={styles.backButton} onClick={goBack}>
                 <Text>Back</Text>
               </Button>
               <Button
@@ -488,9 +437,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                 type="submit"
                 isLoading={isLoading}
               >
-                <Text sx={styles.buttonText}>
-                  Submit
-                </Text>
+                <Text sx={styles.buttonText}>Submit</Text>
               </Button>
             </section>
           )}
@@ -498,18 +445,11 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
         {formStep === 5 && (
           <section>
             <Box h="116px" mt="19px">
-              <Text
-                sx={styles.title}
-              >
-                Your Store is ready to go
-              </Text>
-              <Text
-                sx={styles.subTitle}
-              >
+              <Text sx={styles.title}>Your Store is ready to go</Text>
+              <Text sx={styles.subTitle}>
                 Check your Email to verify your Email
               </Text>
             </Box>
-            
           </section>
         )}
       </Box>
@@ -519,161 +459,178 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
 
 export default NewBusinessForm;
 
-const styles={
+const styles = {
   //form 1
 
-  title:{
-    color:"#000000",
-    fontSize:"45px",
-    textAlign:"center",
-    fontStyle:"normal",
-    fontWeight:4,
-    "@media only screen and (max-width: 500px) ":{
-      fontSize:"25px"
+  title: {
+    color: "#000000",
+    fontSize: "45px",
+    textAlign: "center",
+    fontStyle: "normal",
+    fontWeight: 4,
+    "@media only screen and (max-width: 500px) ": {
+      fontSize: "25px",
     },
   },
-  subTitle:{
-    color:"rgba(0, 0, 0, 0.7)",
-    fontSize:"25px",
-    textAlign:"center",
-    fontStyle:"normal",
-    fontWeight:4,
-    "@media only screen and (max-width: 500px) ":{
-      fontSize:"20px"
+  subTitle: {
+    color: "rgba(0, 0, 0, 0.7)",
+    fontSize: "25px",
+    textAlign: "center",
+    fontStyle: "normal",
+    fontWeight: 4,
+    "@media only screen and (max-width: 500px) ": {
+      fontSize: "20px",
     },
   },
-  container:{
-    marginLeft:"140px", width:"547px", marginBottom:20,
-    "@media only screen and (max-width: 500px) ":{
-      marginLeft:"40px",
+  container: {
+    marginLeft: "140px",
+    width: "547px",
+    marginBottom: 20,
+    "@media only screen and (max-width: 500px) ": {
+      marginLeft: "40px",
     },
   },
-  label:{
-    marginTop:10, fontSize:"21px", width:"280px",
-    "@media only screen and (max-width: 500px) ":{
-      fontSize:"16px"
+  label: {
+    marginTop: 10,
+    fontSize: "21px",
+    width: "280px",
+    "@media only screen and (max-width: 500px) ": {
+      fontSize: "16px",
     },
   },
-  input:{
-    width:"447px",
-    height:"72px",
-    border:"1px",
-    borderRadius:"3px",
-    color:"#000000",
-    marginBottom:"25px",
-    "@media only screen and (max-width: 500px) ":{
-      width:"316px",
-      height:"42px",
+  input: {
+    width: "447px",
+    height: "72px",
+    border: "1px",
+    borderRadius: "3px",
+    color: "#000000",
+    marginBottom: "25px",
+    "@media only screen and (max-width: 500px) ": {
+      width: "316px",
+      height: "42px",
     },
   },
-  button:{
-    border:"1px solid #000000",
-    bg:"#000000",
-    mt:"45px",
-    width:"445px",
-    height:"72px",
-    borderRadius:"3px",
-    "@media only screen and (max-width: 500px) ":{
-      width:"316px",
-      height:"42px",
-      mt:"25px",
+  button: {
+    border: "1px solid #000000",
+    bg: "#000000",
+    mt: "45px",
+    width: "445px",
+    height: "72px",
+    borderRadius: "3px",
+    "@media only screen and (max-width: 500px) ": {
+      width: "316px",
+      height: "42px",
+      mt: "25px",
     },
   },
-  buttonText:{
-    fontSize:"20px", textAlign:"center", color:"#ffffff",
-    "@media only screen and (max-width: 500px) ":{
-      fontSize:"15px",
+  buttonText: {
+    fontSize: "20px",
+    textAlign: "center",
+    color: "#ffffff",
+    "@media only screen and (max-width: 500px) ": {
+      fontSize: "15px",
     },
   },
 
   //form 2
-  stepHeading:{
-    color:"rgba(0, 0, 0, 0.7)",
-    fontSize:"25px",
-    textAlign:"center",
-    fontStyle:"normal",
-    fontWeight:4,
-    mr:"80px",
-    "@media only screen and (max-width: 500px) ":{
-      fontSize:"20px",
+  stepHeading: {
+    color: "rgba(0, 0, 0, 0.7)",
+    fontSize: "25px",
+    textAlign: "center",
+    fontStyle: "normal",
+    fontWeight: 4,
+    mr: "80px",
+    "@media only screen and (max-width: 500px) ": {
+      fontSize: "20px",
     },
   },
-  labelForm2:{
-    marginTop:10, fontSize:"21px", width:"280px",
-    "@media only screen and (max-width: 500px) ":{
-      fontSize:"12px"
+  labelForm2: {
+    marginTop: 10,
+    fontSize: "21px",
+    width: "280px",
+    "@media only screen and (max-width: 500px) ": {
+      fontSize: "12px",
     },
   },
-  imageContainer:{
-    m:6, width:120, height:120,
-    "@media only screen and (max-width: 500px) ":{
-      width:"10px", height:"10px",m:1,
+  imageContainer: {
+    m: 6,
+    width: 120,
+    height: 120,
+    "@media only screen and (max-width: 500px) ": {
+      width: "10px",
+      height: "10px",
+      m: 1,
     },
   },
-  grid:{
-    "@media only screen and (max-width: 500px) ":{
-      display:"block"
+  grid: {
+    "@media only screen and (max-width: 500px) ": {
+      display: "block",
     },
   },
-  box:{
-    "@media only screen and (max-width: 500px) ":{
-      marginTop:"100px"
+  box: {
+    "@media only screen and (max-width: 500px) ": {
+      marginTop: "100px",
     },
   },
-  formButton2:{
-    border:"1px solid #000000",
-    bg:"#000000",
-    mt:"45px",
-    ml:"280px",
-    w:"202px",
-    h:"72px",
-    borderRadius:"3px",
-    "@media only screen and (max-width: 500px) ":{
-      mt:"1px",
-      ml:"120px",
-      w:"102px",
-      h:"42px",
+  formButton2: {
+    border: "1px solid #000000",
+    bg: "#000000",
+    mt: "45px",
+    ml: "280px",
+    w: "202px",
+    h: "72px",
+    borderRadius: "3px",
+    "@media only screen and (max-width: 500px) ": {
+      mt: "1px",
+      ml: "120px",
+      w: "102px",
+      h: "42px",
     },
   },
-  backButton:{
-    mt:"45px",
-    bg:"transparent",
-    border:"none",
-    outline:"none",
-    w:"102px",
-    h:"72px",
-    "@media only screen and (max-width: 500px) ":{
-      mt:"1px",
-      w:"102px",
-      h:"42px",
+  backButton: {
+    mt: "45px",
+    bg: "transparent",
+    border: "none",
+    outline: "none",
+    w: "102px",
+    h: "72px",
+    "@media only screen and (max-width: 500px) ": {
+      mt: "1px",
+      w: "102px",
+      h: "42px",
     },
   },
-  cityLabel:{
-    mt:10, ml:70, fontSize:"16px", w:"280px",
-    "@media only screen and (max-width: 500px) ":{
-      mt:30,ml:1, fontSize:"12px",
+  cityLabel: {
+    mt: 10,
+    ml: 70,
+    fontSize: "16px",
+    w: "280px",
+    "@media only screen and (max-width: 500px) ": {
+      mt: 30,
+      ml: 1,
+      fontSize: "12px",
     },
   },
-  cityInput:{
-    ml:70,
-    w:"247px",
-    h:"42px",
-    border:"1px",
-    borderRadius:"3px",
-    color:"#000000",
-    "@media only screen and (max-width: 500px) ":{
-      ml:1,
-      mb:20,
-      w:"300px",
-      h:"32px",
+  cityInput: {
+    ml: 70,
+    w: "247px",
+    h: "42px",
+    border: "1px",
+    borderRadius: "3px",
+    color: "#000000",
+    "@media only screen and (max-width: 500px) ": {
+      ml: 1,
+      mb: 20,
+      w: "300px",
+      h: "32px",
     },
   },
-  formContainer4:{
-    ml:"30px", mb:20,
-    "@media only screen and (max-width: 500px) ":{
-      ml:"30px",
-      mb:20,
+  formContainer4: {
+    ml: "30px",
+    mb: 20,
+    "@media only screen and (max-width: 500px) ": {
+      ml: "30px",
+      mb: 20,
     },
-  }
-  
-}
+  },
+};
