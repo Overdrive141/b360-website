@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: 'https://startup-saas-modern.vercel.app',
+  siteUrl: 'https://business360.workcycle.co',
   generateRobotsTxt: true,
   // optional
   // robotsTxtOptions: {

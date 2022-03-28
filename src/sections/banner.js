@@ -1,8 +1,14 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import React from 'react'
+import React, { useEffect } from "react";
 import { jsx, Container, Heading, Text, Button, Image } from "theme-ui";
-import { Box,  ModalBody, ModalContent, ModalHeader, ModalOverlay } from "@chakra-ui/react";
+import {
+  Box,
+  ModalBody,
+  ModalContent,
+  ModalHeader,
+  ModalOverlay,
+} from "@chakra-ui/react";
 import { rgba } from "polished";
 import bannerIcon1 from "assets/images/banner-icon-1-1.svg";
 import bannerIcon2 from "assets/images/banner-icon-1-2.svg";
@@ -11,26 +17,25 @@ import bannerIcon4 from "assets/images/banner-icon-1-4.svg";
 import bannerIcon5 from "assets/images/banner-icon-1-5.svg";
 import bannerIcon6 from "assets/images/banner-icon-1-6.svg";
 import bannerIcon7 from "assets/images/dot-pattern.svg";
-import {useDisclosure} from "@chakra-ui/react"
+import { useDisclosure } from "@chakra-ui/react";
 import NewBusinessForm from "components/forms/MultiStepBusinessForm/index";
-import { useState } from 'react'
+import { useState } from "react";
 
-import { Modal } from 'antd';
+import { Modal } from "antd";
 import { keyframes } from "@emotion/react";
 
-
-
+import ScrollMore from "../components/ScrollMore";
+import gsap from "gsap/dist/gsap";
 
 export default function Banner() {
-
-  let [isOpen, setIsOpen] = useState(false)
-  let [isClose, setIsClose] = useState(false)
+  let [isOpen, setIsOpen] = useState(false);
+  let [isClose, setIsClose] = useState(false);
   // const { isOpen, onOpen, onClose } = useDisclosure();
 
   const handleAddClick = () => {
     // open modal
 
-    setIsOpen(true)
+    setIsOpen(true);
     //onOpen();
   };
 
@@ -39,126 +44,179 @@ export default function Banner() {
     console.log("submitting...");
   };
 
+  useEffect(() => {
+    const tl = gsap.timeline({
+      delay: 0.5,
+    });
+    tl.fromTo(
+      ".hero-title",
+      { opacity: 0 },
+      {
+        duration: 2,
+        opacity: 1,
+        delay: function (index) {
+          //index of how many hero index found. if multiple elements then all have a sequential delay
+          return 0.2 * index;
+        },
+      }
+    ).fromTo(
+      ".hero-form",
+      { opacity: 0 },
+      {
+        duration: 1,
+        opacity: 1,
+        delay: function (i) {
+          return 0.2 / i;
+        },
+      }
+    );
+  }, []);
+
   return (
     <>
-    <Box as="section" id="home" sx={styles.section}>
-      <Container sx={styles.container}>
-        <Image
-          sx={styles.bannerIcon1}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon1}
-        />
-        <Image
-          sx={styles.bannerIcon2}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon2}
-        />
-        {/* <Image
+      <Box as="section" id="home" sx={styles.section}>
+        <Container sx={styles.container}>
+          <Image
+            sx={styles.bannerIcon1}
+            className="bannerIcon"
+            alt="banner icon"
+            src={bannerIcon1}
+          />
+          <Image
+            sx={styles.bannerIcon2}
+            className="bannerIcon"
+            alt="banner icon"
+            src={bannerIcon2}
+          />
+          {/* <Image
           sx={styles.bannerIcon3}
           className="bannerIcon"
           alt="banner icon"
           src={bannerIcon3}
         /> */}
-        {/* <Image
+          {/* <Image
           sx={styles.bannerIcon4}
           className="bannerIcon"
           alt="banner icon"
           src={bannerIcon4} 
         />*/}
-        <Image
-          sx={styles.bannerIcon5}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon5}
-        />
-        <Image
-          sx={styles.bannerIcon6}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon6}
-        />
-        <Image
-          sx={styles.bannerIcon7}
-          className="bannerIcon"
-          alt="banner icon"
-          src={bannerIcon7}
-        />
+          <Image
+            sx={styles.bannerIcon5}
+            className="bannerIcon"
+            alt="banner icon"
+            src={bannerIcon5}
+          />
+          <Image
+            sx={styles.bannerIcon6}
+            className="bannerIcon"
+            alt="banner icon"
+            src={bannerIcon6}
+          />
+          <Image
+            sx={styles.bannerIcon7}
+            className="bannerIcon"
+            alt="banner icon"
+            src={bannerIcon7}
+          />
 
-        <Box sx={styles.contentWrapper}>
-          <Box
-            sx={{
-              width:"1270px",
-              textAlign:"left"
-            }}
-          >
-            <Heading as="h1" sx={styles.heroTitle}>
-              Build for <br/>local <br />Businesses
-            </Heading>
-          </Box>
-
-          <Box display={["column","column","row","row",]} sx={styles.bannerContent}>
-            <Text as="p" sx={styles.desc}>
-              Thousands of Successful businesses trust Business 360 as their
-              technical partner.
-            </Text>
-            <Box  sx={{mt:"86px",
-                "@media only screen and (max-width: 1024px) ":{
-                  mt:"20px"
-                },
-                "@media only screen and (max-width: 768px) ":{
-                  mt:"15px"
-                },
-                "@media only screen and (max-width: 425px) ":{
-                  mt:"10px"
-                }
-              }}
-            >
-              <Button  sx={styles.button} variant="primary" onClick={handleAddClick}>
-                <Text sx={{
-                  fontSize:"22px",
-                  fontWeight:400,
-                  lineHeight:"49px",
-                  color:"#1B1C1E",
-                    // "@media only screen and (max-width: 1024px) ":{
-                    //   fontSize:"16px"
-                    // }
-                }}>Start your free trial</Text>
-              </Button>
-            </Box>
+          <Box sx={styles.contentWrapper}>
             <Box
               sx={{
-                mt:"16px",
-                mb:"31px",
+                width: "1270px",
+                textAlign: "left",
               }}
+              className="hero-title"
             >
-              <Text sx={{
-                fontSize:"14px",
-                fontWeight:400,
-                lineHeight:"21px",
-                color:"#ffffff",
-                "@media only screen and (max-width: 1024px) ":{
-                  fontSize:"12px"
-                },
-                "@media only screen and (max-width: 768px) ":{
-                  fontSize:"10px"
-                },
-                "@media only screen and (max-width: 425px) ":{
-                  fontSize:"8px",
-                  lineHeight:"9px",
-                }
-              }}>
-                Try Business 360 free for 30 days, no credit card required.
+              <Heading as="h1" sx={styles.heroTitle}>
+                Build for <br />
+                local <br />
+                Businesses
+              </Heading>
+            </Box>
+
+            <Box
+              display={["column", "column", "row", "row"]}
+              sx={styles.bannerContent}
+              className="hero-form"
+            >
+              <Text as="p" sx={styles.desc}>
+                Thousands of Successful businesses trust Business 360 as their
+                technical partner.
               </Text>
+              <Box
+                sx={{
+                  mt: "86px",
+                  "@media only screen and (max-width: 1024px) ": {
+                    mt: "20px",
+                  },
+                  "@media only screen and (max-width: 768px) ": {
+                    mt: "15px",
+                  },
+                  "@media only screen and (max-width: 425px) ": {
+                    mt: "10px",
+                  },
+                }}
+              >
+                <Button
+                  sx={styles.button}
+                  variant="primary"
+                  onClick={handleAddClick}
+                >
+                  <Text
+                    sx={{
+                      fontSize: "22px",
+                      fontWeight: 400,
+                      lineHeight: "49px",
+                      color: "#1B1C1E",
+                      // "@media only screen and (max-width: 1024px) ":{
+                      //   fontSize:"16px"
+                      // }
+                    }}
+                  >
+                    Start your free trial
+                  </Text>
+                </Button>
+              </Box>
+              <Box
+                sx={{
+                  mt: "16px",
+                  mb: "31px",
+                }}
+              >
+                <Text
+                  sx={{
+                    fontSize: "14px",
+                    fontWeight: 400,
+                    lineHeight: "21px",
+                    color: "#ffffff",
+                    "@media only screen and (max-width: 1024px) ": {
+                      fontSize: "12px",
+                    },
+                    "@media only screen and (max-width: 768px) ": {
+                      fontSize: "10px",
+                    },
+                    "@media only screen and (max-width: 425px) ": {
+                      fontSize: "8px",
+                      lineHeight: "9px",
+                    },
+                  }}
+                >
+                  Try Business 360 free for 30 days, no credit card required.
+                </Text>
+              </Box>
             </Box>
           </Box>
-        </Box>
-      </Container>
+          <ScrollMore />
+        </Container>
+      </Box>
 
-    </Box>
-
-      <Modal title="" visible={isOpen} width={700} footer={null} closable={false}>
+      <Modal
+        title=""
+        visible={isOpen}
+        width={700}
+        footer={null}
+        closable={false}
+      >
         <NewBusinessForm />
       </Modal>
     </>
@@ -257,10 +315,9 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "center",
     minHeight: [null, null, null, null, "50vh", "100vh"],
-    "@media only screen and (max-width: 425px)":
-      {
-        display:"block"
-      },
+    "@media only screen and (max-width: 425px)": {
+      display: "block",
+    },
   },
   bannerContent: {
     backgroundColor: rgba("#000", 0.93),
@@ -273,7 +330,7 @@ const styles = {
     ],
     // widht:"481px",
     // height:"581px",
-    textAlign:"left",
+    textAlign: "left",
     padding: [
       "20px",
       "30px",
@@ -287,47 +344,41 @@ const styles = {
     borderWidth: 1,
     borderColor: "black",
     m: ["110px 0 0", null, null, "110px auto 0", "60px 0 0", null, 0],
-    "@media only screen and (max-width: 1024px)":
-      {
-        maxWidth: 500 ,
-        mt: 70,
-        mb:70,
-        padding: "30px 50px 65px",
-      },
-      "@media only screen and (max-width: 768px)":
-      {
-        maxWidth: 400 ,
-        mt: 70,
-        mb:70,
-        padding: "30px 50px 65px",
-      },
-      "@media only screen and (max-width: 425px)":
-      {
-        maxWidth: 350 ,
-        mt: 70,
-        mb:70,
-        padding: "30px 50px 65px",
-      },
+    "@media only screen and (max-width: 1024px)": {
+      maxWidth: 500,
+      mt: 70,
+      mb: 70,
+      padding: "30px 50px 65px",
+    },
+    "@media only screen and (max-width: 768px)": {
+      maxWidth: 400,
+      mt: 70,
+      mb: 70,
+      padding: "30px 50px 65px",
+    },
+    "@media only screen and (max-width: 425px)": {
+      maxWidth: 350,
+      mt: 70,
+      mb: 70,
+      padding: "30px 50px 65px",
+    },
   },
   heroTitle: {
     fontSize: "130px",
     fontWeight: 400,
-    lineHeight:"195px", 
+    lineHeight: "195px",
     letterSpacing: "heading",
     lineHeight: [1.4, null, null, null, null, null, 1.57],
-    "@media only screen and (max-width: 1024px) ":
-      {
-        fontSize: "90px",
-      },
-      "@media only screen and (max-width: 768px)":
-      {
-        fontSize:"60px"
-      },
-      "@media only screen and (max-width: 425px)":
-      {
-        fontSize:"40px",
-        mt:"80px"
-      },
+    "@media only screen and (max-width: 1024px) ": {
+      fontSize: "90px",
+    },
+    "@media only screen and (max-width: 768px)": {
+      fontSize: "60px",
+    },
+    "@media only screen and (max-width: 425px)": {
+      fontSize: "40px",
+      mt: "80px",
+    },
   },
   desc: {
     fontSize: "31px",
@@ -336,24 +387,21 @@ const styles = {
     maxWidth: 440,
     marginTop: [15, 15, 15, null, null, null, 30],
     color: rgba("#fff", 1),
-    "@media only screen and (max-width: 1024px) ":
-      {
-        mt: 15,
-        fontSize:"28px",
-        lineHeight: "36px",
-      },
-      "@media only screen and (max-width: 768px)":
-      {
-        mt: 15,
-        fontSize:"22px",
-        lineHeight: "26px",
-      },
-      "@media only screen and (max-width: 425px)":
-      {
-        mt: 15,
-        fontSize:"16px",
-        lineHeight: "20px",
-      },
+    "@media only screen and (max-width: 1024px) ": {
+      mt: 15,
+      fontSize: "28px",
+      lineHeight: "36px",
+    },
+    "@media only screen and (max-width: 768px)": {
+      mt: 15,
+      fontSize: "22px",
+      lineHeight: "26px",
+    },
+    "@media only screen and (max-width: 425px)": {
+      mt: 15,
+      fontSize: "16px",
+      lineHeight: "20px",
+    },
   },
   select: {
     marginTop: 30,
@@ -371,24 +419,24 @@ const styles = {
     ":focus": {
       outline: "0 none",
     },
-    "@media only screen and (max-width: 1024px) ":{
+    "@media only screen and (max-width: 1024px) ": {
       fontSize: 16,
       fontWeight: 500,
       marginTop: 5,
       width: "100%",
     },
-    "@media only screen and (max-width: 768px) ":{
+    "@media only screen and (max-width: 768px) ": {
       fontSize: 13,
       fontWeight: 500,
       marginTop: 5,
       width: "100%",
     },
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 425px) ": {
       fontSize: 19,
       fontWeight: 500,
       marginTop: 5,
       width: "100%",
-    }
+    },
   },
 
   bannerIcon1: {
