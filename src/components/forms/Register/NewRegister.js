@@ -108,7 +108,7 @@ const Register = ({ completeFormStep, setUserId, ...props }) => {
         </Text>
         <Grid templateColumns="repeat(7, 1fr)" gap={6} mt={6}>
           <GridItem colSpan={5} mr={10} sx={styles.container}>
-            <Grid templateColumns="repeat(2, 1fr)" gap={4} ml={12} m={2}>
+            <Grid templateColumns="repeat(2, 1fr)" gap={4} ml={12} m={2} sx={styles.gridDisplay}>
               <GridItem>
                 <FormLabel sx={styles.label}>First Name</FormLabel>
                 <InputGroup>
@@ -286,7 +286,7 @@ const styles={
     marginLeft:"250px",
     fontStyle:"normal",
     fontWeight:4,
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       height:"116px",
       fontSize:"25px",
       marginLeft:"130px",
@@ -294,13 +294,13 @@ const styles={
   },
   grid:{
     marginLeft:50,
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       marginLeft:0,
     },
   },
   label:{
     fontSize:"18px",
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       fontSize:"14px",
     },
   },
@@ -311,13 +311,13 @@ const styles={
     borderRadius:"3px",
     color:"#000000",
     marginBottom:"25px",
-    "@media only screen and (max-width: 425px) ":{
-      width:"116px",
+    "@media only screen and (max-width: 500px) ":{
+      width:"207px",
     },
   },
   container:{
     marginLeft:"100px",
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       marginLeft:"10px",
     },
   },
@@ -329,7 +329,7 @@ const styles={
     bg:"#000000",
     width:"182px",
     height:"42px",
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       width:"86px",
       marginTop:10,
       marginLeft:"240px",
@@ -337,7 +337,7 @@ const styles={
   },
   buttonText:{
     fontSize:"20px", textAlign:"center", color:"#ffffff",
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       fontSize:"15px"
     },
   },
@@ -348,8 +348,13 @@ const styles={
     color: "#000000",
     marginBottom: "25px",
     focusBorderColor: "blue",
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       width:"86px",
     },
   },
+  gridDisplay:{
+    "@media only screen and (max-width: 500px) ":{
+      display:"block",
+    },
+  }
 }

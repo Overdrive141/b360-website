@@ -115,7 +115,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
   return (
     <>
       <Box d="flex" flexDir="column" {...props} justifyContent="center">
-        {formStep === 0 && (
+        {formStep === 1 && (
           <Register completeFormStep={completeFormStep} setUserId={setUserId} />
         )}
         <chakra.form onSubmit={handleSubmit(onSubmit)}>
@@ -406,9 +406,6 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                   <Option value="Yes">Yes</Option>
                   <Option value="No">No</Option>
                 </Select>
-                <FormErrorMessage>
-                  {errors.DoyouhaveAwebsite && errors.DoyouhaveAwebsite.message}
-                </FormErrorMessage>
                 <FormLabel fontSize="18px" mb="20px" mt="20px">
                   Do you have an Online digital store?
                 </FormLabel>
@@ -429,10 +426,6 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                   <Option value="Yes">Yes</Option>
                   <Option value="No">No</Option>
                 </Select>
-                <FormErrorMessage>
-                  {errors.DoyouhaveanOnlinedigitalstore &&
-                    errors.DoyouhaveanOnlinedigitalstore.message}
-                </FormErrorMessage>
                 <FormLabel fontSize="18px" mb="20px" mt="20px">
                   What is your current revenue?
                 </FormLabel>
@@ -460,10 +453,6 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                     Rs.1000000-Rs.2000000
                   </Option>
                 </Select>
-                <FormErrorMessage>
-                  {errors.WhatIsYourCurrentRevenue &&
-                    errors.WhatIsYourCurrentRevenue.message}
-                </FormErrorMessage>
                 <FormLabel fontSize="18px" mb="20px" mt="20px">
                   Which Industry will you be operating?
                 </FormLabel>
@@ -486,10 +475,6 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                   <Option value="Petroleum">Petroleum</Option>
                   <Option value="IT">IT</Option>
                 </Select>
-                <FormErrorMessage>
-                  {errors.WhichIndustryWillYouBeOperating &&
-                    errors.WhichIndustryWillYouBeOperating.message}
-                </FormErrorMessage>
               </Box>
               <Button
                 sx={styles.backButton}
@@ -543,7 +528,7 @@ const styles={
     textAlign:"center",
     fontStyle:"normal",
     fontWeight:4,
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       fontSize:"25px"
     },
   },
@@ -553,19 +538,19 @@ const styles={
     textAlign:"center",
     fontStyle:"normal",
     fontWeight:4,
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       fontSize:"20px"
     },
   },
   container:{
     marginLeft:"140px", width:"547px", marginBottom:20,
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       marginLeft:"40px",
     },
   },
   label:{
     marginTop:10, fontSize:"21px", width:"280px",
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       fontSize:"16px"
     },
   },
@@ -576,7 +561,7 @@ const styles={
     borderRadius:"3px",
     color:"#000000",
     marginBottom:"25px",
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       width:"316px",
       height:"42px",
     },
@@ -588,7 +573,7 @@ const styles={
     width:"445px",
     height:"72px",
     borderRadius:"3px",
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       width:"316px",
       height:"42px",
       mt:"25px",
@@ -596,7 +581,7 @@ const styles={
   },
   buttonText:{
     fontSize:"20px", textAlign:"center", color:"#ffffff",
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       fontSize:"15px",
     },
   },
@@ -609,29 +594,29 @@ const styles={
     fontStyle:"normal",
     fontWeight:4,
     mr:"80px",
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       fontSize:"20px",
     },
   },
   labelForm2:{
     marginTop:10, fontSize:"21px", width:"280px",
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       fontSize:"12px"
     },
   },
   imageContainer:{
     m:6, width:120, height:120,
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       width:"10px", height:"10px",m:1,
     },
   },
   grid:{
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       display:"block"
     },
   },
   box:{
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       marginTop:"100px"
     },
   },
@@ -643,7 +628,7 @@ const styles={
     w:"202px",
     h:"72px",
     borderRadius:"3px",
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       mt:"1px",
       ml:"120px",
       w:"102px",
@@ -657,7 +642,7 @@ const styles={
     outline:"none",
     w:"102px",
     h:"72px",
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       mt:"1px",
       w:"102px",
       h:"42px",
@@ -665,7 +650,7 @@ const styles={
   },
   cityLabel:{
     mt:10, ml:70, fontSize:"16px", w:"280px",
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       mt:30,ml:1, fontSize:"12px",
     },
   },
@@ -676,7 +661,7 @@ const styles={
     border:"1px",
     borderRadius:"3px",
     color:"#000000",
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       ml:1,
       mb:20,
       w:"300px",
@@ -685,8 +670,8 @@ const styles={
   },
   formContainer4:{
     ml:"30px", mb:20,
-    "@media only screen and (max-width: 425px) ":{
-      ml:"1px",
+    "@media only screen and (max-width: 500px) ":{
+      ml:"30px",
       mb:20,
     },
   }
