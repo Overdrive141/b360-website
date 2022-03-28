@@ -3,7 +3,13 @@ import customAxios from "config/axios";
 
 export const usePostData = async ({ URL, body }) => {
   console.log(`URL , body`, URL, body);
-  const resp = await axios({
+
+  let axiosRequester = axios;
+  if (body.type && body.type === "regBiz") {
+    axiosRequester = customAxios;
+  }
+
+  const resp = await axiosRequester({
     method: "POST",
     data: body,
     // body: JSON.stringify(body),

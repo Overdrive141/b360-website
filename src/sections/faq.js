@@ -152,7 +152,7 @@ export default function FAQ() {
                                 sx={styles.button}
                                 
                             >
-                                Sign In 
+                                Submit
                             </Button>
                         </chakra.form>
                     </Box>
@@ -206,8 +206,8 @@ const styles = {
   button:{
     mt:10,
     ml:"250px",
-    width:"191px",
-    height:"63px",
+    width:"161px",
+    height:"53px",
     backgroundColor: "#FFFFFF",
     border:"2px solid #FFFFFF",
     boxSizing:"border-box",
