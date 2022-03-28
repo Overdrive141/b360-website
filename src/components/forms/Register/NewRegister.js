@@ -54,40 +54,41 @@ const Register = ({completeFormStep, setUserId, ...props}) => {
     //const dispatch = useDispatch();
   
     const onSubmit = (body) => {
-      try {
-          body.gender= gender
+        try {
+            body.gender= gender
+            body.portal='landingPage'
             console.log(body);
-        if (body.password !== body.confirmPassword) {
-          setError("confirmPassword", {
-            type: "validate",
-            message: "Passwords do not match",
-          });
-          return;
-        } else {
-          unregister("confirmPassword");
-        }
-        mutate(
-            { URL, body },
-            {
-              onSuccess: (value) => {
-                setDone(true);
-                console.log("set value",value);
-                setUserId(value.data.data._id)
-                createToast({ title: "User Created Successfully" });
-                completeFormStep()
-              },
-              onError: (err) => {
-                createToast({
-                  title: "Unable to Create User",
-                  msg: err.stack,
-                  type: "error",
-                });
-              },
+            if (body.password !== body.confirmPassword) {
+                setError("confirmPassword", {
+                type: "validate",
+                message: "Passwords do not match",
+            });
+            return;
+            } else {
+                unregister("confirmPassword");
+            }
+            mutate(
+                { URL, body },
+                {
+                    onSuccess: (value) => {
+                    setDone(true);
+                    console.log("set value",value);
+                    setUserId(value.data.data._id)
+                    createToast({ title: "User Created Successfully" });
+                    completeFormStep()
+                },
+                onError: (err) => {
+                    createToast({
+                        title: "Unable to Create User",
+                        msg: err.stack,
+                        type: "error",
+                    });
+                },
             }
         );
-      } catch (err) {
-        alert(err.message);
-      }
+        } catch (err) {
+            alert(err.message);
+        }
     };
   
     //if (isRegistered) return <Redirect to="/login" />;
