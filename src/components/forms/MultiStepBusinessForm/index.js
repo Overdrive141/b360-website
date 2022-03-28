@@ -123,36 +123,24 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
             <section>
               <Box h="116px" mt="19px">
                 <Text
-                  color="#000000"
-                  fontSize="45px"
-                  textAlign="center"
-                  fontStyle="normal"
-                  fontWeight={4}
+                  sx={styles.title}
                 >
                   Create Your Online Store
                 </Text>
                 <Text
-                  color="rgba(0, 0, 0, 0.7)"
-                  fontSize="25px"
-                  textAlign="center"
-                  fontStyle="normal"
-                  fontWeight={4}
+                  sx={styles.subTitle}
                 >
                   Create Your Online Store
                 </Text>
               </Box>
-              <Box ml="140px" w="447px" mb={20}>
-                <FormLabel mt={10} fontSize="21px" w="280px">
+              <Box sx={styles.container}>
+                <FormLabel sx={styles.label}>
                   Business Name
                 </FormLabel>
                 <InputGroup>
                   <Input
                     placeholder="Business Name"
-                    w="447px"
-                    h="72px"
-                    border="1px"
-                    borderRadius="3px"
-                    color="#000000"
+                    sx={styles.input}
                     type="text"
                     {...register("businessName", {
                       required: "This is required",
@@ -168,17 +156,12 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                 </InputGroup>
                 
                 <Button
-                  border="1px solid #000000"
+                  sx={styles.button}
                   disabled={!isDirty || !isValid}
-                  bg="#000000"
-                  mt="45px"
-                  w="445px"
-                  h="72px"
-                  borderRadius="3px"
                   type="button"
                   onClick={completeFormStep}
                 >
-                  <Text fontSize="20px" textAlign="center" color="#ffffff">
+                  <Text sx={styles.buttonText}>
                     Create Store
                   </Text>
                 </Button>
@@ -189,21 +172,12 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
             <section>
               <Box h="116px" mt="19px">
                 <Text
-                  color="rgba(0, 0, 0, 0.7)"
-                  fontSize="25px"
-                  textAlign="center"
-                  fontStyle="normal"
-                  fontWeight={4}
-                  mr="80px"
+                  sx={styles.stepHeading}
                 >
                   Step {formStep} of {MAX_STEP}
                 </Text>
                 <Text
-                  color="#000000"
-                  fontSize="45px"
-                  textAlign="center"
-                  fontStyle="normal"
-                  fontWeight={4}
+                  sx={styles.title}
                 >
                   Create Your Business Profile
                 </Text>
@@ -213,12 +187,13 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                   templateRows="repeat(2, 1fr)"
                   templateColumns="repeat(6, 1fr)"
                   gap={4}
+                  sx={styles.grid}
                 >
                   <GridItem rowSpan={2} colSpan={2}>
-                    <FormLabel mt={10} fontSize="16px" w="280px">
+                    <FormLabel sx={styles.labelForm2}>
                       Business Logo
                     </FormLabel>
-                    <Box m={6} w={120} h={120}>
+                    <Box sx={styles.imageContainer}>
                       <ImageUpload
                         imageCount={1}
                         value="businessLogo"
@@ -226,8 +201,8 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                       />
                     </Box>
                   </GridItem>
-                  <GridItem colSpan={2}>
-                    <FormLabel mt={10} fontSize="16px" w="207px">
+                  <GridItem colSpan={2} sx={styles.box}>
+                    <FormLabel sx={styles.labelForm2}>
                       Contact Number
                     </FormLabel>
                     <InputGroup>
@@ -252,7 +227,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                     </InputGroup>
                   </GridItem>
                   <GridItem colSpan={2}>
-                    <FormLabel mt={10} fontSize="16px" w="280px">
+                    <FormLabel sx={styles.labelForm2}>
                       Business Email
                     </FormLabel>
                     <InputGroup>
@@ -276,7 +251,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                     </InputGroup>
                   </GridItem>
                   <GridItem colSpan={4}>
-                    <FormLabel mt={10} fontSize="16px" w="280px">
+                    <FormLabel sx={styles.labelForm2}>
                       Tag Line
                     </FormLabel>
                     <InputGroup>
@@ -301,29 +276,18 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                   </GridItem>
                 </Grid>
                 <Button
-                  mt="45px"
-                  bg="transparent"
-                  border="none"
-                  outline="none"
-                  w="102px"
-                  h="72px"
+                  sx={styles.backButton}
                   onClick={goBack}
                 >
                   <Text>Back</Text>
                 </Button>
                 <Button
-                  border="1px solid #000000"
                   disabled={!isDirty || !isValid}
-                  bg="#000000"
-                  mt="45px"
-                  ml="280px"
-                  w="202px"
-                  h="72px"
-                  borderRadius="3px"
+                  sx={styles.formButton2}
                   type="button"
                   onClick={completeFormStep}
                 >
-                  <Text fontSize="20px" textAlign="center" color="#ffffff">
+                  <Text sx={styles.buttonText}>
                     Next
                   </Text>
                 </Button>
@@ -334,21 +298,12 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
             <section>
               <Box h="116px" mt="19px">
                 <Text
-                  color="rgba(0, 0, 0, 0.7)"
-                  fontSize="25px"
-                  textAlign="center"
-                  fontStyle="normal"
-                  fontWeight={4}
-                  mr="80px"
+                  sx={styles.stepHeading}
                 >
                   Step {formStep} of {MAX_STEP}
                 </Text>
                 <Text
-                  color="#000000"
-                  fontSize="45px"
-                  textAlign="center"
-                  fontStyle="normal"
-                  fontWeight={4}
+                  sx={styles.title}
                 >
                   Add Your Address
                 </Text>
@@ -358,6 +313,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                   templateRows="repeat(2, 1fr)"
                   templateColumns="repeat(6, 1fr)"
                   gap={4}
+                  sx={styles.grid}
                 >
                   <GridItem rowSpan={2} colSpan={2}>
                     <Box d="flex" flexDir="column" w="250" mt="15px">
@@ -377,18 +333,13 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                     </Box>
                   </GridItem>
                   <GridItem colSpan={4}>
-                    <FormLabel mt={10} ml={70} fontSize="16px" w="280px">
+                    <FormLabel sx={styles.cityLabel}>
                       City
                     </FormLabel>
                     <InputGroup>
                       <Input
                         placeholder="City"
-                        ml={70}
-                        w="247px"
-                        h="42px"
-                        border="1px"
-                        borderRadius="3px"
-                        color="#000000"
+                        sx={styles.cityInput}
                         type="text"
                         {...register("city", {
                           required: "This is required",
@@ -403,29 +354,18 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                   </GridItem>
                 </Grid>
                 <Button
-                  mt="45px"
-                  bg="transparent"
-                  border="none"
-                  outline="none"
-                  w="102px"
-                  h="72px"
+                  sx={styles.backButton}
                   onClick={goBack}
                 >
                   <Text>Back</Text>
                 </Button>
                 <Button
-                  border="1px solid #000000"
+                  sx={styles.formButton2}
                   disabled={!isDirty || !isValid}
-                  bg="#000000"
-                  mt="45px"
-                  ml="280px"
-                  w="202px"
-                  h="72px"
-                  borderRadius="3px"
                   type="button"
                   onClick={completeFormStep}
                 >
-                  <Text fontSize="20px" textAlign="center" color="#ffffff">
+                  <Text sx={styles.buttonText}>
                     Next
                   </Text>
                 </Button>
@@ -436,26 +376,17 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
             <section>
               <Box h="116px" mt="19px">
                 <Text
-                  color="rgba(0, 0, 0, 0.7)"
-                  fontSize="25px"
-                  textAlign="center"
-                  fontStyle="normal"
-                  fontWeight={4}
-                  mr="80px"
+                  sx={styles.stepHeading}
                 >
                   Step {formStep} of {MAX_STEP}
                 </Text>
                 <Text
-                  color="#000000"
-                  fontSize="45px"
-                  textAlign="center"
-                  fontStyle="normal"
-                  fontWeight={4}
+                  sx={styles.title}
                 >
                   Tell us a little more about yourself
                 </Text>
               </Box>
-              <Box ml="180px" w="447px" mb={20}>
+              <Box sx={styles.formContainer4}>
                 <FormLabel fontSize="18px" mb="20px" mt="20px">
                   Do you have a website?
                 </FormLabel>
@@ -561,29 +492,18 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                 </FormErrorMessage>
               </Box>
               <Button
-                mt="45px"
-                bg="transparent"
-                border="none"
-                outline="none"
-                w="102px"
-                h="72px"
+                sx={styles.backButton}
                 onClick={goBack}
               >
                 <Text>Back</Text>
               </Button>
               <Button
-                border="1px solid #000000"
+                sx={styles.formButton2}
                 disabled={!isDirty || !isValid}
-                bg="#000000"
-                mt="45px"
-                ml="280px"
-                w="202px"
-                h="72px"
-                borderRadius="3px"
                 type="submit"
                 isLoading={isLoading}
               >
-                <Text fontSize="20px" textAlign="center" color="#ffffff">
+                <Text sx={styles.buttonText}>
                   Submit
                 </Text>
               </Button>
@@ -594,20 +514,12 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
           <section>
             <Box h="116px" mt="19px">
               <Text
-                color="#000000"
-                fontSize="45px"
-                textAlign="center"
-                fontStyle="normal"
-                fontWeight={4}
+                sx={styles.title}
               >
                 Your Store is ready to go
               </Text>
               <Text
-                color="rgba(0, 0, 0, 0.7)"
-                fontSize="25px"
-                textAlign="center"
-                fontStyle="normal"
-                fontWeight={4}
+                sx={styles.subTitle}
               >
                 Check your Email to verify your Email
               </Text>
@@ -621,3 +533,162 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
 };
 
 export default NewBusinessForm;
+
+const styles={
+  //form 1
+
+  title:{
+    color:"#000000",
+    fontSize:"45px",
+    textAlign:"center",
+    fontStyle:"normal",
+    fontWeight:4,
+    "@media only screen and (max-width: 425px) ":{
+      fontSize:"25px"
+    },
+  },
+  subTitle:{
+    color:"rgba(0, 0, 0, 0.7)",
+    fontSize:"25px",
+    textAlign:"center",
+    fontStyle:"normal",
+    fontWeight:4,
+    "@media only screen and (max-width: 425px) ":{
+      fontSize:"20px"
+    },
+  },
+  container:{
+    marginLeft:"140px", width:"547px", marginBottom:20,
+    "@media only screen and (max-width: 425px) ":{
+      marginLeft:"40px",
+    },
+  },
+  label:{
+    marginTop:10, fontSize:"21px", width:"280px",
+    "@media only screen and (max-width: 425px) ":{
+      fontSize:"16px"
+    },
+  },
+  input:{
+    width:"447px",
+    height:"72px",
+    border:"1px",
+    borderRadius:"3px",
+    color:"#000000",
+    marginBottom:"25px",
+    "@media only screen and (max-width: 425px) ":{
+      width:"316px",
+      height:"42px",
+    },
+  },
+  button:{
+    border:"1px solid #000000",
+    bg:"#000000",
+    mt:"45px",
+    width:"445px",
+    height:"72px",
+    borderRadius:"3px",
+    "@media only screen and (max-width: 425px) ":{
+      width:"316px",
+      height:"42px",
+      mt:"25px",
+    },
+  },
+  buttonText:{
+    fontSize:"20px", textAlign:"center", color:"#ffffff",
+    "@media only screen and (max-width: 425px) ":{
+      fontSize:"15px",
+    },
+  },
+
+  //form 2
+  stepHeading:{
+    color:"rgba(0, 0, 0, 0.7)",
+    fontSize:"25px",
+    textAlign:"center",
+    fontStyle:"normal",
+    fontWeight:4,
+    mr:"80px",
+    "@media only screen and (max-width: 425px) ":{
+      fontSize:"20px",
+    },
+  },
+  labelForm2:{
+    marginTop:10, fontSize:"21px", width:"280px",
+    "@media only screen and (max-width: 425px) ":{
+      fontSize:"12px"
+    },
+  },
+  imageContainer:{
+    m:6, width:120, height:120,
+    "@media only screen and (max-width: 425px) ":{
+      width:"10px", height:"10px",m:1,
+    },
+  },
+  grid:{
+    "@media only screen and (max-width: 425px) ":{
+      display:"block"
+    },
+  },
+  box:{
+    "@media only screen and (max-width: 425px) ":{
+      marginTop:"100px"
+    },
+  },
+  formButton2:{
+    border:"1px solid #000000",
+    bg:"#000000",
+    mt:"45px",
+    ml:"280px",
+    w:"202px",
+    h:"72px",
+    borderRadius:"3px",
+    "@media only screen and (max-width: 425px) ":{
+      mt:"1px",
+      ml:"120px",
+      w:"102px",
+      h:"42px",
+    },
+  },
+  backButton:{
+    mt:"45px",
+    bg:"transparent",
+    border:"none",
+    outline:"none",
+    w:"102px",
+    h:"72px",
+    "@media only screen and (max-width: 425px) ":{
+      mt:"1px",
+      w:"102px",
+      h:"42px",
+    },
+  },
+  cityLabel:{
+    mt:10, ml:70, fontSize:"16px", w:"280px",
+    "@media only screen and (max-width: 425px) ":{
+      mt:30,ml:1, fontSize:"12px",
+    },
+  },
+  cityInput:{
+    ml:70,
+    w:"247px",
+    h:"42px",
+    border:"1px",
+    borderRadius:"3px",
+    color:"#000000",
+    "@media only screen and (max-width: 425px) ":{
+      ml:1,
+      mb:20,
+      w:"300px",
+      h:"32px",
+    },
+  },
+  formContainer4:{
+    ml:"30px", mb:20,
+    "@media only screen and (max-width: 425px) ":{
+      ml:"1px",
+      mb:20,
+    },
+  }
+  
+}

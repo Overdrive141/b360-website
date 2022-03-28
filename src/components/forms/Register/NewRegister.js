@@ -102,29 +102,19 @@ const Register = ({ completeFormStep, setUserId, ...props }) => {
     <Box>
       <chakra.form onSubmit={handleSubmit(onSubmit)}>
         <Text
-          h="116px"
-          color="#000000"
-          fontSize="45px"
-          ml="250px"
-          fontStyle="normal"
-          fontWeight={4}
+          sx={styles.title}
         >
           Sign Up
         </Text>
         <Grid templateColumns="repeat(7, 1fr)" gap={6} mt={6}>
-          <GridItem colSpan={5} mr={10} ml="100px">
+          <GridItem colSpan={5} mr={10} sx={styles.container}>
             <Grid templateColumns="repeat(2, 1fr)" gap={4} ml={12} m={2}>
               <GridItem>
-                <FormLabel fontSize="18px">First Name</FormLabel>
+                <FormLabel sx={styles.label}>First Name</FormLabel>
                 <InputGroup>
                   <Input
                     placeholder="First Name"
-                    w="207px"
-                    h="42px"
-                    border="1px"
-                    borderRadius="3px"
-                    color="#000000"
-                    mb="25px"
+                    sx={styles.input}
                     type="text"
                     {...register("firstName", {
                       required: "This is required",
@@ -137,17 +127,12 @@ const Register = ({ completeFormStep, setUserId, ...props }) => {
                   </FormErrorMessage>
                 </InputGroup>
               </GridItem>
-              <GridItem ml={50}>
-                <FormLabel fontSize="18px">Last Name</FormLabel>
+              <GridItem sx={styles.grid}>
+                <FormLabel sx={styles.label}>Last Name</FormLabel>
                 <InputGroup>
                   <Input
                     placeholder="Last Name"
-                    w="207px"
-                    h="42px"
-                    border="1px"
-                    borderRadius="3px"
-                    color="#000000"
-                    mb="25px"
+                    sx={styles.input}
                     type="text"
                     id="lastName"
                     {...register("lastName", {
@@ -162,16 +147,11 @@ const Register = ({ completeFormStep, setUserId, ...props }) => {
                 </InputGroup>
               </GridItem>
               <GridItem>
-                <FormLabel fontSize="18px">Email ID</FormLabel>
+                <FormLabel sx={styles.label}>Email ID</FormLabel>
                 <InputGroup>
                   <Input
                     placeholder="Email"
-                    w="207px"
-                    h="42px"
-                    border="1px"
-                    borderRadius="3px"
-                    color="#000000"
-                    mb="25px"
+                    sx={styles.input}
                     type="email"
                     id="email"
                     {...register("email", {
@@ -185,17 +165,12 @@ const Register = ({ completeFormStep, setUserId, ...props }) => {
                   </FormErrorMessage>
                 </InputGroup>
               </GridItem>
-              <GridItem ml={50}>
-                <FormLabel fontSize="18px">Contact Number</FormLabel>
+              <GridItem sx={styles.grid}>
+                <FormLabel sx={styles.label}>Contact Number</FormLabel>
                 <InputGroup>
                   <Input
                     placeholder="Contact Number"
-                    w="207px"
-                    h="42px"
-                    border="1px"
-                    borderRadius="3px"
-                    color="#000000"
-                    mb="25px"
+                    sx={styles.input}
                     type="text"
                     id="phoneNumber"
                     {...register("phoneNumber", {
@@ -211,16 +186,11 @@ const Register = ({ completeFormStep, setUserId, ...props }) => {
               </GridItem>
 
               <GridItem >
-                <FormLabel fontSize="18px">Password</FormLabel>
+                <FormLabel sx={styles.label}>Password</FormLabel>
                 <InputGroup>
                   <Input
                     placeholder="Password"
-                    w="207px"
-                    h="42px"
-                    border="1px"
-                    borderRadius="3px"
-                    color="#000000"
-                    mb="25px"
+                    sx={styles.input}
                     type="password"
                     id="password"
                     autoComplete="current-password"
@@ -235,17 +205,12 @@ const Register = ({ completeFormStep, setUserId, ...props }) => {
                   </FormErrorMessage>
                 </InputGroup>
               </GridItem>
-              <GridItem ml={50}>
-                <FormLabel fontSize="18px">Confirm Password</FormLabel>
+              <GridItem sx={styles.grid}>
+                <FormLabel sx={styles.label}>Confirm Password</FormLabel>
                 <InputGroup>
                   <Input
                     placeholder="Confirm Password"
-                    w="207px"
-                    h="42px"
-                    border="1px"
-                    borderRadius="3px"
-                    color="#000000"
-                    mb="25px"
+                    sx={styles.input}
                     type="password"
                     id="confirmPassword"
                     focusBorderColor="blue"
@@ -260,18 +225,10 @@ const Register = ({ completeFormStep, setUserId, ...props }) => {
                 </InputGroup>
               </GridItem>
               <GridItem>
-                <FormLabel fontSize="18px">Gender</FormLabel>
+                <FormLabel sx={styles.label}>Gender</FormLabel>
                 <Select
                   placeholder="Select Gender"
                   id="gender"
-                  style={{
-                    width: "207px",
-                    border: "1px",
-                    borderRadius: "3px",
-                    color: "#000000",
-                    marginBottom: "25px",
-                    focusBorderColor: "blue",
-                  }}
                   onChange={handleChange}
                 >
                   <Option value="Male">Male</Option>
@@ -305,18 +262,11 @@ const Register = ({ completeFormStep, setUserId, ...props }) => {
                             </Text>
                         )} */}
           <Button
-            borderRadius={40}
-            border="1px"
-            mt={10}
-            ml="450px"
+            sx={styles.button}
             type="submit"
-            colorScheme="customBlue"
-            bg="#000000"
-            width="182px"
-            h="42px"
             isLoading={isSubmitting}
           >
-            <Text fontSize="20px" textAlign="center" color="#ffffff">
+            <Text sx={styles.buttonText}>
               Next
             </Text>
           </Button>
@@ -327,3 +277,79 @@ const Register = ({ completeFormStep, setUserId, ...props }) => {
 };
 
 export default Register;
+
+const styles={
+  title:{
+    height:"116px",
+    color:"#000000",
+    fontSize:"45px",
+    marginLeft:"250px",
+    fontStyle:"normal",
+    fontWeight:4,
+    "@media only screen and (max-width: 425px) ":{
+      height:"116px",
+      fontSize:"25px",
+      marginLeft:"130px",
+    },
+  },
+  grid:{
+    marginLeft:50,
+    "@media only screen and (max-width: 425px) ":{
+      marginLeft:0,
+    },
+  },
+  label:{
+    fontSize:"18px",
+    "@media only screen and (max-width: 425px) ":{
+      fontSize:"14px",
+    },
+  },
+  input:{
+    width:"207px",
+    height:"42px",
+    border:"1px",
+    borderRadius:"3px",
+    color:"#000000",
+    marginBottom:"25px",
+    "@media only screen and (max-width: 425px) ":{
+      width:"116px",
+    },
+  },
+  container:{
+    marginLeft:"100px",
+    "@media only screen and (max-width: 425px) ":{
+      marginLeft:"10px",
+    },
+  },
+  button:{
+    borderRadius:40,
+    border:"1px",
+    marginTop:10,
+    marginLeft:"450px",
+    bg:"#000000",
+    width:"182px",
+    height:"42px",
+    "@media only screen and (max-width: 425px) ":{
+      width:"86px",
+      marginTop:10,
+      marginLeft:"240px",
+    },
+  },
+  buttonText:{
+    fontSize:"20px", textAlign:"center", color:"#ffffff",
+    "@media only screen and (max-width: 425px) ":{
+      fontSize:"15px"
+    },
+  },
+  select:{
+    width: "207px",
+    border: "1px",
+    borderRadius: "3px",
+    color: "#000000",
+    marginBottom: "25px",
+    focusBorderColor: "blue",
+    "@media only screen and (max-width: 425px) ":{
+      width:"86px",
+    },
+  },
+}
