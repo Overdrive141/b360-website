@@ -238,6 +238,11 @@ const styles = {
         lineHeight:"15px",
         ml:"130px",
     },
+    "@media only screen and (max-width: 400px) ":{
+        fontSize:"12px",
+        lineHeight:"15px",
+        ml:"80px",
+    },
     
   },  
 };
