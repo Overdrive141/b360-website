@@ -437,6 +437,12 @@ const styles = {
       marginTop: 5,
       width: "100%",
     },
+    "@media only screen and (max-width: 400px) ": {
+      fontSize: 19,
+      fontWeight: 500,
+      marginTop: 5,
+      width: "230px",
+    },
   },
 
   bannerIcon1: {

@@ -115,7 +115,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
   return (
     <>
       <Box d="flex" flexDir="column" {...props} justifyContent="center">
-        {formStep === 1 && (
+        {formStep === 0 && (
           <Register completeFormStep={completeFormStep} setUserId={setUserId} />
         )}
         <chakra.form onSubmit={handleSubmit(onSubmit)}>
@@ -210,7 +210,8 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                         placeholder="Contact Number"
                         w="157px"
                         h="42px"
-                        border="1px"
+                        border="100px"
+                        bo
                         borderRadius="3px"
                         color="#000000"
                         type="text"
@@ -555,7 +556,7 @@ const styles={
     },
   },
   input:{
-    width:"447px",
+    width:"347px",
     height:"72px",
     border:"1px",
     borderRadius:"3px",
@@ -565,16 +566,25 @@ const styles={
       width:"316px",
       height:"42px",
     },
+    "@media only screen and (max-width: 400px) ":{
+      width:"246px",
+      height:"42px",
+    },
   },
   button:{
     border:"1px solid #000000",
     bg:"#000000",
     mt:"45px",
-    width:"445px",
+    width:"345px",
     height:"72px",
     borderRadius:"3px",
     "@media only screen and (max-width: 500px) ":{
       width:"316px",
+      height:"42px",
+      mt:"25px",
+    },
+    "@media only screen and (max-width: 400px) ":{
+      width:"246px",
       height:"42px",
       mt:"25px",
     },
@@ -624,13 +634,31 @@ const styles={
     border:"1px solid #000000",
     bg:"#000000",
     mt:"45px",
-    ml:"280px",
+    ml:"220px",
     w:"202px",
     h:"72px",
     borderRadius:"3px",
     "@media only screen and (max-width: 500px) ":{
       mt:"1px",
       ml:"120px",
+      w:"102px",
+      h:"42px",
+    },
+    "@media only screen and (max-width: 400px) ":{
+      mt:"10px",
+      ml:"60px",
+      w:"102px",
+      h:"42px",
+    },
+    "@media only screen and (max-width: 358px) ":{
+      mt:"10px",
+      ml:"40px",
+      w:"102px",
+      h:"42px",
+    },
+    "@media only screen and (max-width: 335px) ":{
+      mt:"10px",
+      ml:"20px",
       w:"102px",
       h:"42px",
     },

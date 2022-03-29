@@ -291,6 +291,11 @@ const styles={
       fontSize:"25px",
       marginLeft:"130px",
     },
+    "@media only screen and (max-width: 400px) ":{
+      height:"116px",
+      fontSize:"20px",
+      marginLeft:"110px",
+    },
   },
   grid:{
     marginLeft:50,
@@ -307,12 +312,16 @@ const styles={
   input:{
     width:"207px",
     height:"42px",
-    border:"1px",
+    border:"3px ",
+    borderWidth:10,
     borderRadius:"3px",
     color:"#000000",
     marginBottom:"25px",
     "@media only screen and (max-width: 500px) ":{
       width:"207px",
+    },
+    "@media only screen and (max-width: 500px) ":{
+      width:"297px",
     },
   },
   container:{
@@ -354,6 +363,11 @@ const styles={
   },
   gridDisplay:{
     "@media only screen and (max-width: 500px) ":{
+      display:"block",
+      ml:"40px",
+    },
+    "@media only screen and (max-width: 400px) ":{
+      ml:"40px",
       display:"block",
     },
   }
