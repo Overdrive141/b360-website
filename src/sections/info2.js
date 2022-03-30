@@ -97,6 +97,10 @@ const styles = {
     overflow: "hidden",
     backgroundColor: "#fffff",
     textAlign: "center",
+    borderLeft:"1px black solid",
+    borderRight:"1px black solid",
+    ml:"5%",
+    mr:"5%",
     // pt: ["110px", null, null, null, "130px"],
     h2: {
       fontSize: ["28px", null, null, "32px", "38px", "48px", "64px"],

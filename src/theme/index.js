@@ -15,15 +15,15 @@ export default {
     dark: "#10132D",
 
     // highlight	a background color for highlighting text
-    modes: {
-      dark: {
-        text: "#fff",
-        background: "#000",
-        primary: "#0cf",
-        secondary: "#09c",
-        muted: "#111",
-      },
-    },
+    // modes: {
+    //   dark: {
+    //     text: "#fff",
+    //     background: "#000",
+    //     primary: "#0cf",
+    //     secondary: "#09c",
+    //     muted: "#111",
+    //   },
+    // },
   },
   fonts: {
     body: "DM Sans",

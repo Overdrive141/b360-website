@@ -20,6 +20,7 @@ export default function Products() {
 
   return (
     <Box as="section" id="products" sx={styles.section}>
+      <Box sx={styles.boxContainer}>
       <Container sx={styles.container}>
         <Box sx={styles.productInfo}>
           <Box
@@ -61,7 +62,7 @@ export default function Products() {
           <Box
             sx={styles.imageBox}
           >
-            <Image src="/Inventory.png" sx={styles.imageBox} />
+            <Image src="/Inventory.png" sx={styles.image} />
           </Box>
           <Box
             sx={styles.numberBox}
@@ -100,7 +101,7 @@ export default function Products() {
           <Box
             sx={styles.imageBox}
           >
-            <Image src="/Employee.png" sx={styles.imageBox} />
+            <Image src="/Employee.png" sx={styles.image} />
           </Box>
           <Box
             sx={styles.numberBox}
@@ -124,7 +125,7 @@ export default function Products() {
                 >Employee Chat</li>
                 <li
                   sx={styles.list}
-                >Employee Trackin</li>
+                >Employee Tracking</li>
               </ul>
             </Box>
           </Box>
@@ -133,7 +134,7 @@ export default function Products() {
           <Box
             sx={styles.imageBox}
           >
-            <Image src="/Equipment.png" sx={styles.imageBox} />
+            <Image src="/Equipment.png" sx={styles.image} />
           </Box>
           <Box
             sx={styles.numberBox}
@@ -157,7 +158,7 @@ export default function Products() {
                 >Equipment Maintenance</li>
                 <li
                   sx={styles.list}
-                >Equipment Bookingn</li>
+                >Equipment Booking</li>
                 <li
                   sx={styles.list}
                 >Equipment Reports</li>
@@ -169,7 +170,7 @@ export default function Products() {
           <Box
             sx={styles.imageBox}
           >
-            <Image src="/Procurement.png" sx={styles.imageBox} />
+            <Image src="/Procurement.png" sx={styles.image} />
           </Box>
           <Box
             sx={styles.numberBox}
@@ -208,7 +209,7 @@ export default function Products() {
           <Box
             sx={styles.imageBox}
           >
-            <Image src="/Order.png" sx={styles.imageBox} />
+            <Image src="/Order.png" sx={styles.image} />
           </Box>
           <Box
             sx={styles.numberBox}
@@ -247,7 +248,7 @@ export default function Products() {
           <Box
             sx={styles.imageBox}
           >
-            <Image src="/AccessControl.png" sx={styles.imageBox} />
+            <Image src="/AccessControl.png" sx={styles.image} />
           </Box>
           <Box
             sx={styles.numberBox}
@@ -274,6 +275,7 @@ export default function Products() {
           </Box>
         </Box>
       </Container>
+      </Box>
     </Box>
   );
 }
@@ -344,6 +346,10 @@ const styles = {
     overflow: "hidden",
     backgroundColor: "#fffff",
     textAlign: "center",
+    borderLeft:"1px black solid",
+    borderRight:"1px black solid",
+    ml:"5%",
+    mr:"5%",
     // pt: ["110px", null, null, null, "130px"],
     h2: {
       fontSize: ["28px", null, null, "32px", "38px", "48px", "64px"],
@@ -357,8 +363,12 @@ const styles = {
       mb: ["40px", null, null, "65px"],
     },
   },
+  boxContainer:{
+    
+  },
   container: {
     position: "relative",
+    
     ".bannerIcon": {
       position: "absolute",
       display: ["none", null, null, null, "block"],
@@ -389,7 +399,7 @@ const styles = {
     mb: "73px",
   
     display:"flex",
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       width:"100%",
       display:"block"
     },
@@ -409,7 +419,7 @@ const styles = {
       fontSize: "25px",
       lineHeight: "35px",
     },
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       fontSize: "25px",
       lineHeight:"25px"
     },
@@ -429,7 +439,7 @@ const styles = {
     "@media only screen and (max-width: 768px) ":{
       fontSize: "20px",
     },
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       fontSize: "20px",
     },
   },
@@ -450,7 +460,7 @@ const styles = {
       ml:"30px",
       lineHeight:"23px",
     },
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       fontSize: "13px",
       ml:"40px",
       lineHeight:"20px",
@@ -476,7 +486,7 @@ const styles = {
       maxWidth:"280px",
       maxHeight:"170px",
     },
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       maxWidth:"0px",
       maxHeight:"70px",
       border:"3px orange solid",
@@ -486,7 +496,7 @@ const styles = {
   image:{
     maxWidth:"480px",
     maxHeight:"370px",
-    border: "1px solid #1B1C1E",
+    //border: "1px solid #1B1C1E",
     boxSizing: "border-box",
     borderRadius: "3px",
     clipPath: "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
@@ -500,7 +510,7 @@ const styles = {
       maxWidth:"280px",
       maxHeight:"170px",
     },
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       maxWidth:"180px",
       maxHeight:"70px",
       //display:"none"
@@ -526,7 +536,7 @@ const styles = {
     "@media only screen and (max-width: 768px) ":{
       mt:"35px",
     },
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       mt:"35px",
       mr:"20px",
       width:"500px",
@@ -547,7 +557,7 @@ const styles = {
       mt:"15px",
       textAlign:"left "
     },
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       mr:"15px",
       textAlign:"left "
     },

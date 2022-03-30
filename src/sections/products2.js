@@ -61,18 +61,18 @@ export default function Products2() {
                         <ul>
                             <li
                                 sx={styles.list}
-                            >Detection</li>
+                            >Computer vision aided Supply chain automation</li>
                             <li
                                 sx={styles.list}
                             >Sentiment Analysis</li>
                             <li
                                 sx={styles.list}
-                            >Tracing and Object Detection</li>
+                            >Live tracking and Object detection</li>
                         </ul>
                     </Box>
                 </Box>
             </Box>
-            <Box sx={styles.box}>
+            {/* <Box sx={styles.box}>
                 <Box>
                     <Text sx={styles.number}>04</Text>
                 </Box>
@@ -92,10 +92,10 @@ export default function Products2() {
                         </ul>
                     </Box>
                 </Box>
-            </Box>
+            </Box> */}
             <Box sx={styles.box}>
-                <Box>
-                    <Text sx={styles.number}>05</Text>
+                <Box sx={{mb:"20%"}}>
+                    <Text sx={styles.number}>04</Text>
                 </Box>
                 <Box sx={styles.titleBox}>
                     <Text sx={styles.title}>Omni Channel</Text>
@@ -103,13 +103,13 @@ export default function Products2() {
                         <ul>
                             <li
                                 sx={styles.list}
-                            >Automated inventory replenishment</li>
+                            >Social Media Channel Integration</li>
                             <li
                                 sx={styles.list}
-                            >Inventory listing</li>
+                            >Data and Analytics</li>
                             <li
                                 sx={styles.list}
-                            >Track your inventory</li>
+                            >Customer Segmentation</li>
                         </ul>
                     </Box>
                 </Box>
@@ -147,25 +147,30 @@ const styles = {
     }  
   },
   box:{
-    mt:"61px",
-    mb:"40px",
+    mt:"1px",
+    mb:"1px",
     display:"flex",
-    "@media only screen and (max-width: 768px) ":{
-        mt:"41px",
-        mb:"40px"
+    "@media only screen and (max-width: 1024px) ":{
+        mt:"1px",
+        mb:"0px",
+        //height:"200px",
     },
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 768px) ":{
+        mt:"1px",
+        mb:"0px"
+    },
+    "@media only screen and (max-width: 500px) ":{
         mt:"21px",
         mb:"20px",
         width:"500px"
     }
   },
   titleBox:{
-    mt:"73px", textAlign:"left",
+    mt:"63px", textAlign:"left",
     "@media only screen and (max-width: 768px) ":{
         mt:"41px",
     },
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
         mt:"1px",
         //mb:"20px"
     }
@@ -178,9 +183,10 @@ const styles = {
     lineHeight:"375px",
     color:"#ffffff",
     "@media only screen and (max-width: 1024px) ":{
-        fontSize:"150px",
+        fontSize:"120px",
         letterSpacing: "0.10em",
         lineHeight:"275px",
+        
     },
     "@media only screen and (max-width: 768px) ":{
         fontSize:"100px",
@@ -188,7 +194,7 @@ const styles = {
         lineHeight:"175px",
         mt:"20px"
     },
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
         fontSize:"40px",
         letterSpacing: "10px",
         lineHeight:"45px",
@@ -203,7 +209,7 @@ const styles = {
     lineHeight:"105px",
     color:"#ffffff",
     "@media only screen and (max-width: 1024px) ":{
-        fontSize:"40px",
+        fontSize:"30px",
         letterSpacing: "0.15em",
         lineHeight:"105px",
     },
@@ -212,7 +218,7 @@ const styles = {
         letterSpacing: "0.15em",
         lineHeight:"85px",
     },
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
         fontSize:"15px",
         letterSpacing: "0.01em",
         lineHeight:"55px",ml:"105px",
@@ -226,14 +232,14 @@ const styles = {
     fontSize:"26px",
     lineHeight:"39px",
     "@media only screen and (max-width: 1024px) ":{
-        fontSize:"18px",
-        lineHeight:"29px",
+        fontSize:"12px",
+        lineHeight:"20px",
     },
     "@media only screen and (max-width: 768px) ":{
         fontSize:"15px",
         lineHeight:"25px",
     },
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
         fontSize:"12px",
         lineHeight:"15px",
         ml:"130px",

@@ -99,6 +99,10 @@ const styles = {
     overflow: "hidden",
     backgroundColor: "#ffffff",
     textAlign: "center",
+    borderLeft:"1px black solid",
+    borderRight:"1px black solid",
+    ml:"5%",
+    mr:"5%",
     // pt: ["110px", null, null, null, "130px"],
     h2: {
       fontSize: ["28px", null, null, "32px", "38px", "48px", "64px"],
@@ -143,15 +147,18 @@ const styles = {
     }
   },
   content:{
-    fontSize: "36px",
+    fontSize: "30px",
     fontWeight: 400,
     textAlign:"left",
     "@media only screen and (max-width: 1024px) ":{
-        fontSize:"30px",  
+        fontSize:"20px",  
     },
     "@media only screen and (max-width: 768px) ":{
-      fontSize:"20px",  
-  }
+      fontSize:"15px",  
+    },
+    "@media only screen and (max-width: 500px) ":{
+      fontSize:"12px",  
+    }
   },
   bannerIcon1: {
     top: "10%",

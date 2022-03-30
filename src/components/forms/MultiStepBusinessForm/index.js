@@ -182,7 +182,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                     </Box>
                   </GridItem>
                   <GridItem colSpan={2} sx={styles.box}>
-                    <FormLabel sx={styles.labelForm2}>Contact Number</FormLabel>
+                    <FormLabel sx={styles.labelForm2}>Business Contact Number</FormLabel>
                     <InputGroup>
                       <Input
                         placeholder="Contact Number"
@@ -272,17 +272,17 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                 </Text>
                 <Text sx={styles.title}>Add Your Address</Text>
               </Box>
-              <Box ml="30px" mb={20}>
+              <Box ml="10%" mb={20}>
                 <Grid
                   templateRows="repeat(2, 1fr)"
                   templateColumns="repeat(6, 1fr)"
                   gap={4}
                   sx={styles.grid}
                 >
-                  <GridItem rowSpan={2} colSpan={2}>
-                    <Box d="flex" flexDir="column" w="250" mt="15px">
+                  <GridItem rowSpan={2} colSpan={3}>
+                    <Box d="flex" flexDir="column" w="300" mt="15px">
                       <Map
-                        width={250}
+                        width={300}
                         height={250}
                         value="businessLocation"
                         {...{
@@ -296,7 +296,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                       />
                     </Box>
                   </GridItem>
-                  <GridItem colSpan={4}>
+                  {/* <GridItem colSpan={4}>
                     <FormLabel sx={styles.cityLabel}>City</FormLabel>
                     <InputGroup>
                       <Input
@@ -313,9 +313,10 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                         {errors.city && errors.city.message}
                       </FormErrorMessage>
                     </InputGroup>
-                  </GridItem>
+                  </GridItem> */}
                 </Grid>
-                <Button sx={styles.backButton} onClick={goBack}>
+              </Box>
+              <Button sx={styles.backButton} onClick={goBack}>
                   <Text>Back</Text>
                 </Button>
                 <Button
@@ -326,7 +327,6 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                 >
                   <Text sx={styles.buttonText}>Next</Text>
                 </Button>
-              </Box>
             </section>
           )}
           {formStep === 4 && (
@@ -395,15 +395,18 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                   }}
                   onChange={onCurrentRevenue}
                 >
-                  <Option value="Rs.50000-Rs.100000">Rs.50000-Rs.100000</Option>
-                  <Option value="Rs.100000-Rs.500000">
-                    Rs.100000-Rs.500000
+                  <Option value="Rs.50,000-Rs.100,000">Rs.50,000-Rs.100,000</Option>
+                  <Option value="Rs.100,000-Rs.500,000">
+                    Rs.100,000-Rs.500,000
                   </Option>
                   <Option value="Rs.500000-Rs.1000000">
-                    Rs.500000-Rs.1000000
+                    Rs.500,000-Rs.1,000,000
                   </Option>
                   <Option value="Rs.1000000-Rs.2000000">
-                    Rs.1000000-Rs.2000000
+                    Rs.1,000,000-Rs.2,000,000
+                  </Option>
+                  <Option value="over Rs.2000000">
+                    over Rs.2,000,000
                   </Option>
                 </Select>
                 <FormLabel fontSize="18px" mb="20px" mt="20px">
@@ -448,7 +451,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
             <Box h="116px" mt="19px">
               <Text sx={styles.title}>Your Store is ready to go</Text>
               <Text sx={styles.subTitle}>
-                Check your Email to verify your Email
+                Check your Email to verify your Account
               </Text>
             </Box>
           </section>
@@ -558,6 +561,9 @@ const styles = {
     marginTop: 10,
     fontSize: "21px",
     width: "280px",
+    "@media only screen and (max-width: 10240px) ": {
+      fontSize: "12px",
+    },
     "@media only screen and (max-width: 500px) ": {
       fontSize: "12px",
     },
@@ -590,6 +596,12 @@ const styles = {
     w:"202px",
     h:"72px",
     borderRadius:"3px",
+    "@media only screen and (max-width: 10240px) ":{
+      mt:"45px",
+      ml:"50%",
+      w:"152px",
+      h:"62px",
+    },
     "@media only screen and (max-width: 500px) ":{
       mt:"1px",
       ml:"120px",

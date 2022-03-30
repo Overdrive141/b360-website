@@ -116,6 +116,7 @@ const Register = ({ completeFormStep, setUserId, ...props }) => {
                     placeholder="First Name"
                     sx={styles.input}
                     type="text"
+                    variant="outline"
                     {...register("firstName", {
                       required: "This is required",
                     })}
@@ -312,6 +313,7 @@ const styles={
   input:{
     width:"207px",
     height:"42px",
+    variant:"outline",
     border:"3px ",
     borderWidth:10,
     borderRadius:"3px",

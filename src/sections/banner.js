@@ -76,7 +76,7 @@ export default function Banner() {
     <>
       <Box as="section" id="home" sx={styles.section}>
         <Container sx={styles.container}>
-          <Image
+          {/* <Image
             sx={styles.bannerIcon1}
             className="bannerIcon"
             alt="banner icon"
@@ -87,7 +87,7 @@ export default function Banner() {
             className="bannerIcon"
             alt="banner icon"
             src={bannerIcon2}
-          />
+          /> */}
           {/* <Image
           sx={styles.bannerIcon3}
           className="bannerIcon"
@@ -128,7 +128,7 @@ export default function Banner() {
               className="hero-title"
             >
               <Heading as="h1" sx={styles.heroTitle}>
-                Build for <br />
+                Built for <br />
                 local <br />
                 Businesses
               </Heading>
@@ -152,7 +152,7 @@ export default function Banner() {
                   "@media only screen and (max-width: 768px) ": {
                     mt: "15px",
                   },
-                  "@media only screen and (max-width: 425px) ": {
+                  "@media only screen and (max-width: 500px) ": {
                     mt: "10px",
                   },
                 }}
@@ -195,7 +195,7 @@ export default function Banner() {
                     "@media only screen and (max-width: 768px) ": {
                       fontSize: "10px",
                     },
-                    "@media only screen and (max-width: 425px) ": {
+                    "@media only screen and (max-width: 500px) ": {
                       fontSize: "8px",
                       lineHeight: "9px",
                     },
@@ -214,6 +214,7 @@ export default function Banner() {
         title=""
         visible={isOpen}
         width={700}
+        height={700}
         footer={null}
         closable={false}
       >
@@ -290,6 +291,7 @@ const styles = {
     overflow: "hidden",
     backgroundColor: "#F9FBFD",
     textAlign: "center",
+    
     // pt: ["110px", null, null, null, "130px"],
     h2: {
       fontSize: ["28px", null, null, "32px", "38px", "48px", "64px"],
@@ -315,7 +317,7 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "center",
     minHeight: [null, null, null, null, "50vh", "100vh"],
-    "@media only screen and (max-width: 425px)": {
+    "@media only screen and (max-width: 500px)": {
       display: "block",
     },
   },
@@ -343,7 +345,9 @@ const styles = {
     borderRadius: "10px",
     borderWidth: 1,
     borderColor: "black",
-    m: ["110px 0 0", null, null, "110px auto 0", "60px 0 0", null, 0],
+    mt:"10%",
+    mb:"10%",
+    // m: ["110px 0 0", null, null, "110px auto 0", "60px 0 0", null, 0],
     "@media only screen and (max-width: 1024px)": {
       maxWidth: 500,
       mt: 70,
@@ -356,7 +360,7 @@ const styles = {
       mb: 70,
       padding: "30px 50px 65px",
     },
-    "@media only screen and (max-width: 425px)": {
+    "@media only screen and (max-width: 500px)": {
       maxWidth: 350,
       mt: 70,
       mb: 70,
@@ -375,7 +379,7 @@ const styles = {
     "@media only screen and (max-width: 768px)": {
       fontSize: "60px",
     },
-    "@media only screen and (max-width: 425px)": {
+    "@media only screen and (max-width: 500px)": {
       fontSize: "40px",
       mt: "80px",
     },
@@ -397,7 +401,7 @@ const styles = {
       fontSize: "22px",
       lineHeight: "26px",
     },
-    "@media only screen and (max-width: 425px)": {
+    "@media only screen and (max-width: 500px)": {
       mt: 15,
       fontSize: "16px",
       lineHeight: "20px",
@@ -431,7 +435,7 @@ const styles = {
       marginTop: 5,
       width: "100%",
     },
-    "@media only screen and (max-width: 425px) ": {
+    "@media only screen and (max-width: 500px) ": {
       fontSize: 19,
       fontWeight: 500,
       marginTop: 5,

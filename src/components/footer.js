@@ -149,11 +149,11 @@ const styles = {
     padding: 0,
     mb:"40.5px",
     ml:"155.5px",
-    mr:"155.5px",
+    mr:"55.5px",
     "@media only screen and (max-width: 1024px) ":{
       mb:"25.5px",
     },
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       display:"none"
     },
     // display: ['flex'],

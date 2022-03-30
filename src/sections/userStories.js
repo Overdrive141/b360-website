@@ -16,10 +16,16 @@ import {
     AccordionPanel,
     AccordionIcon,
 } from '@chakra-ui/react'
-
+import React, {useState, useEffect} from "react"
 import { keyframes } from "@emotion/react";
 
 export default function UserStories() {
+
+  const [selected, setSelected] = useState("")
+
+  useEffect(()=>{
+    console.log("selected-->",selected)
+  },[selected])
 
   return (
     <Box as="section" id="userStories" sx={styles.section}>
@@ -32,19 +38,23 @@ export default function UserStories() {
                 <Accordion allowToggle  >
                     <AccordionItem  >
                         <h2>
-                        <AccordionButton>
-                            <Box flex='1' sx={{              
-                            "@media only screen and (max-width: 768px)":
-                            {
-                              width:"100%",
-                            }}}>
-                              <Text 
-                                  sx={styles.accordianTitle}
-                                >Pure Water Delivery (water company)</Text>
-                                
-                            </Box>
-                            <AccordionIcon flex="right" />
-                        </AccordionButton>
+                          <Box onClick={()=> setSelected("Water")} sx={styles.accordianBox}>
+                            <AccordionButton>
+                              <Box flex='1' sx={{              
+                              "@media only screen and (max-width: 768px)":
+                              {
+                                width:"100%",
+                              }}}>
+                                <Text 
+                                    sx={styles.accordianTitle}
+                                  >Pure Water Delivery (water company)</Text>
+                                  
+                              </Box>
+                              <Box sx={styles.iconRetail}>
+                                <AccordionIcon color="#bbbbb"  mt={20}  />
+                              </Box>
+                          </AccordionButton>
+                          </Box>
                         </h2>
                         <AccordionPanel pb={4}  >
                           <Text
@@ -62,14 +72,18 @@ export default function UserStories() {
 
                     <AccordionItem>
                         <h2>
-                        <AccordionButton textAlign="left">
-                            <Box flex='1' sx={{textAlign:  "left"}}>
-                                <Text 
-                                  sx={styles.accordianTitle}
-                                >Safe Home Solutions (HVAC)</Text>
-                            </Box>
-                            <AccordionIcon mt={20} />
-                        </AccordionButton>
+                          <Box onClick={()=> setSelected("Safe Home")} sx={styles.accordianBox}>
+                            <AccordionButton textAlign="left">
+                              <Box flex='1' sx={{textAlign:  "left"}}>
+                                  <Text 
+                                    sx={styles.accordianTitle}
+                                  >Safe Home Solutions (HVAC)</Text>
+                              </Box>
+                              <Box sx={styles.iconSafe}>
+                                <AccordionIcon color="#bbbbb"  mt={20}  />
+                              </Box>
+                          </AccordionButton>
+                          </Box>
                         </h2>
                         <AccordionPanel pb={4} mr="10%">
                         <b>Problem:</b> Managing field service-based industries such as HVAC is very difficult. Most of the companies are switching to these cloud-based ERPs to get the solutions to all problems in one place. Managers at Safe Home Solutions were also finding it difficult to track their orders and employees operating in the field, they were looking for a more remote and transparent solution that provides them with full visibility of their business operations both infield and internally. They were also looking to increase their orders as currently, they were only getting offline orders.<br /><br />
@@ -81,14 +95,18 @@ export default function UserStories() {
                     <Divider sx={styles.divider} />
                     <AccordionItem>
                         <h2>
-                        <AccordionButton>
-                            <Box flex='1' textAlign='left'>
-                              <Text 
-                                  sx={styles.accordianTitle}
-                                >Velocity Movers and Packers (Freight)</Text>
-                            </Box>
-                            <AccordionIcon mt={20} />
-                        </AccordionButton>
+                          <Box onClick={()=> setSelected("velocity")} sx={styles.accordianBox}>
+                            <AccordionButton>
+                              <Box flex='1' textAlign='left'>
+                                <Text 
+                                    sx={styles.accordianTitle}
+                                  >Velocity Movers and Packers (Freight)</Text>
+                              </Box>
+                              <Box sx={styles.iconRetail}>
+                                <AccordionIcon color="#bbbbb"  mt={20}  />
+                              </Box>
+                          </AccordionButton>
+                          </Box>
                         </h2>
                         <AccordionPanel pb={4} mr="10%">
                             <b>Problem:</b>Velocity Movers and Packers were using an ERP system but it required the managers to input data manually in every step of the process, moreover; their system wasn't logging the data entries hence they couldn't see any insights about the business. Managers at the company also wanted efficiency and decreased inventory cycle. <br /><br />
@@ -105,8 +123,25 @@ export default function UserStories() {
                   width:"900px",
                 }
             }} >
-                <Image src="/userStories.png" 
-                  sx={styles.image} />
+                {selected === "Water" ?
+                  <Image
+                    src="/water.jpeg"
+                    sx={styles.image}
+                  /> 
+                  : 
+                  selected === "Safe Home" ?
+                    <Image
+                      src="/hvac.jpg"
+                      sx={styles.image}
+                    />
+                  :
+                  selected === "velocity" ?
+                    <Image
+                      src="/velocity.jpeg"
+                      sx={styles.image}
+                    />
+                  : null
+                }
             </Box>
         </Box>
       </Container>
@@ -180,6 +215,10 @@ const styles = {
     overflow: "hidden",
     backgroundColor: "#fffff",
     textAlign: "center",
+    borderLeft:"1px black solid",
+    borderRight:"1px black solid",
+    ml:"5%",
+    mr:"5%",
     // pt: ["110px", null, null, null, "130px"],
     h2: {
       fontSize: ["28px", null, null, "32px", "38px", "48px", "64px"],
@@ -234,10 +273,11 @@ const styles = {
     }
   },
   image:{
-    height:"1080px", width:"1025px", float:"right",
+    height:"1080px", width:"905px", float:"right",
     "@media only screen and (max-width: 1024px)" :{
       width:"700px",
-      height:"900px",
+      height:"600px",
+      mt:"10%",
     },
     "@media only screen and (max-width: 768px)" :{
       display:"none"
@@ -252,16 +292,55 @@ const styles = {
     "@media only screen and (max-width: 768px) ":{
       width:"4000px",
     },
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
       width:"700px",
     },
+  },
+  accordianBox:{
+    width:"600px",
+    "@media only screen and (max-width: 1024px) ":{
+      width:"420px",
+    },
+    "@media only screen and (max-width: 768px) ":{
+      width:"600px",
+    },
+    "@media only screen and (max-width: 500px) ":{
+      width:"300px",
+    },
+    "@media only screen and (max-width: 400px) ":{
+      width:"300px",
+    }
+  },
+  iconRetail:{ 
+    ml:"17%",
+    "@media only screen and (max-width: 1024px) ":{
+      ml:"5%",
+    },
+    "@media only screen and (max-width: 768px) ":{
+      ml:"12.5%",
+    },
+    "@media only screen and (max-width: 500px) ":{
+      ml:"10%",
+    }
+  },
+  iconSafe:{ 
+    ml:"32%",
+    "@media only screen and (max-width: 1024px) ":{
+      ml:"20%",
+    },
+    "@media only screen and (max-width: 768px) ":{
+      ml:"12.5%",
+    },
+    "@media only screen and (max-width: 500px) ":{
+      ml:"10%",
+    }
   },
   contentAccordian:{
     "@media only screen and (max-width: 768px) ":{
       width:"550px",
       fontSize:"12px",
       mt:"12px",
-      textAlign:"center",
+      textAlign:"justify",
       alignSelf:"center"
 
     },
@@ -271,6 +350,8 @@ const styles = {
   divider:{
     width:"600px",
     mt:"24px",
+    opacity:"0.5",
+    weight:1  ,  
     border: "0.5px solid #6C6C6C",
     "@media only screen and (max-width: 1024px) ":{
       width:"350px",

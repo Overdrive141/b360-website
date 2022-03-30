@@ -30,50 +30,30 @@ export default function FAQ() {
             <Container sx={styles.container}>
                 <SimpleGrid columns={2} spacing={100} sx={styles.grid}>
                     <Box  mt="106px" textAlign="left">
-                        <Text color="#FFFFFF" fontSize="60px" fontWeight={400} lineHeight="90px">Questions?<br/> We're here to <br/>help.</Text>
+                        <Text color="#FFFFFF" fontSize="40px" fontWeight={400} lineHeight="60px">Questions?<br/> We're here to help.</Text>
                         <Text color="#FFFFFF" fontSize="16px" fontWeight={400} opacity="0.5" lineHeight="24px" mt={20}>Our advisors are here to help you chart a course to success. They can answer <br/>all your Business360-related questions, including topics like:</Text>
                         <Box mt="15px">
                             <ul>
                                 <li
                                     sx={styles.list}
-                                >Data Discovery</li>
+                                >Our entire product portfolio</li>
                                 <li
                                     sx={styles.list}
-                                >Data Silos and Insights</li>
+                                >Pricing information</li>
                                 <li
                                     sx={styles.list}
-                                >Data Vulnerability</li>
+                                >Implementation and adoption planning</li>
                             </ul>
                         </Box>
                     </Box>
                     <Box  mt="106px">
                         <chakra.form onSubmit={handleSubmit(onSubmit)}>
-                            
-                        <InputGroup>
-                                <Input 
-                                    placeholder="First Name"
-                                    variant='outline'   
-                                    w="547px"
-                                    h="72px"
-                                    bg="#1B1C1E"
-                                    border="1px solid #FFFFFF"
-                                    boxSizing= "border-box"
-                                    borderRadius="3px" 
-                                    mb="36px"
-                                    type="text"
-                                    id="firstName"
-                                    {...register("firstName", {
-                                    required: "This is required",
-                                    })}
-                                    focusBorderColor="blue"
-                                />
-                            </InputGroup>
                             <InputGroup>
                                 <Input 
-                                    placeholder="Last Name"
+                                    placeholder="Full Name"
                                     variant='outline'   
                                     w="547px"
-                                    h="72px"
+                                    h="52px"
                                     bg="#1B1C1E"
                                     border="1px solid #FFFFFF"
                                     boxSizing= "border-box"
@@ -92,7 +72,7 @@ export default function FAQ() {
                                     placeholder="Email"
                                     variant='outline'   
                                     w="547px"
-                                    h="72px"
+                                    h="52px"
                                     bg="#1B1C1E"
                                     border="1px solid #FFFFFF"
                                     boxSizing= "border-box"
@@ -111,7 +91,7 @@ export default function FAQ() {
                                     placeholder="Phone"
                                     variant='outline'   
                                     w="547px"
-                                    h="72px"
+                                    h="52px"
                                     color="#1B1C1E" 
                                     bg="#1B1C1E"
                                     border="1px solid #FFFFFF"
@@ -131,7 +111,7 @@ export default function FAQ() {
                                     placeholder="Message"
                                     variant='outline'   
                                     w="547px"
-                                    h="188px"
+                                    h="88px"
                                     color="#1B1C1E" 
                                     bg="#1B1C1E"
                                     border="1px solid #FFFFFF"
@@ -183,7 +163,7 @@ const styles = {
     position: "relative",
     background: "#1B1C1E",
     width:"100%",
-    mb:"251px",
+    mb:"101px",
     ".imageBackground":{
         width: "1270px",
         height: "1079px",
@@ -199,7 +179,7 @@ const styles = {
     "@media only screen and (max-width: 768px) ":{
         display:"block"      
     },
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
         display:"block"      
     }
   },
@@ -212,7 +192,7 @@ const styles = {
     border:"2px solid #FFFFFF",
     boxSizing:"border-box",
     borderRadius:"30px",
-    "@media only screen and (max-width: 425px) ":{
+    "@media only screen and (max-width: 500px) ":{
         ml:"150px",
     }
   },

@@ -24,7 +24,8 @@ import {
   AccordionItem,
   AccordionButton,
   AccordionPanel,
-  AccordionIcon
+  AccordionIcon,
+  Collapse
 } from "@chakra-ui/react";
 
 import { AnimationOnScroll } from "react-animation-on-scroll";
@@ -51,6 +52,7 @@ const opacity = useTransform(x, input, output)
 export default function UserStories() {
   const ref = useRef(null);
   const [progress, setProgress] = useState(0);
+  const [selected, setSelected] = useState("")
   // const { scrollYProgress } = useElementScroll(ref)
 
   const { scrollYProgress } = useViewportScroll();
@@ -69,6 +71,10 @@ export default function UserStories() {
       console.log(latest);
     });
   }, []);
+
+  useEffect(()=>{
+    console.log("selected-->",selected)
+  },[selected])
 
   return (
       <Box as="section" id="products" sx={styles.section}>
@@ -90,29 +96,27 @@ export default function UserStories() {
               <Accordion allowToggle>
                 <AccordionItem  >
                   <h2>
-                    <AccordionButton>
-                      <Box
-                        flex='1'
-                        sx={{color: "#ffffff"}}
-                      >
-                        <Text 
-                          sx={styles.accordianTitle}
-                        >Distribution</Text>
-                      </Box>
-                      <AccordionIcon color="#ffffff"  mt={20} />
-                    </AccordionButton>
+                    <Box onClick={()=> setSelected("distribution")} sx={styles.accordianBox}>
+                      <AccordionButton >
+                        <Box
+                          flex='1'
+                          sx={{color: "#ffffff"}}
+                          
+                        >
+                          <Text 
+                            sx={styles.accordianTitle}
+                          >Distribution</Text>
+                        </Box>
+                        <Box sx={styles.iconDistribution}>
+                          <AccordionIcon color="#ffffff"  mt={20}  />
+                        </Box>
+                        
+                      </AccordionButton>
+                    </Box>
+                    
                   </h2>
                   <AccordionPanel pb={4} color="#ffffff" mr="10%">
-                    With many customers throughout the retail industry, we have
-                    deep experience in working with companies like yours.
-                    Business 360 has taken this industry expertise and bundled
-                    it into the retail solution to solve the unique business
-                    challenges of the manufacturing, wholesale, and retail
-                    industries. Combine this industry expertise with the leading
-                    practices developed by our retail-dedicated professional
-                    services team, we help our customers transform their
-                    businesses in consumable stages to develop a competitive
-                    advantage in the marketplace
+                  Wholesale distributors have had to adapt to rapid and significant change and will need to stay agile in order to remain competitive. Using Business 360, distributors can run their businesses on a single, unified platform reducing IT costs and gaining comprehensive, real-time visibility across their organizations. Run your entire business on a single, true cloud platform. Rid yourself of multiple, disparate applications and bring all your data into a single, customizable system, accessible from anywhere. Know your operations like never before. Gain insight from data gathered across your organization and empower your employees with the information they need.
                   </AccordionPanel>
                 </AccordionItem>
 
@@ -121,23 +125,33 @@ export default function UserStories() {
                 />
                 <AccordionItem  >
                   <h2>
-                    <AccordionButton>
-                      <Box
-                        flex='1'
-                        sx={{color: "#ffffff"}}
-                      >
-                        <Text 
-                          sx={styles.accordianTitle}
-                        >Freight</Text>
-                      </Box>
-                      <AccordionIcon color="#ffffff" mt={20} />
-                    </AccordionButton>
+                    <Box onClick={()=>setSelected("freight")} sx={styles.accordianBox}>
+                      <AccordionButton>
+                        <Box
+                          flex='1'
+                          sx={{color: "#ffffff"}}
+                        >
+                          <Text 
+                            sx={styles.accordianTitle}
+                          >Freight</Text>
+                        </Box>
+                        <Box sx={styles.iconFreight}>
+                          <AccordionIcon color="#ffffff"  mt={20}  />
+                        </Box>
+                      </AccordionButton>
+                    </Box>
+                    
                   </h2>
                   <AccordionPanel pb={4} color="#ffffff" mr="10%">
-                    SubLo is a hyperlocal marketplace that is enabled by
-                    Business 360 to provides all the SaaS tools to local
-                    businesses so they can transition towards digitization in an
-                    On Demand Economy.
+                    Globalization makes our world smaller every day. With intensely competitive 
+                    international markets comes an increased pressure to deliver timely service 
+                    while keeping costs low. Behind the simplistic idea of moving products from point, 
+                    A to B is a complex set of challenges that must be faced head-on—inventory management, 
+                    supply chain visibility, compliance, and accounting workflows. To overcome these obstacles, 
+                    transportation and logistics companies need to be able to process information 
+                    faster and act immediately on results. Whether you move goods via air, land, 
+                    or sea, Business 360’s cloud-based business management suite enables your 
+                    business to improve visibility, minimize complexity and remain agile in the face of massive change
                   </AccordionPanel>
                 </AccordionItem>
 
@@ -147,23 +161,34 @@ export default function UserStories() {
 
                 <AccordionItem  >
                   <h2>
-                    <AccordionButton>
-                      <Box
-                        flex='1'
-                        sx={{color: "#ffffff"}}
-                      >
-                        <Text 
-                          sx={styles.accordianTitle}
-                        >HVAC</Text>
-                      </Box>
-                      <AccordionIcon color="#ffffff"  mt={20} />
-                    </AccordionButton>
+                    <Box onClick={()=>setSelected("hvac")} sx={styles.accordianBox}>
+                      <AccordionButton>
+                        <Box
+                          flex='1'
+                          sx={{color: "#ffffff"}}
+                        >
+                          <Text 
+                            sx={styles.accordianTitle}
+                          >HVAC</Text>
+                        </Box>
+                        <Box sx={styles.iconHvac}>
+                          <AccordionIcon color="#ffffff"  mt={20}  />
+                        </Box>
+                      </AccordionButton>
+                    </Box>
+                    
                   </h2>
                   <AccordionPanel pb={4} color="#ffffff" mr="10%">
-                    SubLo is a hyperlocal marketplace that is enabled by
-                    Business 360 to provides all the SaaS tools to local
-                    businesses so they can transition towards digitization in an
-                    On Demand Economy.
+                  Whether it is drafting equipment proposals, managing customers, calculating 
+                  flat-rate pricing, boosting sales, or performing a range of other business functions, 
+                  Business 360 has got you covered! It is a one-point solution that manages everything 
+                  through a web-based system. It will supplement your sales team’s efforts by providing 
+                  a ready comparison chart of the various models within seconds. With Business 360 your 
+                  customers will have access to online, real-time scheduling. They can instantly schedule 
+                  appointments for the required services, from the comfort of their home. Even spikes 
+                  in seasonal demand for spring and fall tune-ups can be easily and conveniently managed.
+                   Additionally, Business 360 can help you manage your Field Worker's timesheets and 
+                   payroll so they’re paid on time.
                   </AccordionPanel>
                 </AccordionItem>
                 <Divider
@@ -171,23 +196,33 @@ export default function UserStories() {
                 />  
                 <AccordionItem  >
                   <h2>
-                    <AccordionButton>
-                      <Box
-                        flex='1'
-                        sx={{color: "#ffffff"}}
-                      >
-                        <Text 
-                          sx={styles.accordianTitle}
-                        >Security</Text>
-                      </Box>
-                      <AccordionIcon color="#ffffff"  mt={20} />
-                    </AccordionButton>
+                    <Box onClick={()=>setSelected("retail")} sx={styles.accordianBox}>
+                      <AccordionButton>
+                        <Box
+                          flex='1'
+                          sx={{color: "#ffffff"}}
+                        >
+                          <Text 
+                            sx={styles.accordianTitle}
+                          >Retail</Text>
+                        </Box>
+                        <Box sx={styles.iconRetail}>
+                          <AccordionIcon color="#ffffff"  mt={20}  />
+                        </Box>
+                      </AccordionButton>
+                    </Box>
+                    
                   </h2>
                   <AccordionPanel pb={4} color="#ffffff" mr="10%">
-                    SubLo is a hyperlocal marketplace that is enabled by
-                    Business 360 to provides all the SaaS tools to local
-                    businesses so they can transition towards digitization in an
-                    On Demand Economy.
+                  With many customers throughout the retail industry, we 
+                  have deep experience in working with companies like yours.
+                  Business 360 has taken this industry expertise and bundled 
+                  it into the retail solution to solve the unique business 
+                  challenges of the manufacturing, wholesale, and retail industries. 
+                  Combine this industry expertise with the leading practices 
+                  developed by our retail-dedicated professional services team,
+                   we help our customers transform their businesses in consumable 
+                   stages to develop a competitive advantage in the marketplace
                   </AccordionPanel>
                 </AccordionItem>
 
@@ -204,10 +239,31 @@ export default function UserStories() {
                 }
               }}  
             >
-              <Image
-                src="/b.jpg"
-                sx={styles.image}
-              />
+              {selected === "distribution" ?
+                  <Image
+                  src="/distribution.jpg"
+                  sx={styles.image}
+                /> 
+                : 
+                selected === "freight" ?
+                  <Image
+                    src="/freight.jpg"
+                    sx={styles.image}
+                  />
+                :
+                selected === "hvac" ?
+                  <Image
+                    src="/hvac.jpg"
+                    sx={styles.image}
+                  />
+                :
+                selected === "retail" ?
+                  <Image
+                    src="/b.jpg"
+                    sx={styles.image}
+                  />
+                : null
+              }
             </Box>
           </Box>
         </Container>
@@ -336,10 +392,11 @@ const styles = {
     },
   },
   image:{
-    height:"1080px", width:"1025px", float:"right",
+    height:"580px", width:"1025px", float:"right",mt:"22%",
     "@media only screen and (max-width: 1024px)" :{
+      mt:"26%",
       width:"550px",
-      height:"900px",
+      height:"680px",
     },
     "@media only screen and (max-width: 768px)" :{
       width:"500px",
@@ -368,7 +425,7 @@ const styles = {
     mt:"24px",
     border: "0.5px solid #6C6C6C",
     "@media only screen and (max-width: 1024px) ":{
-      width:"350px",
+      width:"420px",
       mt:"16px",
     },
     "@media only screen and (max-width: 768px) ":{
@@ -395,10 +452,79 @@ const styles = {
   contentBox:{
     display:"flex",width:"1590px",height:"1200px",
     "@media only screen and (max-width: 1024px) ":{
-      width:"1000px",height:"1000px"
+      width:"1000px"
     },
     "@media only screen and (max-width: 768px) ":{
       width:"400px",height:"900px"
+    },
+    "@media only screen and (max-width: 500px) ":{
+      width:"400px"
+    },
+    "@media only screen and (max-width: 400px) ":{
+      width:"300px",height:"1600px"
+    },
+  },
+  accordianBox:{  
+    width:"600px",
+    "@media only screen and (max-width: 1024px) ":{
+      width:"420px",
+    },
+    "@media only screen and (max-width: 768px) ":{
+      width:"600px",
+    },
+    "@media only screen and (max-width: 500px) ":{
+      width:"300px",
+    },
+    "@media only screen and (max-width: 400px) ":{
+      width:"300px",
+    }
+  },
+  iconDistribution:{ 
+    ml:"65%",
+    "@media only screen and (max-width: 1024px) ":{
+      ml:"65%",
+    },
+    "@media only screen and (max-width: 768px) ":{
+      ml:"65%",
+    },
+    "@media only screen and (max-width: 500px) ":{
+      ml:"35%",
+    }
+  },
+  iconFreight:{ 
+    ml:"75%",
+    "@media only screen and (max-width: 1024px) ":{
+      ml:"75%",
+    },
+    "@media only screen and (max-width: 768px) ":{
+      ml:"71.5%",
+    },
+    "@media only screen and (max-width: 500px) ":{
+      ml:"48%",
+    }
+  },
+  iconHvac:{ 
+    ml:"77%",
+    "@media only screen and (max-width: 1024px) ":{
+      ml:"77%",
+    },
+    "@media only screen and (max-width: 768px) ":{
+      ml:"72.5%",
+    },
+    "@media only screen and (max-width: 500px) ":{
+      ml:"50%",
+    }
+  },
+  iconRetail:{ 
+    ml:"77%",
+    "@media only screen and (max-width: 1024px) ":{
+      ml:"77%",
+    },
+    "@media only screen and (max-width: 768px) ":{
+      ml:"72.5%",
+    },
+    "@media only screen and (max-width: 500px) ":{
+      ml:"50%",
     }
   },
   content: {
