@@ -10,6 +10,7 @@ import bannerIcon5 from "assets/images/banner-icon-1-5.svg";
 import bannerIcon6 from "assets/images/banner-icon-1-6.svg";
 import bannerIcon7 from "assets/images/dot-pattern.svg";
 
+
 import { keyframes } from "@emotion/react";
 
 export default function Products() {
@@ -478,7 +479,9 @@ const styles = {
     ],
     maxWidth:"580px",
     maxHeight:"430px",
-    boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+    border: "1px solid gray",
+    borderRadius:"10px",
+    //boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
     "@media only screen and (max-width: 1024px) ":{
       maxWidth:"500px",
       maxHeight:"310px",

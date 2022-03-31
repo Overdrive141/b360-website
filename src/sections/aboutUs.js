@@ -19,14 +19,17 @@ import bannerIcon4 from "assets/images/banner-icon-1-4.svg";
 import bannerIcon5 from "assets/images/banner-icon-1-5.svg";
 import bannerIcon6 from "assets/images/banner-icon-1-6.svg";
 import bannerIcon7 from "assets/images/dot-pattern.svg";
+import {BsArrowDownCircle,BsArrowUpCircle} from "react-icons/bs"
 import {
   Accordion,
   AccordionItem,
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
+  Icon,
   Collapse
 } from "@chakra-ui/react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import {
@@ -36,6 +39,7 @@ import {
   useElementScroll,
   useViewportScroll
 } from "framer-motion";
+import { ArrowDownIcon,} from '@chakra-ui/icons'
 
 import { keyframes } from "@emotion/react";
 import { urlObjectKeys } from "next/dist/shared/lib/utils";
@@ -77,7 +81,7 @@ export default function UserStories() {
   },[selected])
 
   return (
-      <Box as="section" id="products" sx={styles.section}>
+      <Box as="section" id="aboutUs" sx={styles.section}>
         <Container sx={styles.container}>
           <Box sx={styles.contentBox}>
             <Box
@@ -109,6 +113,8 @@ export default function UserStories() {
                         </Box>
                         <Box sx={styles.iconDistribution}>
                           <AccordionIcon color="#ffffff"  mt={20}  />
+                          {/* <Icon as={BsArrowUpCircle} /> */}
+                          {/* <FontAwesomeIcon icon="fa-thin fa-circle-arrow-down" color="#fffff" /> */}
                         </Box>
                         
                       </AccordionButton>
@@ -422,7 +428,7 @@ const styles = {
   },
   divider:{
     width:"600px",
-    mt:"24px",
+    mt:"1px",
     border: "0.5px solid #6C6C6C",
     "@media only screen and (max-width: 1024px) ":{
       width:"420px",
