@@ -279,10 +279,10 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                   gap={4}
                   sx={styles.grid}
                 >
-                  <GridItem rowSpan={2} colSpan={3}>
-                    <Box d="flex" flexDir="column" w="300" mt="15px">
+                  <GridItem rowSpan={2} colSpan={2}>
+                    <Box d="flex" flexDir="column" w="250" mt="15px">
                       <Map
-                        width={300}
+                        width={250}
                         height={250}
                         value="businessLocation"
                         {...{
@@ -296,24 +296,24 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                       />
                     </Box>
                   </GridItem>
-                  {/* <GridItem colSpan={4}>
-                    <FormLabel sx={styles.cityLabel}>City</FormLabel>
+                  <GridItem colSpan={4}>
+                    <FormLabel sx={styles.cityLabel}>Address</FormLabel>
                     <InputGroup>
                       <Input
-                        placeholder="City"
+                        placeholder="Address"
                         sx={styles.cityInput}
                         type="text"
-                        {...register("city", {
+                        {...register("address", {
                           required: "This is required",
                         })}
                         autoComplete="name"
                         focusBorderColor="blue"
                       />
                       <FormErrorMessage>
-                        {errors.city && errors.city.message}
+                        {errors.address && errors.address.message}
                       </FormErrorMessage>
                     </InputGroup>
-                  </GridItem> */}
+                  </GridItem>
                 </Grid>
               </Box>
               <Button sx={styles.backButton} onClick={goBack}>
@@ -642,7 +642,7 @@ const styles = {
   },
   cityLabel: {
     mt: 10,
-    ml: 70,
+    ml: "20%",
     fontSize: "16px",
     w: "280px",
     "@media only screen and (max-width: 500px) ": {
@@ -652,7 +652,7 @@ const styles = {
     },
   },
   cityInput: {
-    ml: 70,
+    ml: "20%",
     w: "247px",
     h: "42px",
     border: "1px",
@@ -666,7 +666,7 @@ const styles = {
     },
   },
   formContainer4: {
-    ml: "30px",
+    ml: "25%",
     mb: 20,
     "@media only screen and (max-width: 500px) ": {
       ml: "30px",

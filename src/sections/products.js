@@ -26,7 +26,7 @@ export default function Products() {
           <Box
             sx={styles.imageBox}
           >
-            <Image src="/FSMM.png" sx={styles.image} />
+            <Image src="/TrackOrder.png" sx={styles.image} />
           </Box>
           <Box
             sx={styles.numberBox}
@@ -62,7 +62,7 @@ export default function Products() {
           <Box
             sx={styles.imageBox}
           >
-            <Image src="/Inventory.png" sx={styles.image} />
+            <Image src="/VendorInventory.png" sx={styles.image} />
           </Box>
           <Box
             sx={styles.numberBox}
@@ -101,7 +101,7 @@ export default function Products() {
           <Box
             sx={styles.imageBox}
           >
-            <Image src="/Employee.png" sx={styles.image} />
+            <Image src="/VendorEmployees.png" sx={styles.image} />
           </Box>
           <Box
             sx={styles.numberBox}
@@ -134,7 +134,7 @@ export default function Products() {
           <Box
             sx={styles.imageBox}
           >
-            <Image src="/Equipment.png" sx={styles.image} />
+            <Image src="/VendorEquipment.png" sx={styles.image} />
           </Box>
           <Box
             sx={styles.numberBox}
@@ -209,7 +209,7 @@ export default function Products() {
           <Box
             sx={styles.imageBox}
           >
-            <Image src="/Order.png" sx={styles.image} />
+            <Image src="/VendorOrders.png" sx={styles.image} />
           </Box>
           <Box
             sx={styles.numberBox}
@@ -248,7 +248,7 @@ export default function Products() {
           <Box
             sx={styles.imageBox}
           >
-            <Image src="/AccessControl.png" sx={styles.image} />
+            <Image src="/Access.png" sx={styles.image} />
           </Box>
           <Box
             sx={styles.numberBox}
@@ -476,15 +476,16 @@ const styles = {
       "30px 50px 60px",
       "50px 60px 90px",
     ],
-    maxWidth:"480px",
-    maxHeight:"370px",
+    maxWidth:"580px",
+    maxHeight:"430px",
+    boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
     "@media only screen and (max-width: 1024px) ":{
-      maxWidth:"380px",
-      maxHeight:"270px",
+      maxWidth:"500px",
+      maxHeight:"310px",
     },
     "@media only screen and (max-width: 768px) ":{
-      maxWidth:"280px",
-      maxHeight:"170px",
+      maxWidth:"320px",
+      maxHeight:"270px",
     },
     "@media only screen and (max-width: 500px) ":{
       maxWidth:"0px",
@@ -499,15 +500,15 @@ const styles = {
     //border: "1px solid #1B1C1E",
     boxSizing: "border-box",
     borderRadius: "3px",
-    clipPath: "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
+    //clipPath: "polygon(0% 0%, 80% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 86%, 0% 20%)",
     "@media only screen and (max-width: 1024px) ":{
       mt:"40px",
-      maxWidth:"380px",
+      maxWidth:"300px",
       maxHeight:"270px",
     },
     "@media only screen and (max-width: 768px) ":{
       mt:"40px",
-      maxWidth:"280px",
+      maxWidth:"200px",
       maxHeight:"170px",
     },
     "@media only screen and (max-width: 500px) ":{
