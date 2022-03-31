@@ -15,15 +15,7 @@ export default {
     dark: "#10132D",
 
     // highlight	a background color for highlighting text
-    // modes: {
-    //   dark: {
-    //     text: "#fff",
-    //     background: "#000",
-    //     primary: "#0cf",
-    //     secondary: "#09c",
-    //     muted: "#111",
-    //   },
-    // },
+
   },
   fonts: {
     body: "DM Sans",
@@ -43,9 +35,7 @@ export default {
   },
   lineHeights: {
     body: 1.5,
-    // body: 1.5,
     heading: 1.25,
-    // heading: 1.125,
   },
   letterSpacings: {
     body: "normal",
@@ -62,6 +52,7 @@ export default {
     "1200px",
     "1367px",
     "1440px",
+    "2160px"
   ],
   // variants can use custom, user-defined names
   layout: {
@@ -168,7 +159,7 @@ export default {
   // variants for buttons
   buttons: {
     menu: {
-      display: ["block", , , , "none"],
+      display: ["block", "block", "block", "block", "block", "block", "block", "none"],
       svg: {
         width: "32px",
       },

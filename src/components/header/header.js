@@ -7,6 +7,16 @@ import Sticky from "react-stickynode";
 import Logo from "components/logo";
 import { NavLink } from "components/link";
 import menuItems from "./header.data";
+import {
+  Menu,
+  MenuButton as MenuB,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
+} from '@chakra-ui/react'
 
 export default function Header() {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -101,7 +111,8 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    "@media only screen and (max-width: 768px)": {
+
+    "@media only screen and (max-width: 1440px)": {
       ".navbar": {
         position: "absolute",
         top: "100%",
@@ -119,7 +130,11 @@ const styles = {
           visibility: "visible",
         },
         ul: {
-          display: "block",
+          display: "flex",
+          alignItems: 'center',
+          justifyContent: 'center',
+          flexDirection: 'column',
+
           "li + li": {
             marginTop: 5,
           },
@@ -135,6 +150,7 @@ const styles = {
     alignItems: "flex-end",
     flexGrow: 1,
     justifyContent: "flex-end",
+    //flexDirection: mobileMenu ? 'column' : 'row'
   },
   navList: {
     display: ["flex"],
@@ -149,6 +165,12 @@ const styles = {
       fontWeight: 400,
       padding: 0,
       margin: "0 20px",
+      "@media only screen and (min-width: 427px) and (max-width: 768px)":{
+        fontSize:"35px"
+      },
+      "@media only screen and (min-width: 768px) and (max-width: 1440px)":{
+        fontSize:"40px"
+      }
     },
     ".active": {
       color: "primary",
