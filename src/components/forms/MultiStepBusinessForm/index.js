@@ -9,6 +9,7 @@ import {
   Grid,
   GridItem,
   Input,
+  InputLeftAddon,
   InputGroup,
   Text,
 } from "@chakra-ui/react";
@@ -184,6 +185,7 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                   <GridItem colSpan={2} sx={styles.box}>
                     <FormLabel sx={styles.labelForm2}>Business Contact Number</FormLabel>
                     <InputGroup>
+                    <InputLeftAddon children="+92"  sx={styles.inputLeftAddon}/>
                       <Input
                         placeholder="Contact Number"
                         w="157px"
@@ -663,6 +665,22 @@ const styles = {
       mb: 20,
       w: "300px",
       h: "32px",
+    },
+  },
+  inputLeftAddon:{
+    width:"37px",
+    height:"42px",
+    variant:"outline",
+    border:"3px ",
+    borderWidth:10,
+    borderRadius:"3px",
+    color:"#000000",
+    marginBottom:"25px",
+    "@media only screen and (max-width: 500px) ":{
+      width:"37px",
+    },
+    "@media only screen and (max-width: 500px) ":{
+      width:"37px",
     },
   },
   formContainer4: {

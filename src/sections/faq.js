@@ -6,6 +6,10 @@ import { useForm } from "react-hook-form";
 import { rgba } from "polished";
 import Image from "components/bgImage";
 import { keyframes } from "@emotion/react";
+import { usePostData } from "hooks/usePostData";
+import { API_URL } from "config/api/index";
+import { createToast } from "utils/createToast";
+import { useMutation } from "react-query";
 
 export default function FAQ() {
 
@@ -17,11 +21,33 @@ export default function FAQ() {
         formState: { errors, isSubmitting },
     } = useForm();
 
-    const onSubmit = async (values) => {
+    const { mutate, isSuccess, isLoading, isError } = useMutation(
+        usePostData,
+        {}
+      );
+    
+    const URL = `${API_URL.notifications}/send-FAQ-mail`;
+    const onSubmit = async (body) => {
+        console.log(body)
         try {
-            console.log(values)
+            mutate(
+              { URL, body },
+              {
+                onSuccess: (value) => {
+                  console.log(value.data);
+                  createToast({ title: "Query send Successfully" });
+                },
+                onError: (err) => {
+                  createToast({
+                    title: "Unable to send query",
+                    msg: err.stack,
+                    type: "error",
+                  });
+                },
+              }
+            );
         } catch (err) {
-          alert(err.message);
+            alert(err.message);
         }
     };
     
@@ -54,14 +80,15 @@ export default function FAQ() {
                                     variant='outline'   
                                     w="547px"
                                     h="52px"
-                                    bg="#1B1C1E"
+                                    //bg="#1B1C1E"
+                                    color="#fffff"
                                     border="1px solid #FFFFFF"
                                     boxSizing= "border-box"
                                     borderRadius="3px" 
                                     mb="36px"
                                     type="text"
-                                    id="lastName"
-                                    {...register("lastName", {
+                                    id="name"
+                                    {...register("name", {
                                     required: "This is required",
                                     })}
                                     focusBorderColor="blue"
@@ -73,7 +100,7 @@ export default function FAQ() {
                                     variant='outline'   
                                     w="547px"
                                     h="52px"
-                                    bg="#1B1C1E"
+                                    //bg="#1B1C1E"
                                     border="1px solid #FFFFFF"
                                     boxSizing= "border-box"
                                     borderRadius="3px" 
@@ -93,7 +120,7 @@ export default function FAQ() {
                                     w="547px"
                                     h="52px"
                                     color="#1B1C1E" 
-                                    bg="#1B1C1E"
+                                    //bg="#1B1C1E"
                                     border="1px solid #FFFFFF"
                                     boxSizing= "border-box"
                                     borderRadius="3px"
@@ -113,7 +140,7 @@ export default function FAQ() {
                                     w="547px"
                                     h="88px"
                                     color="#1B1C1E" 
-                                    bg="#1B1C1E"
+                                    //bg="#1B1C1E"
                                     border="1px solid #FFFFFF"
                                     boxSizing= "border-box"
                                     borderRadius="3px"

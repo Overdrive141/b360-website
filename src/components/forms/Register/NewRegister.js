@@ -9,6 +9,7 @@ import {
   GridItem,
   Input,
   InputGroup,
+  InputLeftAddon,
   Flex,
   SimpleGrid,
   Text,
@@ -169,6 +170,7 @@ const Register = ({ completeFormStep, setUserId, ...props }) => {
               <GridItem sx={styles.grid}>
                 <FormLabel sx={styles.label}>Contact Number</FormLabel>
                 <InputGroup>
+                <InputLeftAddon children="+92"  sx={styles.inputLeftAddon}/>
                   <Input
                     placeholder="Contact Number"
                     sx={styles.input}
@@ -324,6 +326,22 @@ const styles={
     },
     "@media only screen and (max-width: 500px) ":{
       width:"297px",
+    },
+  },
+  inputLeftAddon:{
+    width:"37px",
+    height:"42px",
+    variant:"outline",
+    border:"3px ",
+    borderWidth:10,
+    borderRadius:"3px",
+    color:"#000000",
+    marginBottom:"25px",
+    "@media only screen and (max-width: 500px) ":{
+      width:"7px",
+    },
+    "@media only screen and (max-width: 500px) ":{
+      width:"7px",
     },
   },
   container:{
