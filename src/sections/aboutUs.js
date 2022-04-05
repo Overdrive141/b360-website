@@ -9,17 +9,9 @@ import {
   Text,
   Button,
   Image,
-  Divider
+  Divider,
 } from "theme-ui";
-import { backgroundImages, rgba } from "polished";
-import bannerIcon1 from "assets/images/banner-icon-1-1.svg";
-import bannerIcon2 from "assets/images/banner-icon-1-2.svg";
-import bannerIcon3 from "assets/images/banner-icon-1-3.svg";
-import bannerIcon4 from "assets/images/banner-icon-1-4.svg";
-import bannerIcon5 from "assets/images/banner-icon-1-5.svg";
-import bannerIcon6 from "assets/images/banner-icon-1-6.svg";
-import bannerIcon7 from "assets/images/dot-pattern.svg";
-import {BsArrowDownCircle,BsArrowUpCircle} from "react-icons/bs"
+
 import {
   Accordion,
   AccordionItem,
@@ -27,9 +19,8 @@ import {
   AccordionPanel,
   AccordionIcon,
   Icon,
-  Collapse
+  Collapse,
 } from "@chakra-ui/react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import {
@@ -37,9 +28,8 @@ import {
   motion,
   useTransform,
   useElementScroll,
-  useViewportScroll
+  useViewportScroll,
 } from "framer-motion";
-import { ArrowDownIcon,} from '@chakra-ui/icons'
 
 import { keyframes } from "@emotion/react";
 import { urlObjectKeys } from "next/dist/shared/lib/utils";
@@ -56,7 +46,7 @@ const opacity = useTransform(x, input, output)
 export default function UserStories() {
   const ref = useRef(null);
   const [progress, setProgress] = useState(0);
-  const [selected, setSelected] = useState("")
+  const [selected, setSelected] = useState("");
   // const { scrollYProgress } = useElementScroll(ref)
 
   const { scrollYProgress } = useViewportScroll();
@@ -71,209 +61,187 @@ export default function UserStories() {
   scrollYProgress.onChange(setProgress);
 
   useEffect(() => {
-    scrollYProgress.onChange(latest => {
+    scrollYProgress.onChange((latest) => {
       console.log(latest);
     });
   }, []);
 
-  useEffect(()=>{
-    console.log("selected-->",selected)
-  },[selected])
+  useEffect(() => {
+    console.log("selected-->", selected);
+  }, [selected]);
 
   return (
-      <Box as="section" id="aboutUs" sx={styles.section}>
-        <Container sx={styles.container}>
-          <Box sx={styles.contentBox}>
-            <Box
-              sx={styles.box} 
-              //mt:"45px"
-            >
-              <Text
-                sx={styles.title}
-              >
-                Bring your
-                <br /> Business Online
-              </Text>
-              <Divider
-                sx={styles.divider}
-              />
-              <Accordion allowToggle>
-                <AccordionItem  >
-                  <h2>
-                    <Box onClick={()=> setSelected("distribution")} sx={styles.accordianBox}>
-                      <AccordionButton >
-                        <Box
-                          flex='1'
-                          sx={{color: "#ffffff"}}
-                          
-                        >
-                          <Text 
-                            sx={styles.accordianTitle}
-                          >Distribution</Text>
-                        </Box>
-                        <Box sx={styles.iconDistribution}>
-                          <AccordionIcon color="#ffffff"  mt={20}  />
-                          {/* <Icon as={BsArrowUpCircle} /> */}
-                          {/* <FontAwesomeIcon icon="fa-thin fa-circle-arrow-down" color="#fffff" /> */}
-                        </Box>
-                        
-                      </AccordionButton>
-                    </Box>
-                    
-                  </h2>
-                  <AccordionPanel pb={4} color="#ffffff" mr="10%">
-                  Wholesale distributors have had to adapt to rapid and significant change and will need to stay agile in order to remain competitive. Using Business 360, distributors can run their businesses on a single, unified platform reducing IT costs and gaining comprehensive, real-time visibility across their organizations. Run your entire business on a single, true cloud platform. Rid yourself of multiple, disparate applications and bring all your data into a single, customizable system, accessible from anywhere. Know your operations like never before. Gain insight from data gathered across your organization and empower your employees with the information they need.
-                  </AccordionPanel>
-                </AccordionItem>
+    <Box as="section" id="aboutUs" sx={styles.section}>
+      <Container sx={styles.container}>
+        <Box sx={styles.contentBox}>
+          <Box
+            sx={styles.box}
+            //mt:"45px"
+          >
+            <Text sx={styles.title}>
+              Bring your
+              <br /> Business Online
+            </Text>
+            <Divider sx={styles.divider} />
+            <Accordion allowToggle>
+              <AccordionItem>
+                <h2>
+                  <Box
+                    onClick={() => setSelected("distribution")}
+                    sx={styles.accordianBox}
+                  >
+                    <AccordionButton>
+                      <Box flex="1" sx={{ color: "#ffffff" }}>
+                        <Text sx={styles.accordianTitle}>Distribution</Text>
+                      </Box>
+                      <Box sx={styles.iconDistribution}>
+                        <AccordionIcon color="#ffffff" mt={20} />
+                        {/* <Icon as={BsArrowUpCircle} /> */}
+                        {/* <FontAwesomeIcon icon="fa-thin fa-circle-arrow-down" color="#fffff" /> */}
+                      </Box>
+                    </AccordionButton>
+                  </Box>
+                </h2>
+                <AccordionPanel pb={4} color="#ffffff" mr="10%">
+                  Wholesale distributors have had to adapt to rapid and
+                  significant change and will need to stay agile in order to
+                  remain competitive. Using Business 360, distributors can run
+                  their businesses on a single, unified platform reducing IT
+                  costs and gaining comprehensive, real-time visibility across
+                  their organizations. Run your entire business on a single,
+                  true cloud platform. Rid yourself of multiple, disparate
+                  applications and bring all your data into a single,
+                  customizable system, accessible from anywhere. Know your
+                  operations like never before. Gain insight from data gathered
+                  across your organization and empower your employees with the
+                  information they need.
+                </AccordionPanel>
+              </AccordionItem>
 
-                <Divider
-                  sx={styles.divider}
-                />
-                <AccordionItem  >
-                  <h2>
-                    <Box onClick={()=>setSelected("freight")} sx={styles.accordianBox}>
-                      <AccordionButton>
-                        <Box
-                          flex='1'
-                          sx={{color: "#ffffff"}}
-                        >
-                          <Text 
-                            sx={styles.accordianTitle}
-                          >Freight</Text>
-                        </Box>
-                        <Box sx={styles.iconFreight}>
-                          <AccordionIcon color="#ffffff"  mt={20}  />
-                        </Box>
-                      </AccordionButton>
-                    </Box>
-                    
-                  </h2>
-                  <AccordionPanel pb={4} color="#ffffff" mr="10%">
-                    Globalization makes our world smaller every day. With intensely competitive 
-                    international markets comes an increased pressure to deliver timely service 
-                    while keeping costs low. Behind the simplistic idea of moving products from point, 
-                    A to B is a complex set of challenges that must be faced head-on—inventory management, 
-                    supply chain visibility, compliance, and accounting workflows. To overcome these obstacles, 
-                    transportation and logistics companies need to be able to process information 
-                    faster and act immediately on results. Whether you move goods via air, land, 
-                    or sea, Business 360’s cloud-based business management suite enables your 
-                    business to improve visibility, minimize complexity and remain agile in the face of massive change
-                  </AccordionPanel>
-                </AccordionItem>
+              <Divider sx={styles.divider} />
+              <AccordionItem>
+                <h2>
+                  <Box
+                    onClick={() => setSelected("freight")}
+                    sx={styles.accordianBox}
+                  >
+                    <AccordionButton>
+                      <Box flex="1" sx={{ color: "#ffffff" }}>
+                        <Text sx={styles.accordianTitle}>Freight</Text>
+                      </Box>
+                      <Box sx={styles.iconFreight}>
+                        <AccordionIcon color="#ffffff" mt={20} />
+                      </Box>
+                    </AccordionButton>
+                  </Box>
+                </h2>
+                <AccordionPanel pb={4} color="#ffffff" mr="10%">
+                  Globalization makes our world smaller every day. With
+                  intensely competitive international markets comes an increased
+                  pressure to deliver timely service while keeping costs low.
+                  Behind the simplistic idea of moving products from point, A to
+                  B is a complex set of challenges that must be faced
+                  head-on—inventory management, supply chain visibility,
+                  compliance, and accounting workflows. To overcome these
+                  obstacles, transportation and logistics companies need to be
+                  able to process information faster and act immediately on
+                  results. Whether you move goods via air, land, or sea,
+                  Business 360’s cloud-based business management suite enables
+                  your business to improve visibility, minimize complexity and
+                  remain agile in the face of massive change
+                </AccordionPanel>
+              </AccordionItem>
 
-                <Divider
-                  sx={styles.divider}
-                />
+              <Divider sx={styles.divider} />
 
-                <AccordionItem  >
-                  <h2>
-                    <Box onClick={()=>setSelected("hvac")} sx={styles.accordianBox}>
-                      <AccordionButton>
-                        <Box
-                          flex='1'
-                          sx={{color: "#ffffff"}}
-                        >
-                          <Text 
-                            sx={styles.accordianTitle}
-                          >HVAC</Text>
-                        </Box>
-                        <Box sx={styles.iconHvac}>
-                          <AccordionIcon color="#ffffff"  mt={20}  />
-                        </Box>
-                      </AccordionButton>
-                    </Box>
-                    
-                  </h2>
-                  <AccordionPanel pb={4} color="#ffffff" mr="10%">
-                  Whether it is drafting equipment proposals, managing customers, calculating 
-                  flat-rate pricing, boosting sales, or performing a range of other business functions, 
-                  Business 360 has got you covered! It is a one-point solution that manages everything 
-                  through a web-based system. It will supplement your sales team’s efforts by providing 
-                  a ready comparison chart of the various models within seconds. With Business 360 your 
-                  customers will have access to online, real-time scheduling. They can instantly schedule 
-                  appointments for the required services, from the comfort of their home. Even spikes 
-                  in seasonal demand for spring and fall tune-ups can be easily and conveniently managed.
-                   Additionally, Business 360 can help you manage your Field Worker's timesheets and 
-                   payroll so they’re paid on time.
-                  </AccordionPanel>
-                </AccordionItem>
-                <Divider
-                  sx={styles.divider}
-                />  
-                <AccordionItem  >
-                  <h2>
-                    <Box onClick={()=>setSelected("retail")} sx={styles.accordianBox}>
-                      <AccordionButton>
-                        <Box
-                          flex='1'
-                          sx={{color: "#ffffff"}}
-                        >
-                          <Text 
-                            sx={styles.accordianTitle}
-                          >Retail</Text>
-                        </Box>
-                        <Box sx={styles.iconRetail}>
-                          <AccordionIcon color="#ffffff"  mt={20}  />
-                        </Box>
-                      </AccordionButton>
-                    </Box>
-                    
-                  </h2>
-                  <AccordionPanel pb={4} color="#ffffff" mr="10%">
-                  With many customers throughout the retail industry, we 
-                  have deep experience in working with companies like yours.
-                  Business 360 has taken this industry expertise and bundled 
-                  it into the retail solution to solve the unique business 
-                  challenges of the manufacturing, wholesale, and retail industries. 
-                  Combine this industry expertise with the leading practices 
-                  developed by our retail-dedicated professional services team,
-                   we help our customers transform their businesses in consumable 
-                   stages to develop a competitive advantage in the marketplace
-                  </AccordionPanel>
-                </AccordionItem>
-
-              </Accordion>
-            </Box>
-            <Box
-              sx={{
-                width:"1020px",
-                "@media only screen and (max-width: 1024px)" :{
-                  width:"900px",
-                },
-                "@media only screen and (max-width: 768px)" :{
-                  width:"700px",
-                }
-              }}  
-            >
-              {selected === "distribution" ?
-                  <Image
-                  src="/distribution.jpg"
-                  sx={styles.image}
-                /> 
-                : 
-                selected === "freight" ?
-                  <Image
-                    src="/freight.jpg"
-                    sx={styles.image}
-                  />
-                :
-                selected === "hvac" ?
-                  <Image
-                    src="/hvac.jpg"
-                    sx={styles.image}
-                  />
-                :
-                selected === "retail" ?
-                  <Image
-                    src="/b.jpg"
-                    sx={styles.image}
-                  />
-                : null
-              }
-            </Box>
+              <AccordionItem>
+                <h2>
+                  <Box
+                    onClick={() => setSelected("hvac")}
+                    sx={styles.accordianBox}
+                  >
+                    <AccordionButton>
+                      <Box flex="1" sx={{ color: "#ffffff" }}>
+                        <Text sx={styles.accordianTitle}>HVAC</Text>
+                      </Box>
+                      <Box sx={styles.iconHvac}>
+                        <AccordionIcon color="#ffffff" mt={20} />
+                      </Box>
+                    </AccordionButton>
+                  </Box>
+                </h2>
+                <AccordionPanel pb={4} color="#ffffff" mr="10%">
+                  Whether it is drafting equipment proposals, managing
+                  customers, calculating flat-rate pricing, boosting sales, or
+                  performing a range of other business functions, Business 360
+                  has got you covered! It is a one-point solution that manages
+                  everything through a web-based system. It will supplement your
+                  sales team’s efforts by providing a ready comparison chart of
+                  the various models within seconds. With Business 360 your
+                  customers will have access to online, real-time scheduling.
+                  They can instantly schedule appointments for the required
+                  services, from the comfort of their home. Even spikes in
+                  seasonal demand for spring and fall tune-ups can be easily and
+                  conveniently managed. Additionally, Business 360 can help you
+                  manage your Field Worker's timesheets and payroll so they’re
+                  paid on time.
+                </AccordionPanel>
+              </AccordionItem>
+              <Divider sx={styles.divider} />
+              <AccordionItem>
+                <h2>
+                  <Box
+                    onClick={() => setSelected("retail")}
+                    sx={styles.accordianBox}
+                  >
+                    <AccordionButton>
+                      <Box flex="1" sx={{ color: "#ffffff" }}>
+                        <Text sx={styles.accordianTitle}>Retail</Text>
+                      </Box>
+                      <Box sx={styles.iconRetail}>
+                        <AccordionIcon color="#ffffff" mt={20} />
+                      </Box>
+                    </AccordionButton>
+                  </Box>
+                </h2>
+                <AccordionPanel pb={4} color="#ffffff" mr="10%">
+                  With many customers throughout the retail industry, we have
+                  deep experience in working with companies like yours. Business
+                  360 has taken this industry expertise and bundled it into the
+                  retail solution to solve the unique business challenges of the
+                  manufacturing, wholesale, and retail industries. Combine this
+                  industry expertise with the leading practices developed by our
+                  retail-dedicated professional services team, we help our
+                  customers transform their businesses in consumable stages to
+                  develop a competitive advantage in the marketplace
+                </AccordionPanel>
+              </AccordionItem>
+            </Accordion>
           </Box>
-        </Container>
-      </Box>  
+          <Box
+            sx={{
+              width: "1020px",
+              "@media only screen and (max-width: 1024px)": {
+                width: "900px",
+              },
+              "@media only screen and (max-width: 768px)": {
+                width: "700px",
+              },
+            }}
+          >
+            {selected === "distribution" ? (
+              <Image src="/distribution.jpg" sx={styles.image} />
+            ) : selected === "freight" ? (
+              <Image src="/freight.jpg" sx={styles.image} />
+            ) : selected === "hvac" ? (
+              <Image src="/hvac.jpg" sx={styles.image} />
+            ) : selected === "retail" ? (
+              <Image src="/b.jpg" sx={styles.image} />
+            ) : null}
+          </Box>
+        </Box>
+      </Container>
+    </Box>
   );
 }
 
@@ -353,21 +321,21 @@ const styles = {
       maxWidth: ["100%", null, null, "55%", "500px", "640px", "851px"],
       mx: "auto",
       mt: "30px",
-      mb: ["40px", null, null, "65px"]
-    }
+      mb: ["40px", null, null, "65px"],
+    },
   },
   container: {
     position: "relative",
     ".bannerIcon": {
       position: "absolute",
-      display: ["none", null, null, null, "block"]
-    }
+      display: ["none", null, null, null, "block"],
+    },
   },
   contentWrapper: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    minHeight: [null, null, null, null, "50vh", "100vh"]
+    minHeight: [null, null, null, null, "50vh", "100vh"],
   },
   heroTitle: {
     fontSize: "70px",
@@ -377,198 +345,202 @@ const styles = {
     fontColor: "#1B1C1E",
     "@media only screen and (min-height: 720px) and (max-height: 760px), (min-width: 1501px) and (max-width: 1560px) ":
       {
-        fontSize: "70px"
-      }
+        fontSize: "70px",
+      },
   },
-  title:{
-    fontSize:"48px",
-    fontWeight:400,
-    lineHeight:"72px",
+  title: {
+    fontSize: "48px",
+    fontWeight: 400,
+    lineHeight: "72px",
     fontColor: "#fffff",
-    "@media only screen and (max-width: 1024px) ":{
-      fontSize:"35px",
-      fontWeight:400,
-      lineHeight:"52px",
+    "@media only screen and (max-width: 1024px) ": {
+      fontSize: "35px",
+      fontWeight: 400,
+      lineHeight: "52px",
     },
-    "@media only screen and (max-width: 768px) ":{
-      fontSize:"30px",
-      fontWeight:400,
-      lineHeight:"42px",
-      
-    },
-  },
-  image:{
-    height:"580px", width:"1025px", float:"right",mt:"22%",
-    "@media only screen and (max-width: 1024px)" :{
-      mt:"26%",
-      width:"550px",
-      height:"680px",
-    },
-    "@media only screen and (max-width: 768px)" :{
-      width:"500px",
-      height:"800px",
-      display:"none"
-    }
-  },
-  box:{
-    width:"700px",
-    textAlign:"left",
-    color:"#ffffff",
-    mt:"45px",
-    "@media only screen and (max-width: 1024px) ":{
-      width:"600px",
-    },
-    "@media only screen and (max-width: 768px) ":{
-      
-      width:"4000px",
-    },
-    "@media only screen and (max-width: 425px) ":{
-      width:"700px",
+    "@media only screen and (max-width: 768px) ": {
+      fontSize: "30px",
+      fontWeight: 400,
+      lineHeight: "42px",
     },
   },
-  divider:{
-    width:"600px",
-    mt:"1px",
+  image: {
+    height: "580px",
+    width: "1025px",
+    float: "right",
+    mt: "22%",
+    "@media only screen and (max-width: 1024px)": {
+      mt: "26%",
+      width: "550px",
+      height: "680px",
+    },
+    "@media only screen and (max-width: 768px)": {
+      width: "500px",
+      height: "800px",
+      display: "none",
+    },
+  },
+  box: {
+    width: "700px",
+    textAlign: "left",
+    color: "#ffffff",
+    mt: "45px",
+    "@media only screen and (max-width: 1024px) ": {
+      width: "600px",
+    },
+    "@media only screen and (max-width: 768px) ": {
+      width: "4000px",
+    },
+    "@media only screen and (max-width: 425px) ": {
+      width: "700px",
+    },
+  },
+  divider: {
+    width: "600px",
+    mt: "1px",
     border: "0.5px solid #6C6C6C",
-    "@media only screen and (max-width: 1024px) ":{
-      width:"420px",
-      mt:"16px",
+    "@media only screen and (max-width: 1024px) ": {
+      width: "420px",
+      mt: "16px",
     },
-    "@media only screen and (max-width: 768px) ":{
-      width:"700px",
-      mt:"14px",
+    "@media only screen and (max-width: 768px) ": {
+      width: "700px",
+      mt: "14px",
     },
-    "@media only screen and (max-width: 425px) ":{
-      width:"400px",
-      mt:"14px",
-    },
-  },
-  accordianTitle:{
-    fontSize:"26px",
-    color:"#fffff",
-    "@media only screen and (max-width: 1024px) ":{
-      fontSize:"20px "
-    },
-    "@media only screen and (max-width: 768px) ":{
-      
-      fontSize:"18px ",
-      ml:"50px"
+    "@media only screen and (max-width: 425px) ": {
+      width: "400px",
+      mt: "14px",
     },
   },
-  contentBox:{
-    display:"flex",width:"1590px",height:"1200px",
-    "@media only screen and (max-width: 1024px) ":{
-      width:"1000px"
+  accordianTitle: {
+    fontSize: "26px",
+    color: "#fffff",
+    "@media only screen and (max-width: 1024px) ": {
+      fontSize: "20px ",
     },
-    "@media only screen and (max-width: 768px) ":{
-      width:"400px",height:"900px"
-    },
-    "@media only screen and (max-width: 500px) ":{
-      width:"400px"
-    },
-    "@media only screen and (max-width: 400px) ":{
-      width:"300px",height:"1600px"
+    "@media only screen and (max-width: 768px) ": {
+      fontSize: "18px ",
+      ml: "50px",
     },
   },
-  accordianBox:{  
-    width:"600px",
-    "@media only screen and (max-width: 1024px) ":{
-      width:"420px",
+  contentBox: {
+    display: "flex",
+    width: "1590px",
+    height: "1200px",
+    "@media only screen and (max-width: 1024px) ": {
+      width: "1000px",
     },
-    "@media only screen and (max-width: 768px) ":{
-      width:"600px",
+    "@media only screen and (max-width: 768px) ": {
+      width: "400px",
+      height: "900px",
     },
-    "@media only screen and (max-width: 500px) ":{
-      width:"300px",
+    "@media only screen and (max-width: 500px) ": {
+      width: "400px",
     },
-    "@media only screen and (max-width: 400px) ":{
-      width:"300px",
-    }
+    "@media only screen and (max-width: 400px) ": {
+      width: "300px",
+      height: "1600px",
+    },
   },
-  iconDistribution:{ 
-    ml:"65%",
-    "@media only screen and (max-width: 1024px) ":{
-      ml:"65%",
+  accordianBox: {
+    width: "600px",
+    "@media only screen and (max-width: 1024px) ": {
+      width: "420px",
     },
-    "@media only screen and (max-width: 768px) ":{
-      ml:"65%",
+    "@media only screen and (max-width: 768px) ": {
+      width: "600px",
     },
-    "@media only screen and (max-width: 500px) ":{
-      ml:"35%",
-    }
+    "@media only screen and (max-width: 500px) ": {
+      width: "300px",
+    },
+    "@media only screen and (max-width: 400px) ": {
+      width: "300px",
+    },
   },
-  iconFreight:{ 
-    ml:"75%",
-    "@media only screen and (max-width: 1024px) ":{
-      ml:"75%",
+  iconDistribution: {
+    ml: "65%",
+    "@media only screen and (max-width: 1024px) ": {
+      ml: "65%",
     },
-    "@media only screen and (max-width: 768px) ":{
-      ml:"71.5%",
+    "@media only screen and (max-width: 768px) ": {
+      ml: "65%",
     },
-    "@media only screen and (max-width: 500px) ":{
-      ml:"48%",
-    }
+    "@media only screen and (max-width: 500px) ": {
+      ml: "35%",
+    },
   },
-  iconHvac:{ 
-    ml:"77%",
-    "@media only screen and (max-width: 1024px) ":{
-      ml:"77%",
+  iconFreight: {
+    ml: "75%",
+    "@media only screen and (max-width: 1024px) ": {
+      ml: "75%",
     },
-    "@media only screen and (max-width: 768px) ":{
-      ml:"72.5%",
+    "@media only screen and (max-width: 768px) ": {
+      ml: "71.5%",
     },
-    "@media only screen and (max-width: 500px) ":{
-      ml:"50%",
-    }
+    "@media only screen and (max-width: 500px) ": {
+      ml: "48%",
+    },
   },
-  iconRetail:{ 
-    ml:"77%",
-    "@media only screen and (max-width: 1024px) ":{
-      ml:"77%",
+  iconHvac: {
+    ml: "77%",
+    "@media only screen and (max-width: 1024px) ": {
+      ml: "77%",
     },
-    "@media only screen and (max-width: 768px) ":{
-      ml:"72.5%",
+    "@media only screen and (max-width: 768px) ": {
+      ml: "72.5%",
     },
-    "@media only screen and (max-width: 500px) ":{
-      ml:"50%",
-    }
+    "@media only screen and (max-width: 500px) ": {
+      ml: "50%",
+    },
+  },
+  iconRetail: {
+    ml: "77%",
+    "@media only screen and (max-width: 1024px) ": {
+      ml: "77%",
+    },
+    "@media only screen and (max-width: 768px) ": {
+      ml: "72.5%",
+    },
+    "@media only screen and (max-width: 500px) ": {
+      ml: "50%",
+    },
   },
   content: {
     fontSize: "36px",
     fontWeight: 400,
-    textAlign: "left"
+    textAlign: "left",
   },
   bannerIcon1: {
     top: "10%",
     left: "10%",
-    animation: `${bannerAnim2} 8s linear infinite`
+    animation: `${bannerAnim2} 8s linear infinite`,
   },
   bannerIcon2: {
     top: "10%",
     right: "10%",
-    animation: `${bannerAnim2} 8s linear infinite`
+    animation: `${bannerAnim2} 8s linear infinite`,
   },
   bannerIcon3: {
     bottom: "40px",
     right: "-120px",
-    animation: `${bannerAnim1} 5s ease-out infinite`
+    animation: `${bannerAnim1} 5s ease-out infinite`,
   },
   bannerIcon4: {
     bottom: "130px",
     left: "-120px",
-    animation: `${bannerAnim1} 5s ease-out infinite`
+    animation: `${bannerAnim1} 5s ease-out infinite`,
   },
   bannerIcon5: {
     bottom: "40%",
-    left: "60%"
+    left: "60%",
   },
   bannerIcon6: {
     bottom: "-65px",
     left: "0px",
-    animation: `${bannerAnim3} 9s linear infinite`
+    animation: `${bannerAnim3} 9s linear infinite`,
   },
   bannerIcon7: {
     bottom: "30%",
-    right: "70%"
-  }
+    right: "70%",
+  },
 };

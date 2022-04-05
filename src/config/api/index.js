@@ -13,12 +13,12 @@ const API_DOMAIN_URL = "https://api.sublo.co";
 // Production
 const ACCOUNT_MANAGEMENT_URL = `${API_DOMAIN_URL}/accountmanagement`;
 const MASTERDATA_URL = `${API_DOMAIN_URL}/masterdata`;
-//const NOTIFICATION_URL = `${API_DOMAIN_URL}/orders`; // For SSE Order Notifications
+const NOTIFICATION_URL = `${API_DOMAIN_URL}/orders`; // For SSE Order Notifications
 
 // Development
 //const ACCOUNT_MANAGEMENT_URL = "http://localhost:3001";
 //const MASTERDATA_URL = "http://localhost:3002";
-const NOTIFICATION_URL = "http://localhost:3007";
+// const NOTIFICATION_URL = "http://localhost:3007";
 
 const BASE_API_ROUTE = "v1";
 
