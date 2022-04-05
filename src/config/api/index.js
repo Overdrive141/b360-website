@@ -18,7 +18,7 @@ const NOTIFICATION_URL = `${API_DOMAIN_URL}/orders`; // For SSE Order Notificati
 
 // Development
 //const ACCOUNT_MANAGEMENT_URL = "http://localhost:3001";
-//const MASTERDATA_URL = "http://localhost:3002";
+//const MASTERDATA_URL = "http://localhost:3002" ;
 // const NOTIFICATION_URL = "http://localhost:3007";
 
 const BASE_API_ROUTE = "v1";
