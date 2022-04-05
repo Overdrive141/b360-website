@@ -14,7 +14,7 @@ const API_DOMAIN_URL = "https://api.sublo.co";
 const ACCOUNT_MANAGEMENT_URL = `${API_DOMAIN_URL}/accountmanagement`;
 const MASTERDATA_URL = `${API_DOMAIN_URL}/masterdata`;
 const NOTIFICATION_URL = `${API_DOMAIN_URL}/orders`; // For SSE Order Notifications
-// ADD NOTIFICATION API
+// ADD NOTIFICATION API TO AWS
 
 // Development
 //const ACCOUNT_MANAGEMENT_URL = "http://localhost:3001";
