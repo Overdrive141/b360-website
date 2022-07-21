@@ -215,6 +215,7 @@ export default function Banner() {
         visible={isOpen}
         width={700}
         height={700}
+        onCancel={() => setIsOpen(false)}
         footer={null}
         closable={false}
       >

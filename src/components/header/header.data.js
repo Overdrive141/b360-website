@@ -19,8 +19,8 @@ export default [
     path: "faq",
     label: "FAQ",
   },
-  {
-    path: "/vendor-portal",
-    label: "Login",
-  },
+  // {
+  //   path: <a href="https://beta.sublo.co/"></a>,
+  //   label: "Login",
+  // },
 ];

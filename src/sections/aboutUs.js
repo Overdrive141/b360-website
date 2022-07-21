@@ -253,7 +253,7 @@ export default function UserStories() {
                 : 
                 selected === "freight" ?
                   <Image
-                    src="/freight.jpg"
+                    src="/Freight 2.jpg"
                     sx={styles.image}
                   />
                 :
@@ -265,7 +265,7 @@ export default function UserStories() {
                 :
                 selected === "retail" ?
                   <Image
-                    src="/b.jpg"
+                    src="/retail 5.jpeg"
                     sx={styles.image}
                   />
                 : null

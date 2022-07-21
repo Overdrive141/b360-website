@@ -191,7 +191,6 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                         w="157px"
                         h="42px"
                         border="100px"
-                        bo
                         borderRadius="3px"
                         color="#000000"
                         type="text"
@@ -428,10 +427,25 @@ const NewBusinessForm = ({ buttonText, onClose, children, ...props }) => {
                   }}
                   onChange={onIndustry}
                 >
+                  <Option value="Car Rental">Car Rental</Option>
+                  <Option value="Driving school">Driving school</Option>
                   <Option value="Food">Food</Option>
                   <Option value="FMCG">FMCG</Option>
-                  <Option value="Petroleum">Petroleum</Option>
+                  <Option value="Freight">Freight</Option>
+                  <Option value="Fumigation & Pest Control">Fumigation & Pest Control</Option>
+                  <Option value="HVAC">HVAC</Option>
                   <Option value="IT">IT</Option>
+                  <Option value="LPG Gas">LPG Gas</Option>
+                  <Option value="Last-Mile Delivery">Last-Mile Delivery</Option>
+                  <Option value="Maintenance and Engineering ">Maintenance and Engineering </Option>
+                  <Option value="Medical">Medical</Option>
+                  <Option value="Organic food">Organic food</Option>
+                  <Option value="Petroleum">Petroleum</Option>
+                  <Option value="Pharmaceutical">Pharmaceutical</Option>
+                  <Option value="Retail">Retail</Option>
+                  <Option value="Solar">Solar</Option>
+                  <Option value="Vets">Vets</Option>
+                  <Option value="Water Delivery">Water Delivery</Option>
                 </Select>
               </Box>
               <Button sx={styles.backButton} onClick={goBack}>

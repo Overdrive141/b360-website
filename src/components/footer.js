@@ -17,17 +17,17 @@ const navItems = [
   },
   {
     id: 2,
-    link: "#!",
+    link: "#aboutUs",
     title: "About",
   },
   {
     id: 3,
-    link: "#!",
+    link: "#products",
     title: "Products",
   },
   {
     id: 4,
-    link: "#!",
+    link: "#userStories",
     title: "Use Cases",
   },
 ];
@@ -54,6 +54,7 @@ export default function Footer() {
 
           <Flex as="ul" sx={styles.icons}>
 
+          {/* <a href="">
             <IconButton 
               color="#fff"
               w="30px"
@@ -62,6 +63,8 @@ export default function Footer() {
               aria-label='Send email'
               icon={<FaFacebook />}
             />
+          </a> */}
+          <a href="https://www.instagram.com/business360pk/?igshid=YmMyMTA2M2Y%3D">
             <IconButton 
               color="#fff"
               w="30px"
@@ -70,6 +73,8 @@ export default function Footer() {
               aria-label='Send email'
               icon={<FiInstagram />}
             />
+          </a>
+          <a href="https://www.linkedin.com/company/business-360pk/about/">
             <IconButton 
               color="#fff"
               w="30px"
@@ -78,6 +83,7 @@ export default function Footer() {
               aria-label='Send email'
               icon={<AiFillLinkedin />}
             />
+          </a>
 
           </Flex>
         </Flex>

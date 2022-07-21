@@ -86,10 +86,11 @@ export default function UserStories() {
                           </Box>
                         </h2>
                         <AccordionPanel pb={4} mr="10%">
-                        <b>Problem:</b> Managing field service-based industries such as HVAC is very difficult. Most of the companies are switching to these cloud-based ERPs to get the solutions to all problems in one place. Managers at Safe Home Solutions were also finding it difficult to track their orders and employees operating in the field, they were looking for a more remote and transparent solution that provides them with full visibility of their business operations both infield and internally. They were also looking to increase their orders as currently, they were only getting offline orders.<br /><br />
-                        <b>Solution:</b> Business 360 Field Workforce Management solved all operational difficulties by providing end-to-end digitization from order generation to order management and finally order delivery. Managers could exactly track all their assets in the field including employees, vehicles, equipment, etc. This helped them to decrease any time wastage in service provision and increase efficiency by 46%. <br /><br />
-                        In order to increase the online orders, a user-friendly Web Application was generated for Safe Home Solutions that allowed customers to order from anywhere anytime, resulting in 67% increase in total orders. 
-
+                          <Text sx={styles.contentAccordian}>
+                            <b>Problem:</b> Managing field service-based industries such as HVAC is very difficult. Most of the companies are switching to these cloud-based ERPs to get the solutions to all problems in one place. Managers at Safe Home Solutions were also finding it difficult to track their orders and employees operating in the field, they were looking for a more remote and transparent solution that provides them with full visibility of their business operations both infield and internally. They were also looking to increase their orders as currently, they were only getting offline orders.<br /><br />
+                            <b>Solution:</b> Business 360 Field Workforce Management solved all operational difficulties by providing end-to-end digitization from order generation to order management and finally order delivery. Managers could exactly track all their assets in the field including employees, vehicles, equipment, etc. This helped them to decrease any time wastage in service provision and increase efficiency by 46%. <br /><br />
+                            In order to increase the online orders, a user-friendly Web Application was generated for Safe Home Solutions that allowed customers to order from anywhere anytime, resulting in 67% increase in total orders. 
+                          </Text>
                         </AccordionPanel>
                     </AccordionItem>
                     <Divider sx={styles.divider} />
@@ -109,10 +110,12 @@ export default function UserStories() {
                           </Box>
                         </h2>
                         <AccordionPanel pb={4} mr="10%">
-                            <b>Problem:</b>Velocity Movers and Packers were using an ERP system but it required the managers to input data manually in every step of the process, moreover; their system wasn't logging the data entries hence they couldn't see any insights about the business. Managers at the company also wanted efficiency and decreased inventory cycle. <br /><br />
-                            <b>Solution:</b> With Business 360, Velocity Movers and Packers managed inventories on a personalized dashboard, letting them view orders, sales, and deliveries from one centralized location. This allows for better decision-making: managers could make predictions about future orders based on previous sales trends. B360 also expedites distribution times. Research shows Business 360 speeds up order-to-shipment times for distributors by 23%.<br /><br />
-                            Business 360 comes with real-time data analytics that provides companies with valuable business intelligence. Managers use these programs to identify out-of-stock inventory, handle inbound orders from suppliers, and execute outbound orders for customers. This can be accomplished on a desktop or a smartphone. <br /><br />
-                            Business 360 also allowed Velocity Movers and Packers to improve their distribution management flow, from product fulfillment to transportation. These programs gather datasets from multiple sources — in-house records, the internet, social media, etc. — and display information through maps, charts, and graphs
+                              <Text sx={styles.contentAccordian}>
+                              <b>Problem:</b>Velocity Movers and Packers were using an ERP system but it required the managers to input data manually in every step of the process, moreover; their system wasn't logging the data entries hence they couldn't see any insights about the business. Managers at the company also wanted efficiency and decreased inventory cycle. <br /><br />
+                              <b>Solution:</b> With Business 360, Velocity Movers and Packers managed inventories on a personalized dashboard, letting them view orders, sales, and deliveries from one centralized location. This allows for better decision-making: managers could make predictions about future orders based on previous sales trends. B360 also expedites distribution times. Research shows Business 360 speeds up order-to-shipment times for distributors by 23%.<br /><br />
+                              Business 360 comes with real-time data analytics that provides companies with valuable business intelligence. Managers use these programs to identify out-of-stock inventory, handle inbound orders from suppliers, and execute outbound orders for customers. This can be accomplished on a desktop or a smartphone. <br /><br />
+                              Business 360 also allowed Velocity Movers and Packers to improve their distribution management flow, from product fulfillment to transportation. These programs gather datasets from multiple sources — in-house records, the internet, social media, etc. — and display information through maps, charts, and graphs
+                              </Text>
                         </AccordionPanel>
                     </AccordionItem>
                 </Accordion>
@@ -336,6 +339,7 @@ const styles = {
     }
   },
   contentAccordian:{
+    textAlign:"justify",
     "@media only screen and (max-width: 768px) ":{
       width:"550px",
       fontSize:"12px",

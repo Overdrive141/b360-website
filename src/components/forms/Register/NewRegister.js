@@ -84,9 +84,10 @@ const Register = ({ completeFormStep, setUserId, ...props }) => {
             completeFormStep();
           },
           onError: (err) => {
+            console.log("err------>",err.message)
             createToast({
               title: "Unable to Create User",
-              msg: err.stack,
+              msg: "Email already exist",
               type: "error",
             });
           },
@@ -123,6 +124,7 @@ const Register = ({ completeFormStep, setUserId, ...props }) => {
                     })}
                     autoComplete="name"
                     focusBorderColor="blue"
+                    errorBorderColor='crimson'
                   />
                   <FormErrorMessage>
                     {errors.firstName && errors.firstName.message}
@@ -142,6 +144,7 @@ const Register = ({ completeFormStep, setUserId, ...props }) => {
                     })}
                     autoComplete="name"
                     focusBorderColor="blue"
+                    errorBorderColor='crimson'
                   />
                   <FormErrorMessage>
                     {errors.lastName && errors.lastName.message}
@@ -161,6 +164,7 @@ const Register = ({ completeFormStep, setUserId, ...props }) => {
                     })}
                     autoComplete="email"
                     focusBorderColor="blue"
+                    errorBorderColor='crimson'
                   />
                   <FormErrorMessage>
                     {errors.email && errors.email.message}
@@ -181,6 +185,7 @@ const Register = ({ completeFormStep, setUserId, ...props }) => {
                     })}
                     autoComplete="phoneNumber"
                     focusBorderColor="blue"
+                    errorBorderColor='crimson'
                   />
                   <FormErrorMessage>
                     {errors.phoneNumber && errors.phoneNumber.message}
@@ -198,6 +203,7 @@ const Register = ({ completeFormStep, setUserId, ...props }) => {
                     id="password"
                     autoComplete="current-password"
                     focusBorderColor="blue"
+                    errorBorderColor='crimson'
                     {...register("password", {
                       required: "This is required",
                       minLength: 6,
@@ -217,6 +223,7 @@ const Register = ({ completeFormStep, setUserId, ...props }) => {
                     type="password"
                     id="confirmPassword"
                     focusBorderColor="blue"
+                    errorBorderColor='crimson'
                     {...register("confirmPassword", {
                       required: "This is required",
                     })}
@@ -232,6 +239,7 @@ const Register = ({ completeFormStep, setUserId, ...props }) => {
                 <Select
                   placeholder="Select Gender"
                   id="gender"
+                  errorBorderColor='crimson'
                   onChange={handleChange}
                 >
                   <Option value="Male">Male</Option>
@@ -244,7 +252,7 @@ const Register = ({ completeFormStep, setUserId, ...props }) => {
               </GridItem>
               <GridItem></GridItem>
               <GridItem>
-                <Checkbox defaultIsChecked py={4}>
+                <Checkbox size="lg" defaultChecked style={{border:"2px"}}>
                   <Text textAlign="left">
                     I agree to the <span>&nbsp;</span>
                     <Link color="#000000" href="#" ml={2}>
@@ -338,10 +346,10 @@ const styles={
     color:"#000000",
     marginBottom:"25px",
     "@media only screen and (max-width: 500px) ":{
-      width:"7px",
+      width:"37px",
     },
     "@media only screen and (max-width: 500px) ":{
-      width:"7px",
+      width:"37px",
     },
   },
   container:{
