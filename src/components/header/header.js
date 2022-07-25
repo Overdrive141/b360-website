@@ -65,7 +65,7 @@ export default function Header() {
                     />
                     // </li>
                   ))}
-                  <a href="https://beta.sublo.co/">Login</a>
+                  <a href="https://beta.sublo.co/" target="_blank" rel="noopener noreferrer">Login</a>
                 </Box>
               </Flex>
 

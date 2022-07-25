@@ -64,7 +64,7 @@ export default function Footer() {
               icon={<FaFacebook />}
             />
           </a> */}
-          <a href="https://www.instagram.com/business360pk/?igshid=YmMyMTA2M2Y%3D">
+          <a href="https://www.instagram.com/business360pk/?igshid=YmMyMTA2M2Y%3D" target="_blank" rel="noopener noreferrer">
             <IconButton 
               color="#fff"
               w="30px"
@@ -74,7 +74,7 @@ export default function Footer() {
               icon={<FiInstagram />}
             />
           </a>
-          <a href="https://www.linkedin.com/company/business-360pk/about/">
+          <a href="https://www.linkedin.com/company/business-360pk/about/" target="_blank" rel="noopener noreferrer">
             <IconButton 
               color="#fff"
               w="30px"
